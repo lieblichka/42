@@ -6,12 +6,14 @@
 /*   By: mwuckert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/22 17:04:37 by mwuckert          #+#    #+#             */
-/*   Updated: 2018/11/22 17:05:22 by mwuckert         ###   ########.fr       */
+/*   Updated: 2018/11/22 18:07:03 by mwuckert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		main(int argc, char **argv)
+void	call_test(void);
+
+int		main(void)
 {
-	
+	call_test();
 	return (0);
 }

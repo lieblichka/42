@@ -6,12 +6,13 @@
 /*   By: mwuckert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/22 17:05:47 by mwuckert          #+#    #+#             */
-/*   Updated: 2018/11/22 17:07:07 by mwuckert         ###   ########.fr       */
+/*   Updated: 2018/11/22 19:07:58 by mwuckert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	call_test()
-{
-	ft_memset_test();
+void	ft_memset_test(char c);
 
+void	call_test(void)
+{
+	ft_memset_test('a');
 }
