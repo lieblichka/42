@@ -1,24 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lib.h                                           :+:      :+:    :+:   */
+/*   ft_test.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mwuckert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/23 09:53:54 by mwuckert          #+#    #+#             */
-/*   Updated: 2018/11/23 17:39:14 by mwuckert         ###   ########.fr       */
+/*   Created: 2018/11/23 17:33:03 by mwuckert          #+#    #+#             */
+/*   Updated: 2018/11/23 17:40:08 by mwuckert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_LIB_H
-# define FT_LIB_H
+#ifndef FT_TEST_H
+# define FT_TEST_H
 
-# include  <string.h>
+# include <string.h>
 
-void	ft_putchar(char c);
-void	ft_putstr(char const *str);
-void	ft_putnbr(int nb);
-void	*ft_memset(void *b, int c, size_t len);
-void	ft_bzero(void *s, size_t n);
+void	ft_memset_test(char c);
+void	ft_bzero_test(size_t n);
 
 #endif

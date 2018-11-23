@@ -1,23 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset_test.c                                   :+:      :+:    :+:   */
+/*   ft_bzero_test.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mwuckert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/22 17:07:15 by mwuckert          #+#    #+#             */
-/*   Updated: 2018/11/23 15:00:53 by mwuckert         ###   ########.fr       */
+/*   Updated: 2018/11/23 18:09:28 by mwuckert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
 #include "ft_lib.h"
 
-void	ft_memset_test(void)
+void	ft_bzero_test(size_t n)
 {
-	char str[] = "1234567890A";
+	char	*str;
+	size_t	i;
 
-	ft_putstr("\n---ft_memset:");
-	ft_putnbr(ft_memset(str, 255, 10) == ft_memset(str, 255, 10));
-	ft_putstr("\n\n");
+	str = "1234567890A";
+	i = 0;
+	ft_putstr("\n---ft_b_zero: ");
+	ft_bzero(str, n);
+	while (i < n)
+		ft_putnbr(*(str + i++) == NULL);
 }

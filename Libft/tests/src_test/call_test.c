@@ -6,13 +6,14 @@
 /*   By: mwuckert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/22 17:05:47 by mwuckert          #+#    #+#             */
-/*   Updated: 2018/11/23 14:57:08 by mwuckert         ###   ########.fr       */
+/*   Updated: 2018/11/23 17:44:24 by mwuckert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_memset_test(void);
+#include "ft_test.h"
 
 void	call_test(void)
 {
-	ft_memset_test();
+	ft_memset_test('a');
+	ft_bzero_test(10);
 }
