@@ -1,18 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   call_test.c                                        :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mwuckert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/22 17:05:47 by mwuckert          #+#    #+#             */
-/*   Updated: 2018/11/23 14:57:08 by mwuckert         ###   ########.fr       */
+/*   Created: 2018/11/23 10:30:01 by mwuckert          #+#    #+#             */
+/*   Updated: 2018/11/23 14:04:10 by mwuckert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_memset_test(void);
+#include "ft_lib.h"
 
-void	call_test(void)
+void	ft_putstr(char const *str)
 {
-	ft_memset_test();
+	while (*str)
+		ft_putchar(*str++);
 }

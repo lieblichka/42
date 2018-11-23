@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   call_test.c                                        :+:      :+:    :+:   */
+/*   ft_putchar.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mwuckert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/22 17:05:47 by mwuckert          #+#    #+#             */
-/*   Updated: 2018/11/23 14:57:08 by mwuckert         ###   ########.fr       */
+/*   Created: 2018/11/23 10:19:51 by mwuckert          #+#    #+#             */
+/*   Updated: 2018/11/23 10:19:55 by mwuckert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_memset_test(void);
+#include <unistd.h>
 
-void	call_test(void)
+void	ft_putchar(char c)
 {
-	ft_memset_test();
+	write(1, &c, 1);
 }

@@ -1,18 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   call_test.c                                        :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mwuckert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/22 17:05:47 by mwuckert          #+#    #+#             */
-/*   Updated: 2018/11/23 14:57:08 by mwuckert         ###   ########.fr       */
+/*   Created: 2018/11/23 09:27:42 by mwuckert          #+#    #+#             */
+/*   Updated: 2018/11/23 14:53:33 by mwuckert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_memset_test(void);
+#include <string.h>
+#include <stdio.h>
 
-void	call_test(void)
+void	ft_bzero(void *s, size_t n)
 {
-	ft_memset_test();
+	size_t i;
+
+	i = 0;
+	while (i < size_t)
+		if (*(s + i))
+			*((unsigned char*)s + i++) = 0;
 }

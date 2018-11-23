@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   call_test.c                                        :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mwuckert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/22 17:05:47 by mwuckert          #+#    #+#             */
-/*   Updated: 2018/11/23 14:57:08 by mwuckert         ###   ########.fr       */
+/*   Created: 2018/11/23 14:14:17 by mwuckert          #+#    #+#             */
+/*   Updated: 2018/11/23 14:53:01 by mwuckert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_memset_test(void);
+#include <string.h>
 
-void	call_test(void)
+void	*ft_memcpy(void *restrict dst, const void *restrict src, size_t)
 {
-	ft_memset_test();
+	return (NULL);
 }

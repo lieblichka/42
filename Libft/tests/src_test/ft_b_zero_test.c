@@ -1,18 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   call_test.c                                        :+:      :+:    :+:   */
+/*   ft_memset_test.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mwuckert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/22 17:05:47 by mwuckert          #+#    #+#             */
-/*   Updated: 2018/11/23 14:57:08 by mwuckert         ###   ########.fr       */
+/*   Created: 2018/11/22 17:07:15 by mwuckert          #+#    #+#             */
+/*   Updated: 2018/11/23 15:00:53 by mwuckert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_memset_test(void);
+#include <string.h>
+#include "ft_lib.h"
 
-void	call_test(void)
+void	ft_memset_test(void)
 {
-	ft_memset_test();
+	char str[] = "1234567890A";
+
+	ft_putstr("\n---ft_memset:");
+	ft_putnbr(ft_memset(str, 255, 10) == ft_memset(str, 255, 10));
+	ft_putstr("\n\n");
 }
