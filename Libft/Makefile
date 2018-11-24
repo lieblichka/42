@@ -6,7 +6,7 @@
 #    By: mwuckert <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/22 15:15:48 by mwuckert          #+#    #+#              #
-#    Updated: 2018/11/24 22:06:39 by mwuckert         ###   ########.fr        #
+#    Updated: 2018/11/24 22:14:09 by mwuckert         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,11 +16,11 @@ S = srcs/
 
 I = .
 
-SRC = $(S)ft_memset.c $(S)ft_putchar.c $(S)ft_putnbr.c $(S)ft_putstr.c $(S)ft_bzero.c $(S)ft_memcpy.c ft_m
+SRC = $(S)ft_memset.c $(S)ft_putchar.c $(S)ft_putnbr.c $(S)ft_putstr.c $(S)ft_bzero.c $(S)ft_memcpy.c $(S)ft_memccpy.c
 
 SRC_T = tests/src_test/
 
-TEST_FILES = $(SRC_T)ft_memset_test.c $(SRC_T)ft_bzero_test.c $(SRC_T)ft_memcpy_test.c
+TEST_FILES = $(SRC_T)ft_memset_test.c $(SRC_T)ft_bzero_test.c $(SRC_T)ft_memcpy_test.c $(SRC_T)ft_memccpy_test.c
 
 EXEC = tests/exec/test
 
