@@ -6,7 +6,7 @@
 #    By: mwuckert <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/22 15:15:48 by mwuckert          #+#    #+#              #
-#    Updated: 2018/11/24 20:15:52 by mwuckert         ###   ########.fr        #
+#    Updated: 2018/11/24 22:06:39 by mwuckert         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ S = srcs/
 
 I = .
 
-SRC = $(S)ft_memset.c $(S)ft_putchar.c $(S)ft_putnbr.c $(S)ft_putstr.c $(S)ft_bzero.c $(S)ft_memcpy.c
+SRC = $(S)ft_memset.c $(S)ft_putchar.c $(S)ft_putnbr.c $(S)ft_putstr.c $(S)ft_bzero.c $(S)ft_memcpy.c ft_m
 
 SRC_T = tests/src_test/
 
@@ -33,3 +33,6 @@ test: compile_test
 
 compile_test:
 	gcc -Wall -Wextra -Werror $(SRC_T)main.c $(SRC_T)call_test.c $(TEST_FILES) $(SRC) -o $(EXEC) -I$(I)
+
+clean_exec:
+	rm tests/exec/test
