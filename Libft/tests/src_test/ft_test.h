@@ -6,7 +6,7 @@
 /*   By: mwuckert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/23 17:33:03 by mwuckert          #+#    #+#             */
-/*   Updated: 2018/11/23 17:40:08 by mwuckert         ###   ########.fr       */
+/*   Updated: 2018/11/24 20:26:30 by mwuckert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,5 +17,6 @@
 
 void	ft_memset_test(char c);
 void	ft_bzero_test(size_t n);
+void	ft_memcpy_test(char *str);
 
 #endif

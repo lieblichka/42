@@ -5,14 +5,19 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mwuckert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/23 14:14:17 by mwuckert          #+#    #+#             */
-/*   Updated: 2018/11/23 14:53:01 by mwuckert         ###   ########.fr       */
+/*   Created: 2018/11/24 21:23:52 by mwuckert          #+#    #+#             */
+/*   Updated: 2018/11/24 21:23:54 by mwuckert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
 
-void	*ft_memcpy(void *restrict dst, const void *restrict src, size_t)
+void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
-	return (NULL);
+	size_t i;
+
+	i = -1;
+	while (++i < n)
+		*((unsigned char*)dst + i) = *((unsigned char*)(src + i));
+	return (dst);
 }

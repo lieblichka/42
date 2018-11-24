@@ -6,7 +6,7 @@
 /*   By: mwuckert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/22 17:07:15 by mwuckert          #+#    #+#             */
-/*   Updated: 2018/11/23 17:40:28 by mwuckert         ###   ########.fr       */
+/*   Updated: 2018/11/24 18:08:54 by mwuckert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	ft_memset_test(char c)
 
 	ft_putstr("\n---ft_memset: ");
 	ft_putstr(ft_memset(str, c, 10));
-	ft_putstr("\n---memset: ");
+	ft_putstr("\n+++memset:    ");
 	ft_putstr(memset(str2, c, 10));
 	ft_putchar('\n');
 }
