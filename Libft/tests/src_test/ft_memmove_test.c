@@ -1,22 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   call_test.c                                        :+:      :+:    :+:   */
+/*   ft_memmove_test.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mwuckert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/22 17:05:47 by mwuckert          #+#    #+#             */
-/*   Updated: 2018/11/25 19:59:47 by mwuckert         ###   ########.fr       */
+/*   Created: 2018/11/24 21:37:20 by mwuckert          #+#    #+#             */
+/*   Updated: 2018/11/25 21:15:47 by mwuckert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_test.h"
+#include <string.h>
+#include "ft_lib.h"
 
-void	call_test(void)
+void	ft_memmove_test(const void *cat_str)
 {
-	ft_memset_test('a');
-	ft_bzero_test(10);
-	ft_memcpy_test("kisa");
-	ft_memccpy_test("kisa", '\0');
-	ft_memmove_test("kisa");
+	//char str[15] = {"1234567890ABC"};
+	char str2[15] = {"1234567890ABC"};
+	cat_str = NULL;
+	//ft_putstr("\n---ft_memccpy: ");
+	//ft_putstr(ft_memccpy(str, cat_str, 5));
+	ft_putstr("\n+++memmove:    ");
+	ft_putstr(memmove(str2, &str2[10], 5));
+	ft_putchar('\n');	
 }
