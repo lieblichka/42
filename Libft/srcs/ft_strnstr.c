@@ -1,26 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove_test.c                                   :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mwuckert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/24 21:37:20 by mwuckert          #+#    #+#             */
-/*   Updated: 2018/11/26 16:55:38 by mwuckert         ###   ########.fr       */
+/*   Created: 2018/11/26 20:27:21 by mwuckert          #+#    #+#             */
+/*   Updated: 2018/11/26 20:48:26 by mwuckert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
-#include "ft_lib.h"
 
-void	ft_memmove_test(void)
+char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-	char str[15] = {"1234567890ABC"};
-	char str2[15] = {"1234567890ABC"};
+	char *addr;
 
-	ft_putstr("\n---ft_memmove: ");
-	ft_putstr(ft_memmove(str + 4, str + 2, 4));
-	ft_putstr("\n+++memmove:    ");
-	ft_putstr(memmove(str2 + 4, str2 + 2, 4));
-	ft_putchar('\n');	
+	if (*needle == '\0')
+		return (haystack);
+	while (*haystack && *needle && len--)
+		if (*haystack++ == *needle++)
+			addr = haystack - 1;
+		else
+			addr = 0;
+	return (addr);
 }

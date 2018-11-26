@@ -1,26 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove_test.c                                   :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mwuckert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/24 21:37:20 by mwuckert          #+#    #+#             */
-/*   Updated: 2018/11/26 16:55:38 by mwuckert         ###   ########.fr       */
+/*   Created: 2018/11/26 17:33:41 by mwuckert          #+#    #+#             */
+/*   Updated: 2018/11/26 18:23:32 by mwuckert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
-#include "ft_lib.h"
 
-void	ft_memmove_test(void)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	char str[15] = {"1234567890ABC"};
-	char str2[15] = {"1234567890ABC"};
-
-	ft_putstr("\n---ft_memmove: ");
-	ft_putstr(ft_memmove(str + 4, str + 2, 4));
-	ft_putstr("\n+++memmove:    ");
-	ft_putstr(memmove(str2 + 4, str2 + 2, 4));
-	ft_putchar('\n');	
+	while (n--)
+		if (*((unsigned char*)s) == c)
+			return (s);
+		else
+			s++;
+	return (NULL);
 }

@@ -1,26 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove_test.c                                   :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mwuckert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/24 21:37:20 by mwuckert          #+#    #+#             */
-/*   Updated: 2018/11/26 16:55:38 by mwuckert         ###   ########.fr       */
+/*   Created: 2018/11/26 20:48:47 by mwuckert          #+#    #+#             */
+/*   Updated: 2018/11/26 20:50:48 by mwuckert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-#include "ft_lib.h"
-
-void	ft_memmove_test(void)
+int		ft_strcmp(const char *s1, const char *s2)
 {
-	char str[15] = {"1234567890ABC"};
-	char str2[15] = {"1234567890ABC"};
-
-	ft_putstr("\n---ft_memmove: ");
-	ft_putstr(ft_memmove(str + 4, str + 2, 4));
-	ft_putstr("\n+++memmove:    ");
-	ft_putstr(memmove(str2 + 4, str2 + 2, 4));
-	ft_putchar('\n');	
+	while (*s1)
+		if (!(*s1++ - *s2++ == 0))
+			return (*s1 - *s2);
+	return (*s1 - *s2);
 }

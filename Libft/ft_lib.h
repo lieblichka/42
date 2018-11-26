@@ -6,7 +6,7 @@
 /*   By: mwuckert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/23 09:53:54 by mwuckert          #+#    #+#             */
-/*   Updated: 2018/11/24 21:17:18 by mwuckert         ###   ########.fr       */
+/*   Updated: 2018/11/26 16:20:58 by mwuckert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,5 +22,6 @@ void	ft_bzero(void *s, size_t n);
 void	*ft_memcpy(void *dst, const void *src, size_t n);
 void	*ft_memccpy(void *dst, const void *src, int c, size_t n);
 void	*ft_memset(void *b, int c, size_t len);
+void	*ft_memmove(void *b, const void *src, size_t len);
 
 #endif

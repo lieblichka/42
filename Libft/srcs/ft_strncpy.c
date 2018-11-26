@@ -1,26 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove_test.c                                   :+:      :+:    :+:   */
+/*   ft_strncpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mwuckert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/24 21:37:20 by mwuckert          #+#    #+#             */
-/*   Updated: 2018/11/26 16:55:38 by mwuckert         ###   ########.fr       */
+/*   Created: 2018/11/26 18:30:19 by mwuckert          #+#    #+#             */
+/*   Updated: 2018/11/26 19:31:06 by mwuckert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
-#include "ft_lib.h"
 
-void	ft_memmove_test(void)
+char	*ft_strncpy(char *dst, const char *src, size_t len)
 {
-	char str[15] = {"1234567890ABC"};
-	char str2[15] = {"1234567890ABC"};
+	char *addr;
 
-	ft_putstr("\n---ft_memmove: ");
-	ft_putstr(ft_memmove(str + 4, str + 2, 4));
-	ft_putstr("\n+++memmove:    ");
-	ft_putstr(memmove(str2 + 4, str2 + 2, 4));
-	ft_putchar('\n');	
+	addr = dst;
+	while (*src)
+	{
+		*dst++ = *src++;
+		len--;
+	}
+	while (len--)
+		*dst++ = '\0';
+	return (addr);
 }

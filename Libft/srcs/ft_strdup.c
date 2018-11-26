@@ -1,26 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove_test.c                                   :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mwuckert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/24 21:37:20 by mwuckert          #+#    #+#             */
-/*   Updated: 2018/11/26 16:55:38 by mwuckert         ###   ########.fr       */
+/*   Created: 2018/11/26 18:12:15 by mwuckert          #+#    #+#             */
+/*   Updated: 2018/11/26 19:25:45 by mwuckert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include <stdlib.h>
 #include "ft_lib.h"
 
-void	ft_memmove_test(void)
+char	*ft_strdup(const char *s1)
 {
-	char str[15] = {"1234567890ABC"};
-	char str2[15] = {"1234567890ABC"};
+	char *dup;
 
-	ft_putstr("\n---ft_memmove: ");
-	ft_putstr(ft_memmove(str + 4, str + 2, 4));
-	ft_putstr("\n+++memmove:    ");
-	ft_putstr(memmove(str2 + 4, str2 + 2, 4));
-	ft_putchar('\n');	
+	dup = (char*)(malloc(sizeof(*s1) * ft_strlen(s1) + 1));
+	while (*s1)
+		*dup++ = *s1++;
+	*dup = '\0';
+	return (dup);
 }
