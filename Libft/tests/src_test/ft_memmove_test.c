@@ -6,7 +6,7 @@
 /*   By: mwuckert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/24 21:37:20 by mwuckert          #+#    #+#             */
-/*   Updated: 2018/11/25 21:15:47 by mwuckert         ###   ########.fr       */
+/*   Updated: 2018/11/26 12:49:03 by mwuckert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,6 @@ void	ft_memmove_test(const void *cat_str)
 	//ft_putstr("\n---ft_memccpy: ");
 	//ft_putstr(ft_memccpy(str, cat_str, 5));
 	ft_putstr("\n+++memmove:    ");
-	ft_putstr(memmove(str2, &str2[10], 5));
+	ft_putstr(memmove(str2 + 4, str2 + 2, 4));
 	ft_putchar('\n');	
 }
