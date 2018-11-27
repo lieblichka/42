@@ -6,33 +6,30 @@
 #    By: mwuckert <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/22 15:15:48 by mwuckert          #+#    #+#              #
-#    Updated: 2018/11/26 16:21:19 by mwuckert         ###   ########.fr        #
+#    Updated: 2018/11/27 20:29:55 by mwuckert         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 
-S = srcs/
+S = ./
 
-I = .
+I = ./
 
-SRC = $(S)ft_memset.c $(S)ft_putchar.c $(S)ft_putnbr.c $(S)ft_putstr.c $(S)ft_bzero.c $(S)ft_memcpy.c $(S)ft_memccpy.c $(S)ft_memmove.c
-
-SRC_T = tests/src_test/
-
-TEST_FILES = $(SRC_T)ft_memset_test.c $(SRC_T)ft_bzero_test.c $(SRC_T)ft_memcpy_test.c $(SRC_T)ft_memccpy_test.c $(SRC_T)ft_memmove_test.c
-
-EXEC = tests/exec/test
+SRC = $(S)ft_atoi.c $(S)ft_bzero.c $(S)ft_isalnum.c $(S)ft_isalpha.c $(S)ft_isascii.c $(S)ft_isdigit.c $(S)ft_isprint.c $(S)ft_memccpy.c $(S)ft_memchr.c $(S)ft_memcmp.c $(S)ft_memcpy.c $(S)ft_memmove.c $(S)ft_memset.c $(S)ft_putchar.c $(S)ft_putnbr.c $(S)ft_putstr.c $(S)ft_strcat.c $(S)ft_strchr.c $(S)ft_strcmp.c $(S)ft_strcpy.c $(S)ft_strdup.c $(S)ft_strlcat.c $(S)ft_strlen.c $(S)ft_strncat.c $(S)ft_strncmp.c $(S)ft_strncpy.c $(S)ft_strnstr.c $(S)ft_strrchr.c $(S)ft_strstr.c $(S)ft_tolower.c $(S)ft_toupper.c
 
 all: $(NAME)
 
-$(NAME):
+$(NAME): create_o
+	ar rc libft.a *.o
 
-test: compile_test
-	./tests/exec/test
+create_o:
+	gcc -Wall -Wextra -Werror -c $(SRC) -I$(I)
 
-compile_test:
-	gcc -Wall -Wextra -Werror $(SRC_T)main.c $(SRC_T)call_test.c $(TEST_FILES) $(SRC) -o $(EXEC) -I$(I)
+clean:
+	rm -f *.o
 
-clean_exec:
-	rm tests/exec/test
+fclean: clean
+	rm -f libft.a
+
+re: fclean all
