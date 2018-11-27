@@ -1,23 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mwuckert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/27 13:45:17 by mwuckert          #+#    #+#             */
-/*   Updated: 2018/11/27 14:40:13 by mwuckert         ###   ########.fr       */
+/*   Created: 2018/11/27 14:29:52 by mwuckert          #+#    #+#             */
+/*   Updated: 2018/11/27 14:36:08 by mwuckert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <stdio.h>
-
-int		ft_atoi(const char *str);
-
-int		main(int argc, char **argv)
+int		ft_isadigit(int c)
 {
-	if (argc == 2)
-		printf("atoi: %d\nft_atoi: %d\n", atoi(argv[1]), ft_atoi(argv[1]));
-	return (0);
+	if (c >=  && c <= ') 
 }

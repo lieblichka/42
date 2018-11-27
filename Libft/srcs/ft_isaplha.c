@@ -1,23 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_isaplha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mwuckert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/27 13:45:17 by mwuckert          #+#    #+#             */
-/*   Updated: 2018/11/27 14:40:13 by mwuckert         ###   ########.fr       */
+/*   Created: 2018/11/27 14:20:54 by mwuckert          #+#    #+#             */
+/*   Updated: 2018/11/27 14:28:43 by mwuckert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <stdio.h>
-
-int		ft_atoi(const char *str);
-
-int		main(int argc, char **argv)
+int		ft_isaplha(int c)
 {
-	if (argc == 2)
-		printf("atoi: %d\nft_atoi: %d\n", atoi(argv[1]), ft_atoi(argv[1]));
+	if ((c >= 'a' && c <= 'z')
+			|| (c >= 'A' && c <= 'Z'))
+		return (c);
 	return (0);
 }
