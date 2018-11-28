@@ -6,11 +6,11 @@
 /*   By: mwuckert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/27 14:29:52 by mwuckert          #+#    #+#             */
-/*   Updated: 2018/11/27 16:40:59 by mwuckert         ###   ########.fr       */
+/*   Updated: 2018/11/27 20:59:12 by mwuckert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_isadigit(int c)
+int		ft_isdigit(int c)
 {
 	if (c >= '0' && c <= '9')
 		return (c);
