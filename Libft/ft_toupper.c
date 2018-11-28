@@ -6,11 +6,11 @@
 /*   By: mwuckert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/27 16:57:49 by mwuckert          #+#    #+#             */
-/*   Updated: 2018/11/27 16:59:51 by mwuckert         ###   ########.fr       */
+/*   Updated: 2018/11/28 10:10:38 by mwuckert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		toupper(int c)
+int		ft_toupper(int c)
 {
 	if (c >= 'a' && c <= 'z')
 		return (c - 32);
