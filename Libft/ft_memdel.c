@@ -1,23 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memccpy.c                                       :+:      :+:    :+:   */
+/*   ft_memdel.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mwuckert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/24 21:23:25 by mwuckert          #+#    #+#             */
-/*   Updated: 2018/11/28 22:21:11 by mwuckert         ###   ########.fr       */
+/*   Created: 2018/11/28 17:17:16 by mwuckert          #+#    #+#             */
+/*   Updated: 2018/11/28 17:19:47 by mwuckert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include <stdlib.h>
 
-void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
+void	*ft_memdel(void **ap)
 {
-	while (n-- > 0)
-		if (*(unsigned char*)dst == (unsigned char)c)
-			return (dst + 1);
-		else
-			*(unsigned char*)dst++ = *(unsigned char*)src++;
+	free(ap);
+	ap = 0;
 	return (0);
 }

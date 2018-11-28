@@ -1,23 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memccpy.c                                       :+:      :+:    :+:   */
+/*   ft_striter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mwuckert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/24 21:23:25 by mwuckert          #+#    #+#             */
-/*   Updated: 2018/11/28 22:21:11 by mwuckert         ###   ########.fr       */
+/*   Created: 2018/11/28 17:42:42 by mwuckert          #+#    #+#             */
+/*   Updated: 2018/11/28 17:52:20 by mwuckert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-
-void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
+void	ft_striter(char *s, void (*f)(char*))
 {
-	while (n-- > 0)
-		if (*(unsigned char*)dst == (unsigned char)c)
-			return (dst + 1);
-		else
-			*(unsigned char*)dst++ = *(unsigned char*)src++;
-	return (0);
+	while (*s)
+		f(s++);
 }
