@@ -6,7 +6,7 @@
 /*   By: mwuckert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/28 16:56:57 by mwuckert          #+#    #+#             */
-/*   Updated: 2018/11/28 17:23:24 by mwuckert         ###   ########.fr       */
+/*   Updated: 2018/11/29 21:12:11 by mwuckert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,10 @@ void	*ft_memalloc(size_t size)
 {
 	void *new;
 
-	if (!(new = malloc(size)))
+	new = 0;
+	if (!(new = malloc(sizeof(*new) * size)))
 		return (0);
+	while (size--)
+		*(unsigned char*)(new + size) = 0;
 	return (new);
 }

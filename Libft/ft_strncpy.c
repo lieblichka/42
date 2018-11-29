@@ -6,7 +6,7 @@
 /*   By: mwuckert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/26 18:30:19 by mwuckert          #+#    #+#             */
-/*   Updated: 2018/11/28 21:26:15 by mwuckert         ###   ########.fr       */
+/*   Updated: 2018/11/29 16:25:10 by mwuckert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_strncpy(char *dst, const char *src, size_t len)
 	addr = dst;
 	while (*src && len--)
 		*dst++ = *src++;
-	while (len--)
+	while (!*src && len--)
 		*dst++ = '\0';
 	return (addr);
 }
