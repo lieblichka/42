@@ -1,23 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strnequ.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mwuckert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/30 12:22:13 by mwuckert          #+#    #+#             */
-/*   Updated: 2018/11/30 12:54:46 by lbrown-b         ###   ########.fr       */
+/*   Created: 2018/11/30 14:33:20 by mwuckert          #+#    #+#             */
+/*   Updated: 2018/11/30 15:46:13 by mwuckert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include <string.h>
+#include "libft.h"
 
-int		main(void)
+int		ft_strnequ(char const *s1, char const *s2, size_t n)
 {
-	char *s = "Hello";
-	void **ap;
-
-	ap = (void*)s;
-	printf("%c", *(((char *)ap) + 1));
-	return (0);
+	return (ft_strncmp(s1, s2, n) == 0 ? 1 : 0);
 }

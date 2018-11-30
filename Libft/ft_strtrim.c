@@ -1,20 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mwuckert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/23 09:27:42 by mwuckert          #+#    #+#             */
-/*   Updated: 2018/11/30 16:59:10 by mwuckert         ###   ########.fr       */
+/*   Created: 2018/11/30 17:14:28 by mwuckert          #+#    #+#             */
+/*   Updated: 2018/11/30 20:58:56 by mwuckert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-#include <stdio.h>
+#include "libft.h"
 
-void	ft_bzero(void *s, size_t n)
+char	*ft_strtrim(char const *s)
 {
-	while (n--)
-		*((unsigned char*)s++) = 0;
+	char	*str
+	int		i;
+
+	str = (char*)s;
+	while (*begin == ' ' || *begin == '\n' || *begin == '\t')
+		str++;
+	while (*s)
 }

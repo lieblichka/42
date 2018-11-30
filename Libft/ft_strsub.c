@@ -1,20 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_strsub.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mwuckert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/23 09:27:42 by mwuckert          #+#    #+#             */
-/*   Updated: 2018/11/30 16:59:10 by mwuckert         ###   ########.fr       */
+/*   Created: 2018/11/30 15:47:18 by mwuckert          #+#    #+#             */
+/*   Updated: 2018/11/30 19:15:00 by mwuckert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
-#include <stdio.h>
+#include "libft.h"
 
-void	ft_bzero(void *s, size_t n)
+char	*ft_strsub(char const *s, unsigned int start, size_t len)
 {
-	while (n--)
-		*((unsigned char*)s++) = 0;
+	char *sub;
+
+	if (!(sub = (char*)(ft_memalloc(sizeof(*s) * len + 1))))
+		return (0);
+	ft_strncpy(sub, s + start, len);
+	*(sub + len + 1) = '\0';
+	return (sub);
 }
