@@ -1,23 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memdel.c                                        :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mwuckert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/28 17:17:16 by mwuckert          #+#    #+#             */
-/*   Updated: 2018/11/30 12:22:06 by mwuckert         ###   ########.fr       */
+/*   Created: 2018/11/30 12:22:13 by mwuckert          #+#    #+#             */
+/*   Updated: 2018/11/30 12:42:54 by mwuckert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <libft.h>
+#include <stdio.h>
 
-void	ft_memdel(void **ap)
+int		main(void)
 {
-	int i;
+	char *s = "Hello";
+	void **ap;
 
-	i = 0;
-	while (*((unsigned char*)ap + i))
-		*((unsigned char*)ap + i++) = 0;
+	ap = (void*)s;
+	printf("%c", *(*(char *)(ap) + 1));
+	return (0);
 }
