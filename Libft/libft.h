@@ -6,7 +6,7 @@
 /*   By: mwuckert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/23 09:53:54 by mwuckert          #+#    #+#             */
-/*   Updated: 2018/11/30 12:10:27 by mwuckert         ###   ########.fr       */
+/*   Updated: 2018/11/30 14:36:24 by mwuckert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ int		ft_strcmp(const char *s1, const char *s2);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 int		ft_tolower(int c);
 int		ft_toupper(int c);
+int		ft_strequ(char const *s1, char const *s2);
 void	ft_putchar(char c);
 void	ft_putstr(const char *str);
 void	ft_putnbr(int nb);
@@ -44,7 +45,8 @@ void	*ft_memalloc(size_t size);
 char	*ft_strcat(char *s1, const char *s2);
 char	*ft_strnew(size_t size);
 char	*ft_strncat(char *s1, const char *s2, size_t n);
-char	*ft_strmap(char const *s, char (*f)(unsigned int, char*));
+char	*ft_strmap(char const *s, char (*f)(char));
+char	*ft_strmapi(char const *s, char (*f)(unsigned int,char));
 char	*ft_strchr(const char *s, int c);
 char	*ft_strrchr(const char *s, int c);
 char	*ft_strcpy(char *dst, const char *src);

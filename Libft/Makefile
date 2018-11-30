@@ -6,22 +6,17 @@
 #    By: mwuckert <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/22 15:15:48 by mwuckert          #+#    #+#              #
-#    Updated: 2018/11/28 22:22:00 by mwuckert         ###   ########.fr        #
+#    Updated: 2018/11/30 14:39:56 by mwuckert         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 
-S = ./
-
-I = ./
-
-SRC = $(S)ft_atoi.c $(S)ft_bzero.c $(S)ft_isalnum.c $(S)ft_isalpha.c $(S)ft_isascii.c $(S)ft_isdigit.c $(S)ft_isprint.c $(S)ft_memccpy.c $(S)ft_memchr.c $(S)ft_memcmp.c $(S)ft_memcpy.c $(S)ft_memmove.c $(S)ft_memset.c $(S)ft_putchar.c $(S)ft_putnbr.c $(S)ft_putstr.c $(S)ft_strcat.c $(S)ft_strchr.c $(S)ft_strcmp.c $(S)ft_strcpy.c $(S)ft_strdup.c $(S)ft_strlcat.c $(S)ft_strlen.c $(S)ft_strncat.c $(S)ft_strncmp.c $(S)ft_strncpy.c $(S)ft_strnstr.c $(S)ft_strrchr.c $(S)ft_strstr.c $(S)ft_tolower.c $(S)ft_toupper.c $(S)ft_memalloc.c $(S)ft_memdel.c $(S)ft_strnew.c $(S)ft_strdel.c $(S)ft_strclr.c $(S)ft_striter.c $(S)ft_striteri.c $(S)ft_strmap.c
-
+SRC = ft_atoi.c ft_bzero.c ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isdigit.c ft_isprint.c ft_memccpy.c ft_memchr.c ft_memcmp.c ft_memcpy.c ft_memmove.c ft_memset.c ft_putchar.c ft_putnbr.c ft_putstr.c ft_strcat.c ft_strchr.c ft_strcmp.c ft_strcpy.c ft_strdup.c ft_strlcat.c ft_strlen.c ft_strncat.c ft_strncmp.c ft_strncpy.c ft_strnstr.c ft_strrchr.c ft_strstr.c ft_tolower.c ft_toupper.c ft_memalloc.c ft_memdel.c ft_strnew.c ft_strdel.c ft_strclr.c ft_striter.c ft_striteri.c ft_strmap.c ft_strmapi.c ft_strequ.c
 all: $(NAME)
 
 $(NAME):
-	gcc -Wall -Wextra -Werror -c $(SRC) -I$(I)
+	gcc -Wall -Wextra -Werror -c $(SRC) -I.
 	ar rc libft.a *.o
 
 clean:

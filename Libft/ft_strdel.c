@@ -6,14 +6,14 @@
 /*   By: mwuckert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/28 17:30:48 by mwuckert          #+#    #+#             */
-/*   Updated: 2018/11/28 17:34:26 by mwuckert         ###   ########.fr       */
+/*   Updated: 2018/11/30 14:10:25 by mwuckert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
 void	ft_strdel(char **as)
 {
-	free(as);
-	as = 0;
+	if (as)
+		ft_bzero(as, ft_strlen((char*)as));
 }

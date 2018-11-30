@@ -6,18 +6,15 @@
 /*   By: mwuckert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/28 17:17:16 by mwuckert          #+#    #+#             */
-/*   Updated: 2018/11/30 12:22:06 by mwuckert         ###   ########.fr       */
+/*   Updated: 2018/11/30 14:10:17 by mwuckert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <libft.h>
+#include "libft.h"
 
 void	ft_memdel(void **ap)
 {
-	int i;
-
-	i = 0;
-	while (*((unsigned char*)ap + i))
-		*((unsigned char*)ap + i++) = 0;
+	if (ap)
+		ft_bzero(ap, ft_strlen((char*)ap));
+	ap = 0;
 }
