@@ -6,7 +6,7 @@
 /*   By: mwuckert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/26 20:53:40 by mwuckert          #+#    #+#             */
-/*   Updated: 2018/11/28 16:51:52 by mwuckert         ###   ########.fr       */
+/*   Updated: 2018/12/01 13:08:42 by mwuckert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int		ft_atoi(const char *str)
 	}
 	if (i < 20)
 		return (nb * sign);
-	else
-		return (-1);
-	return (0);
+	else if (sign == -1)
+		return (0);
+	return (-1);
 }

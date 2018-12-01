@@ -6,7 +6,7 @@
 /*   By: mwuckert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/30 15:47:18 by mwuckert          #+#    #+#             */
-/*   Updated: 2018/11/30 19:15:00 by mwuckert         ###   ########.fr       */
+/*   Updated: 2018/12/01 15:15:26 by mwuckert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	*ft_strsub(char const *s, unsigned int start, size_t len)
 {
 	char *sub;
 
-	if (!(sub = (char*)(ft_memalloc(sizeof(*s) * len + 1))))
+	if (!(sub = (char*)(ft_memalloc(sizeof(*s) * len + 1))) || !s)
 		return (0);
 	ft_strncpy(sub, s + start, len);
 	*(sub + len + 1) = '\0';

@@ -6,7 +6,7 @@
 /*   By: mwuckert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/30 17:14:28 by mwuckert          #+#    #+#             */
-/*   Updated: 2018/11/30 20:58:56 by mwuckert         ###   ########.fr       */
+/*   Updated: 2018/12/01 15:28:27 by mwuckert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,14 @@
 
 char	*ft_strtrim(char const *s)
 {
-	char	*str
+	char	*str;
 	int		i;
 
+	i = 0;
 	str = (char*)s;
-	while (*begin == ' ' || *begin == '\n' || *begin == '\t')
-		str++;
-	while (*s)
+	while (*(str + i) == ' ' || *(str + i) == '\n' || *(str + i) == '\t')
+		i++;
+	while (*(str + i))
+		i++;
+	return (str + i);
 }

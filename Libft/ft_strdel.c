@@ -6,7 +6,7 @@
 /*   By: mwuckert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/28 17:30:48 by mwuckert          #+#    #+#             */
-/*   Updated: 2018/11/30 14:10:25 by mwuckert         ###   ########.fr       */
+/*   Updated: 2018/12/01 17:24:02 by mwuckert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,5 +15,6 @@
 void	ft_strdel(char **as)
 {
 	if (as)
-		ft_bzero(as, ft_strlen((char*)as));
+		*as = 0;
+	as = 0;
 }

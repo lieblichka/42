@@ -6,18 +6,18 @@
 /*   By: mwuckert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/26 18:11:40 by mwuckert          #+#    #+#             */
-/*   Updated: 2018/11/30 14:00:27 by mwuckert         ###   ########.fr       */
+/*   Updated: 2018/12/01 16:10:20 by mwuckert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
 
-size_t		ft_strlen(const char *str)
+size_t		ft_strlen(const char *s)
 {
 	int i;
 
 	i = 0;
-	while (*str++)
+	while (*s++)
 		i++;
 	return (i);
 }

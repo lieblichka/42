@@ -6,7 +6,7 @@
 /*   By: mwuckert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/26 18:12:15 by mwuckert          #+#    #+#             */
-/*   Updated: 2018/11/28 14:14:06 by mwuckert         ###   ########.fr       */
+/*   Updated: 2018/12/01 10:57:22 by mwuckert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,8 @@ char	*ft_strdup(const char *s1)
 	char *dup;
 	char *addr;
 
-	dup = (char*)(malloc(sizeof(*s1) * ft_strlen(s1) + 1));
+	if (!(dup = (char*)(malloc(sizeof(*s1) * ft_strlen(s1) + 1))))
+		return (0);
 	addr = dup;
 	while (*s1)
 		*dup++ = *s1++;

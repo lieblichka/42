@@ -6,7 +6,7 @@
 /*   By: mwuckert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/28 17:17:16 by mwuckert          #+#    #+#             */
-/*   Updated: 2018/11/30 17:00:58 by mwuckert         ###   ########.fr       */
+/*   Updated: 2018/12/01 17:22:59 by mwuckert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,6 @@
 void	ft_memdel(void **ap)
 {
 	if (ap)
-		ft_bzero(ap, ft_strlen((char*)ap));
+		*ap = 0;
 	ap = 0;
 }

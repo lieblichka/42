@@ -6,7 +6,7 @@
 /*   By: mwuckert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/28 17:58:36 by mwuckert          #+#    #+#             */
-/*   Updated: 2018/11/30 14:32:05 by mwuckert         ###   ########.fr       */
+/*   Updated: 2018/12/01 15:21:08 by mwuckert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,10 @@ char	*ft_strmap(char const *s, char (*f)(char))
 	char	*new;
 	int		i;
 
-	new = (char*)ft_memalloc(sizeof(*s) * ft_strlen(s) + 1);
+	if (!s || !(new = (char*)(ft_memalloc(sizeof(*s) * ft_strlen(s) + 1))))
+		return (0);
 	i = -1;
-	while (*(s + ++i))
+	while (*(char*)(s + ++i))
 		*(new + i) = f(*(s + i));
 	*(new + i) = '\0';
 	return (new);
