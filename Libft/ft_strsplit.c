@@ -1,18 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_striter.c                                       :+:      :+:    :+:   */
+/*   ft_strsplit.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mwuckert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/28 17:42:42 by mwuckert          #+#    #+#             */
-/*   Updated: 2018/12/01 18:42:40 by mwuckert         ###   ########.fr       */
+/*   Created: 2018/12/01 18:44:00 by mwuckert          #+#    #+#             */
+/*   Updated: 2018/12/01 21:36:59 by mwuckert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_striter(char *s, void (*f)(char*))
+#include "libft.h"
+
+char	**ft_strsplit(char const *s, char c)
 {
-	if (s)
-		while (*s)
-			f(s++);
+	int		i;
+
+	if (!s)
+		return (0);
+	while (clear )
 }

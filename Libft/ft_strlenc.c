@@ -1,18 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_striter.c                                       :+:      :+:    :+:   */
+/*   ft_strlenc.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mwuckert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/28 17:42:42 by mwuckert          #+#    #+#             */
-/*   Updated: 2018/12/01 18:42:40 by mwuckert         ###   ########.fr       */
+/*   Created: 2018/12/01 20:28:25 by mwuckert          #+#    #+#             */
+/*   Updated: 2018/12/01 21:03:12 by mwuckert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_striter(char *s, void (*f)(char*))
+#include <string.h>
+
+size_t	ft_strlenc(const char *s, int c)
 {
-	if (s)
-		while (*s)
-			f(s++);
+	size_t i;
+
+	if (!s)
+		return (0);
+	i = 0;
+	while (!(*s++ == c))
+		i++;
+	return (i);
 }
