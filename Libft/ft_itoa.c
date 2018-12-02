@@ -1,25 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlenc.c                                       :+:      :+:    :+:   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mwuckert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/12/01 20:28:25 by mwuckert          #+#    #+#             */
-/*   Updated: 2018/12/02 19:46:51 by mwuckert         ###   ########.fr       */
+/*   Created: 2018/12/02 18:54:09 by mwuckert          #+#    #+#             */
+/*   Updated: 2018/12/02 19:36:17 by mwuckert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "libft.h"
 
-size_t	ft_strlenc(const char *s, int c)
+char	*ft_itoa(int n)
 {
-	size_t i;
+	int		size;
+	int		copy;
+	char	*a;
 
-	if (!s)
+	size = 2;
+	copy = n;
+	while ((n / 10 && size++))
+		n /= 10;
+	if (!(a = (char*)ft_memalloc(size--)))
 		return (0);
-	i = 0;
-	while (*s && !(*s++ == c))
-		i++;
-	return (i);
+	n = copy;
+	while (size--)
+	{
+		*(a + size) = n % 10;
+		n /= 10;
+	}
+	return (a);
 }

@@ -1,25 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlenc.c                                       :+:      :+:    :+:   */
+/*   ft_countwordc.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mwuckert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/12/01 20:28:25 by mwuckert          #+#    #+#             */
-/*   Updated: 2018/12/02 19:46:51 by mwuckert         ###   ########.fr       */
+/*   Created: 2018/12/02 15:56:51 by mwuckert          #+#    #+#             */
+/*   Updated: 2018/12/02 16:54:28 by mwuckert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "libft.h"
 
-size_t	ft_strlenc(const char *s, int c)
+int		ft_countwordc(const char *str, char c)
 {
-	size_t i;
+	int i;
 
-	if (!s)
-		return (0);
 	i = 0;
-	while (*s && !(*s++ == c))
-		i++;
+	while (*str)
+		if (*str != c && ++i)
+			while (*str != c && *str)
+				str++;
+		else
+			str++;
 	return (i);
 }
