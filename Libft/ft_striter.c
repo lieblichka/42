@@ -6,13 +6,13 @@
 /*   By: mwuckert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/28 17:42:42 by mwuckert          #+#    #+#             */
-/*   Updated: 2018/12/01 18:42:40 by mwuckert         ###   ########.fr       */
+/*   Updated: 2018/12/03 22:58:29 by mwuckert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 void	ft_striter(char *s, void (*f)(char*))
 {
-	if (s)
+	if (s && f)
 		while (*s)
 			f(s++);
 }

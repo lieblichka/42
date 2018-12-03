@@ -6,13 +6,13 @@
 /*   By: mwuckert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/28 17:17:16 by mwuckert          #+#    #+#             */
-/*   Updated: 2018/12/03 19:29:18 by mwuckert         ###   ########.fr       */
+/*   Updated: 2018/12/03 22:20:29 by mwuckert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-void	ft_memdel(void **ap) //har **as 0x0f =  char *str 0x0a = 0x01 = 'c'
+void	ft_memdel(void **ap)
 {
 	if (ap && *ap)
 	{
