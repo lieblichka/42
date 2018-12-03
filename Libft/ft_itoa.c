@@ -6,7 +6,7 @@
 /*   By: mwuckert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/02 18:54:09 by mwuckert          #+#    #+#             */
-/*   Updated: 2018/12/02 19:36:17 by mwuckert         ###   ########.fr       */
+/*   Updated: 2018/12/03 17:22:47 by mwuckert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,20 @@ char	*ft_itoa(int n)
 
 	size = 2;
 	copy = n;
+	if (n == -2147483648)
+		return (ft_strdup("-2147483648"));
 	while ((n / 10 && size++))
 		n /= 10;
-	if (!(a = (char*)ft_memalloc(size--)))
+	if (copy >= 0 && !(a = (char*)ft_memalloc(size--)))
 		return (0);
-	n = copy;
-	while (size--)
+	else if (copy < 0 && !(a = (char*)ft_memalloc(size + 1)))
+		return (0);
+	n = copy < 0 ? -copy : copy;
+	if (copy < 0)
+		*(a + 0) = '-';
+	while (size-- && !(size == 0 && copy < 0))
 	{
-		*(a + size) = n % 10;
+		*(a + size) = n % 10 + 48;
 		n /= 10;
 	}
 	return (a);
