@@ -6,11 +6,12 @@
 /*   By: mwuckert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/01 18:44:00 by mwuckert          #+#    #+#             */
-/*   Updated: 2018/12/04 04:53:16 by mwuckert         ###   ########.fr       */
+/*   Updated: 2018/12/05 16:06:44 by mwuckert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdlib.h>
 
 char	**ft_strsplit(char const *s, char c)
 {
@@ -19,11 +20,8 @@ char	**ft_strsplit(char const *s, char c)
 
 	if (!s)
 		return (0);
-	if (*s == '\0')
-		if ((ar = ft_memalloc(1)))
-			return (ar);
 	i = 0;
-	if (!(ar = (char**)ft_memalloc(sizeof(char*) * ft_countwordc(s, c) + 1)))
+	if (!(ar = (char**)ft_memalloc(sizeof(char*) * (ft_countwordc(s, c) + 1))))
 		return (0);
 	while (*s)
 		if (*s != c)
