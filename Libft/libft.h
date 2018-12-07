@@ -6,7 +6,7 @@
 /*   By: mwuckert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/02 13:15:59 by mwuckert          #+#    #+#             */
-/*   Updated: 2018/12/06 20:56:12 by mwuckert         ###   ########.fr       */
+/*   Updated: 2018/12/07 18:45:14 by mwuckert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,7 @@ void				ft_strclr(char *s);
 void				ft_striter(char *s, void (*f)(char*));
 void				ft_striteri(char *s, void (*f)(unsigned int, char*));
 void				ft_lstdelone(t_list **alst, void (*del)(void*, size_t));
+void				ft_lstdel(t_list **alst, void (*del)(void*, size_t));
 void				ft_lstadd(t_list **alst, t_list *new);
 void				*ft_memccpy(void *dst, const void *src, int c, size_t n);
 void				*ft_memchr(const void *s, int c, size_t n);
@@ -79,5 +80,6 @@ size_t				ft_strlcat(char *dst, const char *src, size_t size);
 size_t				ft_strlen(const char *s);
 size_t				ft_strlenc(const char *s, int c);
 t_list				*ft_lstnew(void const *contentv, size_t content_size);
+t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 
 #endif
