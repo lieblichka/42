@@ -1,37 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mwuckert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/26 20:53:40 by mwuckert          #+#    #+#             */
-/*   Updated: 2018/12/08 14:03:04 by mwuckert         ###   ########.fr       */
+/*   Created: 2018/12/09 20:54:59 by mwuckert          #+#    #+#             */
+/*   Updated: 2018/12/09 21:11:43 by mwuckert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_atoi(const char *str)
-{
-	int	nb;
-	int sign;
-	int i;
+#include "libft.h"
 
-	i = 0;
-	nb = 0;
-	sign = 1;
-	while ((*str >= '\a' && *str <= '\r') || *str == ' ' || *str == '0')
-		str++;
-	if (*str == '-' || *str == '+')
-		if (*str++ == '-')
-			sign = -1;
-	while (*str >= '0' && *str <= '9')
+void	ft_lstiter(t_list *lst, void (*f)(t_list *elem))
+{
+	if (lst)
 	{
-		nb = nb * 10 + *str++ - '0';
-		i++;
+		if (lst->next)
+			ft_lstiter(lst->next, f);
+		f(lst);
 	}
-	if (i < 20)
-		return (nb * sign);
-	else if (sign == -1)
-		return (0);
-	return (-1);
 }

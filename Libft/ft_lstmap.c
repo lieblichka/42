@@ -6,7 +6,7 @@
 /*   By: mwuckert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/07 18:31:10 by mwuckert          #+#    #+#             */
-/*   Updated: 2018/12/07 20:43:24 by mwuckert         ###   ########.fr       */
+/*   Updated: 2018/12/09 21:43:26 by mwuckert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,20 @@
 
 t_list		*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 {
-	t_list *alst;
 	t_list *new;
+	t_list *save;
 
-	alst = (t_list**)new;
-	while (lst)
+	while (lst && f)
 	{
-		new = ft_lstnew((*f(lst)).content, (*lst).content_size);
-		(*new).next = (*f(lst)).next;
+		new = f(lst);
+		save = new;
+		while ((*lst).next)
+		{
+			lst = (*lst).next;
+			(*new).next = f(lst);
+			new = (*new).next;
+		}
 		lst = (*lst).next;
-		new = (*new).next;
 	}
-	return (*alst); 
+	return (save);
 }
