@@ -1,18 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar.c                                       :+:      :+:    :+:   */
+/*   ft_lstdelcontent.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mwuckert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/01 22:50:58 by mwuckert          #+#    #+#             */
-/*   Updated: 2018/12/10 16:38:36 by mwuckert         ###   ########.fr       */
+/*   Created: 2018/12/10 17:22:29 by mwuckert          #+#    #+#             */
+/*   Updated: 2018/12/10 18:13:00 by mwuckert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "libft.h"
 
-void	ft_putchar(char c)
+void	ft_lstdelcontent(void* content, size_t content_size)
 {
-	write(1, &c, 1);
+	if (content && content_size)
+		ft_memdel((void*)content);
 }
