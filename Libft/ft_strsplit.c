@@ -6,7 +6,7 @@
 /*   By: mwuckert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/01 18:44:00 by mwuckert          #+#    #+#             */
-/*   Updated: 2018/12/07 19:17:30 by mwuckert         ###   ########.fr       */
+/*   Updated: 2018/12/11 15:11:28 by mwuckert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,12 @@ char	**ft_strsplit(char const *s, char c)
 	while (*s)
 		if (*s != c)
 		{
-			*(ar + i++) = ft_strsub(s, 0, ft_strlenc(s, c));
+			if (!(*(ar + i++) = ft_strsub(s, 0, ft_strlenc(s, c))))
+			{
+				ft_arraydel((void**)ar);
+				ft_memdel((void**)ar);
+				return (0);
+			}
 			s += ft_strlenc(s, c);
 		}
 		else

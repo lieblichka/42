@@ -1,19 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstdelcontent.c                                 :+:      :+:    :+:   */
+/*   ft_arraydel.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mwuckert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/12/10 17:22:29 by mwuckert          #+#    #+#             */
-/*   Updated: 2018/12/10 18:32:57 by mwuckert         ###   ########.fr       */
+/*   Created: 2018/12/10 19:16:36 by mwuckert          #+#    #+#             */
+/*   Updated: 2018/12/11 14:47:27 by mwuckert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstdelcontent(void *content, size_t content_size)
+void	ft_arraydel(void **array)
 {
-	if (content && content_size)
-		ft_memdel((void*)content);
+	if (array && *array)
+		if (*(array + 1))
+			ft_arraydel(array + 1);
+	if (array)
+		ft_memdel(&*array);
 }
