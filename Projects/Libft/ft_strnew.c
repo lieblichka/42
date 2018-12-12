@@ -6,7 +6,7 @@
 /*   By: mwuckert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/28 17:23:43 by mwuckert          #+#    #+#             */
-/*   Updated: 2018/12/06 14:40:18 by mwuckert         ###   ########.fr       */
+/*   Updated: 2018/12/12 20:04:56 by mwuckert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ char	*ft_strnew(size_t size)
 {
 	char	*str;
 
-	if (!(str = (char*)(ft_memalloc(sizeof(*str) * size + 1))))
+	if (!size && !(str = (char*)(ft_memalloc(sizeof(*str) * size + 1))))
 		return (0);
 	ft_bzero(str, size + 1);
 	return (str);
