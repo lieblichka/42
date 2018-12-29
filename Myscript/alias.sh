@@ -7,3 +7,4 @@ alias c=clear
 alias l="ls -1"
 alias desktop="cd ~/Desktop"
 alias downloads="cd ~/Downloads"
+clear
