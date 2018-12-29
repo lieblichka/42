@@ -1,4 +1,4 @@
-/* ************************************************************************** */
+/*************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   test.c                                             :+:      :+:    :+:   */
@@ -6,7 +6,7 @@
 /*   By: mwuckert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/25 17:51:40 by mwuckert          #+#    #+#             */
-/*   Updated: 2018/12/28 22:37:24 by mwuckert         ###   ########.fr       */
+/*   Updated: 2018/12/29 21:03:45 by mwuckert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,12 +37,12 @@ int		readf(const int fd, char **line)
 	if (ft_strrchr(*line, '\n'))
 	{
 		addr = *line;
+		*line = ft_strjoin(lst, *line);
+		ft_memdel((void**)&addr);
 		lst = ft_strdup(*line + ft_strlenc(*line, '\n'));
+		addr = *line;
 		*line = ft_strncpy(ft_strnew(ft_strlenc(*line, '\n')),
 				*line, ft_strlenc(*line, '\n'));
-		ft_memdel((void**)&addr);
-		addr = *line;
-		*line = ft_strjoin(lst, *line);
 		ft_memdel((void**)&addr);
 		return (1);
 	}
