@@ -8,4 +8,5 @@ alias l="ls -1"
 alias desktop="cd ~/Desktop"
 alias downloads="cd ~/Downloads"
 alias battery="acpi | cut -d , -f 2 | tr -d ' '"
+alias time="date | cut -d ' ' -f 5"
 clear
