@@ -53,7 +53,7 @@ all: $(NAME)
 
 $(NAME):
 	gcc $(FLAGS) -c $(SRC) -I.
-	ar rc $(NAME) $(OBJECT)
+	ar -r -c -s $(NAME) $(OBJECT)
 
 clean:
 	rm -f *.o
