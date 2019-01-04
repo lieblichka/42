@@ -64,5 +64,6 @@ int		main(int argc, char **argv)
 		get_next_line(fd, &line);
 		ft_putstr(line);
 	}
+	ft_putchar('\n');
 	return (0);
 }
