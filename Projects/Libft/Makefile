@@ -6,7 +6,7 @@
 #    By: mwuckert <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/22 15:15:48 by mwuckert          #+#    #+#              #
-#    Updated: 2018/12/26 21:41:39 by mwuckert         ###   ########.fr        #
+#    Updated: 2019/01/05 13:10:39 by mwuckert         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -53,7 +53,7 @@ all: $(NAME)
 
 $(NAME):
 	gcc $(FLAGS) -c $(SRC) -I.
-	ar -r -c -s $(NAME) $(OBJECT)
+	ar -r -c -s  $(NAME) $(OBJECT)
 
 clean:
 	rm -f *.o
