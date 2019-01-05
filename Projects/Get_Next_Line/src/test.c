@@ -6,7 +6,7 @@
 /*   By: mwuckert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/25 17:51:40 by mwuckert          #+#    #+#             */
-/*   Updated: 2019/01/05 15:26:56 by mwuckert         ###   ########.fr       */
+/*   Updated: 2019/01/05 19:34:30 by mwuckert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <fcntl.h>
 #include <unistd.h>
 
-#define BUF_SIZE 1000
+#define BUF_SIZE 100
 
 int		readf(const int fd, char **lst)
 {
@@ -45,7 +45,8 @@ int		get_next_line(const int fd, char **line)
 		if (!(*line = ft_strnew(ft_strlenc(lst, '\n'))))
 			return (-1);
 		ft_strncpy(*line, lst, ft_strlenc(lst, '\n'));
-		if (!(lst = ft_strdup(lst + ft_strlenc(lst, '\n') + 1));
+		lst = ft_strdup(lst + ft_strlenc(lst, '\n') + 1);
+		return (1);
 	}
 	return (0);
 }
@@ -65,6 +66,5 @@ int		main(int argc, char **argv)
 		get_next_line(fd, &line);
 		ft_putstr(line);
 	}
-	ft_putchar('\n');
 	return (0);
 }
