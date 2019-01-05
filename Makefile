@@ -1,6 +1,12 @@
+VAR=.
+
 stat:
 	git status
-commt:
+report:
 	git commit -m 'push'
-psh:
+send:
 	git push
+update:
+	git pull
+put_all:
+	git add $(VAR)
