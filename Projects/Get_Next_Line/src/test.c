@@ -14,7 +14,7 @@
 #include <fcntl.h>
 #include <unistd.h>
 
-#define BUF_SIZE 100
+#define BUF_SIZE 1000000000
 
 int		readf(const int fd, char **lst)
 {

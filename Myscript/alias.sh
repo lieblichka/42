@@ -9,4 +9,7 @@ alias desktop="cd ~/Desktop"
 alias downloads="cd ~/Downloads"
 alias battery="acpi | cut -d , -f 2 | tr -d ' '"
 alias time="date | cut -d ' ' -f 5"
+alias brightness-high="sudo tee /sys/class/backlight/radeon_bl0/brightness <<< 255"
+alias brightness-middle="sudo tee /sys/class/backlight/radeon_bl0/brightness <<< 155"
+alias brightness-low="sudo tee /sys/class/backlight/radeon_bl0/brightness <<< 55"
 clear
