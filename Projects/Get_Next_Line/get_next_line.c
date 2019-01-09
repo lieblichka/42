@@ -6,7 +6,7 @@
 /*   By: mwuckert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/07 13:05:53 by mwuckert          #+#    #+#             */
-/*   Updated: 2019/01/09 15:39:50 by mwuckert         ###   ########.fr       */
+/*   Updated: 2019/01/09 16:21:16 by mwuckert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ int		get_next_line(const int fd, char **line)
 		ft_memdel((void**)&lst);
 		return (-1);
 	}
-	if (ft_strlenc(lst, '\n'))
+	if (ft_strlenc(lst, '\n') || ft_strrchr(lst, '\n'))
 	{
 		if (!(*line = ft_strnew(ft_strlenc(lst, '\n'))))
 			return (-1);
