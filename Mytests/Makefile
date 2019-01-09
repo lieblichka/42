@@ -1,6 +1,6 @@
 NAME = get_next_line
 
-SRC_GNL = /Users/mwuckert/Desktop/42/Projects/Get_Next_Line/
+SRC_GNL = ~/Desktop/42/Projects/Get_Next_Line/
 
 SRCS = $(SRC_GNL)get_next_line.c
 
