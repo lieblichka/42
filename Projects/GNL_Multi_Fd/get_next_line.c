@@ -6,7 +6,7 @@
 /*   By: mwuckert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/07 13:05:53 by mwuckert          #+#    #+#             */
-/*   Updated: 2019/01/11 17:13:36 by mwuckert         ###   ########.fr       */
+/*   Updated: 2019/01/11 18:44:50 by mwuckert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int		readf(const int fd, char **lst)
 	return (1);
 }
 
-int		give_next_line(char **buf, char **line)
+int		readl(char **buf, char **line)
 {
 	char *addr;
 
@@ -66,5 +66,5 @@ int		get_next_line(const int fd, char **line)
 		ft_memdel((void**)&lst[fd]);
 		return (-1);
 	}
-	return (give_next_line(&lst[fd], line) ? 1 : 0);
+	return (readl(&lst[fd], line));
 }
