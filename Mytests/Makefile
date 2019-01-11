@@ -10,7 +10,7 @@ SRCO = get_next_line.o main.o
 
 MAIN = main.c
 
-LFT_DIR = $(SRC_GNL_M)libft
+LFT_DIR = $(SRC_GNL)libft
 
 FLAGS = -Wall -Wextra -Werror
 
