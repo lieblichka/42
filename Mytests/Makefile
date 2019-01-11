@@ -4,13 +4,15 @@ SRC_GNL = ~/Desktop/42/Projects/Get_Next_Line/
 
 SRC_GNL_M = ~/Desktop/42/Projects/GNL_Multi_Fd/
 
-SRCS = $(SRC_GNL)get_next_line.c
+SRC_GNL_C = ~/Desktop/GNL_Multi_Fd/
 
-SRCO = get_next_line.o main.o
+SRCS = $(SRC_GNL_M)get_next_line.c
 
-MAIN = main.c
+SRCO = get_next_line.o mainput.o
 
-LFT_DIR = $(SRC_GNL)libft
+MAIN = mainput.c
+
+LFT_DIR = $(SRC_GNL_M)libft
 
 FLAGS = -Wall -Wextra -Werror
 
