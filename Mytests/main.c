@@ -6,7 +6,7 @@
 /*   By: mwuckert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/08 15:18:18 by mwuckert          #+#    #+#             */
-/*   Updated: 2019/01/09 16:31:42 by mwuckert         ###   ########.fr       */
+/*   Updated: 2019/01/12 07:09:18 by mwuckert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,13 @@
 #include <fcntl.h>
 #include "get_next_line.h"
 #include <stdio.h>
+#include <time.h>
 
 int	main(int argc, char **argv)
 {
 	char	*str;
 	int		fd;
+	clock_t tic = clock();
 
 	if (argc != 2)
 		return (-1);
@@ -27,5 +29,9 @@ int	main(int argc, char **argv)
 	{
 		puts(str);
 	}
+
+	clock_t toc = clock();
+	
+	printf("Running time for your program: %f", (double)(toc - tic) / CLOCKS_PER_SEC);
 	return (0);
 }
