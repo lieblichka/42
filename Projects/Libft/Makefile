@@ -6,7 +6,7 @@
 #    By: mwuckert <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/22 15:15:48 by mwuckert          #+#    #+#              #
-#    Updated: 2019/01/05 13:10:39 by mwuckert         ###   ########.fr        #
+#    Updated: 2019/01/12 15:07:46 by mwuckert         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,7 @@ SRC =	ft_atoi.c ft_bzero.c ft_isalnum.c ft_isalpha.c \
 		ft_itoa.c ft_putendl.c ft_putchar_fd.c ft_putstr_fd.c \
 		ft_putnbr_fd.c ft_putendl_fd.c ft_lstnew.c ft_lstdelone.c \
 		ft_lstadd.c ft_lstdel.c ft_lstiter.c ft_lstmap.c \
-		ft_lstdelcontent.c ft_arraydel.c
+		ft_lstdelcontent.c ft_arraydel.c ft_countchar.c
 
 OBJECT =	ft_atoi.o ft_bzero.o ft_isalnum.o ft_isalpha.o \
 			ft_isascii.o ft_isdigit.o ft_isprint.o ft_memccpy.o \
@@ -44,7 +44,7 @@ OBJECT =	ft_atoi.o ft_bzero.o ft_isalnum.o ft_isalpha.o \
 			ft_itoa.o ft_putendl.o ft_putchar_fd.o ft_putstr_fd.o \
 			ft_putnbr_fd.o ft_putendl_fd.o ft_lstnew.o ft_lstdelone.o \
 			ft_lstadd.o ft_lstdel.o ft_lstiter.o ft_lstmap.o \
-			ft_lstdelcontent.o ft_arraydel.o 
+			ft_lstdelcontent.o ft_arraydel.o ft_countchar.o
 
 FLAGS = -Wall -Wextra -Werror
 
