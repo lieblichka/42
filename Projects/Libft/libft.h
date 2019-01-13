@@ -6,7 +6,7 @@
 /*   By: mwuckert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/02 13:15:59 by mwuckert          #+#    #+#             */
-/*   Updated: 2019/01/12 15:09:03 by mwuckert         ###   ########.fr       */
+/*   Updated: 2019/01/13 12:34:03 by mwuckert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@ void				ft_putendl(char const *s);
 void				ft_putendl_fd(char const *s, int fd);
 void				ft_putnbr(int nb);
 void				ft_putnbr_fd(int nb, int fd);
+void				ft_swap_point(void ***p1, void ***p2);
 void				ft_memdel(void **ap);
 void				ft_bzero(void *s, size_t n);
 void				ft_strdel(char **as);
