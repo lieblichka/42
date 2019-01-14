@@ -1,23 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   ft_swap.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mwuckert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/12/13 19:54:16 by mwuckert          #+#    #+#             */
-/*   Updated: 2019/01/14 12:15:59 by mwuckert         ###   ########.fr       */
+/*   Created: 2019/01/13 12:44:19 by mwuckert          #+#    #+#             */
+/*   Updated: 2019/01/13 12:56:25 by mwuckert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
+void	ft_swap(int *p1, int *p2)
+{
+	int swap;
 
-# define BUFF_SIZE 1000
-
-# include <unistd.h>
-# include "libft/libft.h"
-
-int	get_next_line(const int fd, char **line);
-
-#endif
+	swap = *p1;
+	*p1 = *p2;
+	*p2 = swap;
+}
