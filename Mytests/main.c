@@ -6,7 +6,7 @@
 /*   By: mwuckert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/08 15:18:18 by mwuckert          #+#    #+#             */
-/*   Updated: 2019/01/12 07:09:18 by mwuckert         ###   ########.fr       */
+/*   Updated: 2019/01/14 09:08:14 by mwuckert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ int	main(int argc, char **argv)
 	while (get_next_line(fd, &str) == 1)
 	{
 		puts(str);
+		ft_memdel((void**)&str);
 	}
 
 	clock_t toc = clock();

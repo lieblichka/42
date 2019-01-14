@@ -6,7 +6,7 @@
 /*   By: mwuckert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/07 13:05:53 by mwuckert          #+#    #+#             */
-/*   Updated: 2019/01/11 18:44:50 by mwuckert         ###   ########.fr       */
+/*   Updated: 2019/01/14 09:07:30 by mwuckert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int		readf(const int fd, char **lst)
 {
 	char *src;
 	char *addr;
-
+	
 	if (read(fd, 0, 0) == -1)
 		return (0);
 	while (!ft_strrchr(*lst, '\n') &&
@@ -29,6 +29,8 @@ int		readf(const int fd, char **lst)
 		if (!*lst)
 			return (0);
 	}
+	if (src)
+		ft_memdel((void**)&src);
 	return (1);
 }
 
