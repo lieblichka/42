@@ -2,6 +2,7 @@
 export PATH="$PATH:$HOME/.rvm/bin"
 export PS1="[\u]: "
 cd ~/Desktop/
+alias ls='ls --color=auto'
 alias p="pwd | rev | cut -d / -f 1 | rev"
 alias c=clear
 alias l="ls -1"
