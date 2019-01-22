@@ -6,30 +6,29 @@
 /*   By: mwuckert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/20 00:29:43 by mwuckert          #+#    #+#             */
-/*   Updated: 2019/01/21 22:08:25 by mwuckert         ###   ########.fr       */
+/*   Updated: 2019/01/22 15:13:10 by mwuckert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libfillit.h"
 
-int		ft_check_cross_one_wother(char **tetra, int figure)
+
+int		ft_check_cross_all(char **tetra)
 {
-	if (ft_check_cross(tetra, tetra + figure))
-		return (1);
-	if (*(tetra + figure) != 0)
-		return (ft_check_cross_one_wother(tetra, figure + 16));
+	char **addr;
+	char c;
+
+	addr = tetra;
+	c = ft_whose_house(addr);
+	while (ft_whose_house(tetra) != 'A')
+		tetra -= 16;
+	while (ft_whose_house(tetra) != c + 1)
+		if (ft_check_cross(addr, tetra))
+			return (1);
+		else
+			tetra += 16;
 	return (0);
 }
-
-int		ft_check_cross_all(char **tetra, char a, char c)
-{
-	if (ft_check_cross(tetra, tetra + 16))
-		return (1);
-	if (*(tetra + 16) != 0 && ++a < c)
-		return (ft_check_cross_all(tetra + 16, a, c));
-	return (0);
-}
-
 void	ft_add_figure(char **tetra)
 {
 	int i;
@@ -47,9 +46,13 @@ void	ft_add_figure(char **tetra)
 
 void	ft_build_square(char **tetra)
 {
-	 
 	if (*(tetra + 16) != 0)
-		if (ft_check_cross(tetra, tetra + 16))
+	{
+		ft_puts_figure(tetra);
+		ft_putchar('\n');
+		ft_puts_figure(tetra + 16);
+		ft_putchar('\n');
+		if (ft_check_cross_all(tetra))
 		{
 			if (!ft_figure_next_step(tetra + 16))
 			{
@@ -67,4 +70,7 @@ void	ft_build_square(char **tetra)
 			}
 			ft_build_square(tetra);
 		}
+		else
+			ft_build_square(tetra + 16);
+	}
 }
