@@ -21,12 +21,11 @@ $(NAME):
 	gcc 	$(FLAGS) -c $(MAIN) -I $(SRC_GNL)
 	gcc -o $(NAME) $(FLAGS) $(SRCO) -I $(LFT_DIR) -L $(LFT_DIR) -lft
 
-fclean_dir_gnl:
+clean:
+	rm -f *.o
 	make -C $(SRC_GNL)libft fclean
 
 fclean: clean
 	rm -f $(NAME)
-clean:
-	rm -f *.o
 
 re: fclean all
