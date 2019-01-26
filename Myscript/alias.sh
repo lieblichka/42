@@ -15,4 +15,5 @@ alias brightness-middle="sudo tee /sys/class/backlight/radeon_bl0/brightness <<<
 alias brightness-low="sudo tee /sys/class/backlight/radeon_bl0/brightness <<< 55"
 alias brightness-ultra="sudo tee /sys/class/backlight/radeon_bl0/brightness <<< 15"
 alias leak="sh ~/Desktop/.link/leak"
+alias wifi_stat="netctl status"
 clear
