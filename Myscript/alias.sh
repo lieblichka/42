@@ -20,4 +20,5 @@ alias wifi_stat="netctl status"
 alias wifi_connect="sudo netctl start"
 alias browser="exec firefox"
 alias audio="alsamixer"
+alias temp="acpi -t | cut -d ' ' -f 4"
 clear
