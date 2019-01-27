@@ -14,6 +14,10 @@ alias brightness-high="sudo tee /sys/class/backlight/radeon_bl0/brightness <<< 2
 alias brightness-middle="sudo tee /sys/class/backlight/radeon_bl0/brightness <<< 155"
 alias brightness-low="sudo tee /sys/class/backlight/radeon_bl0/brightness <<< 55"
 alias brightness-ultra="sudo tee /sys/class/backlight/radeon_bl0/brightness <<< 15"
+alias brightness-extra="sudo tee /sys/class/backlight/radeon_bl0/brightness <<< 5"
 alias leak="sh ~/Desktop/.link/leak"
 alias wifi_stat="netctl status"
+alias wifi_connect="sudo netctl start"
+alias browser="exec firefox"
+alias audio="alsamixer"
 clear
