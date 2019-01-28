@@ -1,10 +1,14 @@
 #include "mlx.h"
+#include "fdf.h"
 
-int	main(void)
+int		main(void)
 {
-	void *mlx;
+	void	*mlx;
+	void	*win;
+
 	mlx = mlx_init();
-	mlx_new_window(mlx, 1000, 1000, "Hello");
+	win = mlx_new_window(mlx, 1000, 700, "Hello");
+	move_diagonal(mlx, win);
 	mlx_loop(mlx);
 	return (0);
 }
