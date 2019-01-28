@@ -10,6 +10,8 @@ HEADER_FDF = includes/
 
 HEADER_LFDF = libfdf/
 
+HEADER_LFT = $(HEADER_LFDF)libft/
+
 S = srcs/
 
 SRCS = $(S)main.c $(S)fdf.c
@@ -22,10 +24,12 @@ all: $(NAME)
 
 $(NAME):
 	make -C $(HEADER_LFDF) fclean && make -C $(HEADER_LFDF)
-	gcc -c $(FLAGS) $(SRCS) -I $(HEADER_FDF) -I $(HEADER_LFDF)
-	gcc -o $(NAME) $(SRCO) -L $(HEADER_LFDF) -lfdf -L $(LMLX) -lmlx $(FRAMEWORKS)
+	gcc -c $(FLAGS) $(SRCS) -I $(HEADER_FDF) -I $(HEADER_LFDF) -I $(HEADER_LFT)
+	gcc -o $(NAME) $(SRCO) -L $(HEADER_LFDF) -lfdf -L $(LMLX) -lmlx \
+	-L $(HEADER_LFT) -lft  $(FRAMEWORKS)
 clean:
 	make -C $(HEADER_LFDF) fclean
+	make -C $(HEADER_LFT) fclean
 	rm -f *.o
 
 fclean: clean

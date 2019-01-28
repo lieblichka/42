@@ -6,11 +6,12 @@
 /*   By: mwuckert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/28 18:56:44 by mwuckert          #+#    #+#             */
-/*   Updated: 2019/01/28 21:39:05 by mwuckert         ###   ########.fr       */
+/*   Updated: 2019/01/28 21:47:55 by mwuckert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libfdf.h"
+#include "libft.h"
 
 int	fdf(const int fd)
 {
