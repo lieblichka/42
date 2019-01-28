@@ -6,21 +6,21 @@
 #    By: mwuckert <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/22 15:15:48 by mwuckert          #+#    #+#              #
-#    Updated: 2019/01/28 21:53:35 by mwuckert         ###   ########.fr        #
+#    Updated: 2019/01/28 22:34:19 by mwuckert         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libfdf.a
 
-SRC = ft_create_window.c
+SRC = ft_create_tmlx.c ft_create_window.c ft_loop_tmlx.c
 
-OBJECT = ft_create_window.o
+OBJECT = ft_create_tmlx.o ft_create_window.o ft_loop_tmlx.o
 
 FLAGS = -Wall -Wextra -Werror
 
-MLX_H = $(PATH_MLX)mlx.h
+MLX_H = $(PATH_MLX)
 
-LFT_H = $(PATH_LFT)libft.h
+LFT_H = $(PATH_LFT)
 
 PATH_MLX = libmlx/
 

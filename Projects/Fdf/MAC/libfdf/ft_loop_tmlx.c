@@ -1,19 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_create_window.c                                 :+:      :+:    :+:   */
+/*   ft_loop_tmlx.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mwuckert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/28 19:11:01 by mwuckert          #+#    #+#             */
-/*   Updated: 2019/01/28 22:25:25 by mwuckert         ###   ########.fr       */
+/*   Created: 2019/01/28 22:31:42 by mwuckert          #+#    #+#             */
+/*   Updated: 2019/01/28 22:37:48 by mwuckert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "mlx.h"
 #include "libfdf.h"
 
-t_mlx	*ft_create_window(t_mlx *mlx_ptr, int width, int height, char *title)
+void	ft_loop_tmlx(t_mlx *mlx_ptr)
 {
-	return (((*mlx_ptr).win = mlx_new_window(mlx_ptr, width, height, title)));
+	if (mlx_ptr)
+		mlx_loop((*mlx_ptr).mlx);
 }
