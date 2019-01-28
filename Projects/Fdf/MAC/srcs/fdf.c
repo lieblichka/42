@@ -6,7 +6,7 @@
 /*   By: mwuckert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/28 18:56:44 by mwuckert          #+#    #+#             */
-/*   Updated: 2019/01/28 22:42:10 by mwuckert         ###   ########.fr       */
+/*   Updated: 2019/01/28 22:59:54 by mwuckert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,6 @@ int	fdf(const int fd)
 			!ft_create_window(mlx_ptr, 1000, 800, "HELLO"))
 		return (0);
 	ft_loop_tmlx(mlx_ptr);
+	ft_memdel((void**)&mlx_ptr);
 	return (1);
 }
