@@ -1,21 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   libfdf.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mwuckert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/28 18:56:23 by mwuckert          #+#    #+#             */
-/*   Updated: 2019/01/28 21:34:26 by mwuckert         ###   ########.fr       */
+/*   Created: 2019/01/28 19:14:13 by mwuckert          #+#    #+#             */
+/*   Updated: 2019/01/28 20:09:48 by mwuckert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fdf.h"
+#ifndef LIBFDF_H
+# define LIBFDF_H
 
-int		main(int argc, char **agrv)
+# include "mlx.h"
+
+typedef struct	s_mlx_coordinate
 {
-	agrv++;
-	if (argc == 1)
-		fdf(3);
-	return (0);
-}
+	void		*win;
+	void		*mlx;
+	int			x;
+	int			y;
+}				t_mlx;
+
+int				*ft_create_window(void *mlx, int width, int height, char *title);
+
+#endif

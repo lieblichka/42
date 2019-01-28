@@ -1,28 +1,34 @@
 NAME = fdf
 
-FLAGS = -Wall -Wextra -Werror
+FLAGS = -Wall -Wextra -Werror 
+
+F = -framework
+
+FRAMEWORKS = $(F) OpenGL $(F) AppKit
+
+HEADER_FDF = includes/
+
+HEADER_LFDF = libfdf/
 
 S = srcs/
 
-SRCS = $(S)main.c
+SRCS = $(S)main.c $(S)fdf.c
 
-PATH_USR_LIB = /usr/lib/
+SRCO = main.o fdf.o
 
-ADDITION_LIB = -L $(PATH_MLX) -lmlx_x86_64 -L $(PATH_USR_LIB) -lX11 -lXext
+LMLX = $(HEADER_LFDF)libmlx
 
-MLX_H = $(PATH_MLX)
-
-FDF_H = $(PATH_FDF) 
-
-HEADERS = -I $(FDF_H) -I $(MLX_H)
+all: $(NAME)
 
 $(NAME):
-	gcc -o $(NAME) $(FLAGS) $(SRCS) $(ADDITION_LIB) $(HEADERS)
-
+	make -C $(HEADER_LFDF) fclean && make -C $(HEADER_LFDF)
+	gcc -c $(FLAGS) $(SRCS) -I $(HEADER_FDF) -I $(HEADER_LFDF)
+	gcc -o $(NAME) $(SRCO) -L $(HEADER_LFDF) -lfdf -L $(LMLX) -lmlx $(FRAMEWORKS)
 clean:
+	make -C $(HEADER_LFDF) fclean
 	rm -f *.o
 
 fclean: clean
 	rm -f $(NAME)
 
-re: re all
+re: fclean all

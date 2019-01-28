@@ -1,21 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_create_window.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mwuckert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/28 18:56:23 by mwuckert          #+#    #+#             */
-/*   Updated: 2019/01/28 21:34:26 by mwuckert         ###   ########.fr       */
+/*   Created: 2019/01/28 19:11:01 by mwuckert          #+#    #+#             */
+/*   Updated: 2019/01/28 20:14:39 by mwuckert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fdf.h"
+#include "mlx.h"
 
-int		main(int argc, char **agrv)
+int	*ft_create_window(void *mlx, int width, int height, char *title)
 {
-	agrv++;
-	if (argc == 1)
-		fdf(3);
-	return (0);
+	return (mlx_new_window(mlx, width, height, title));
 }

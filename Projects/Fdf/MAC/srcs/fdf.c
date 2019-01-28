@@ -1,21 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   fdf.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mwuckert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/28 18:56:23 by mwuckert          #+#    #+#             */
-/*   Updated: 2019/01/28 21:34:26 by mwuckert         ###   ########.fr       */
+/*   Created: 2019/01/28 18:56:44 by mwuckert          #+#    #+#             */
+/*   Updated: 2019/01/28 21:39:05 by mwuckert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fdf.h"
+#include "libfdf.h"
 
-int		main(int argc, char **agrv)
+int	fdf(const int fd)
 {
-	agrv++;
-	if (argc == 1)
-		fdf(3);
-	return (0);
+	int i;
+
+	i = fd; 
+	void *mlx;
+	void *win;
+
+	i = 2;
+	mlx = mlx_init();
+	win = ft_create_window(mlx, 1000, 800, "HELLO");
+	mlx_loop(mlx);
+	return (1);
 }
