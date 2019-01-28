@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_create_window.c                                 :+:      :+:    :+:   */
+/*   ft_pixel_put_tmlx.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mwuckert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/28 19:11:01 by mwuckert          #+#    #+#             */
-/*   Updated: 2019/01/28 23:22:17 by mwuckert         ###   ########.fr       */
+/*   Created: 2019/01/28 23:05:14 by mwuckert          #+#    #+#             */
+/*   Updated: 2019/01/28 23:27:20 by mwuckert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "mlx.h"
 #include "libfdf.h"
 
-t_mlx	*ft_create_window(t_mlx *mlx_ptr, int width, int height, char *title)
+void	ft_pixel_put_tmlx(t_mlx *mlx_ptr, int x, int y, int color)
 {
-	return (((*mlx_ptr).win = mlx_new_window((*mlx_ptr).mlx,
-					width, height, title)));
+	if (mlx_ptr && (*mlx_ptr).mlx && (*mlx_ptr).win)
+		mlx_pixel_put((*mlx_ptr).mlx, (*mlx_ptr).win, x, y, color);
 }
