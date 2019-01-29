@@ -6,7 +6,7 @@
 /*   By: mwuckert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/28 19:14:13 by mwuckert          #+#    #+#             */
-/*   Updated: 2019/01/30 00:21:49 by mwuckert         ###   ########.fr       */
+/*   Updated: 2019/01/30 01:14:27 by mwuckert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,16 @@ typedef struct	s_mlx_coordinate
 	int			x;
 	int			y;
 }				t_mlx;
+
+typedef struct	s_mlx_math
+{
+	int			delta_x;
+	int			delta_y;
+	int			sign_x;
+	int			sign_y;
+	int			delta_xy;
+	int			delta_2xy;
+}				t_straight;
 
 void			ft_loop_tmlx(t_mlx *mlx_ptr);
 void			ft_set_pos_tmlx(t_mlx *mlx_ptr, int x, int y);
