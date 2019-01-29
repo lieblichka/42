@@ -6,14 +6,14 @@
 /*   By: mwuckert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/13 19:54:16 by mwuckert          #+#    #+#             */
-/*   Updated: 2019/01/14 12:15:59 by mwuckert         ###   ########.fr       */
+/*   Updated: 2019/01/29 22:18:23 by mwuckert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef GET_NEXT_LINE_H
 # define GET_NEXT_LINE_H
 
-# define BUFF_SIZE 1000
+# define BUFF_SIZE 50
 
 # include <unistd.h>
 # include "libft/libft.h"
