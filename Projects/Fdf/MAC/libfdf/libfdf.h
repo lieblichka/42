@@ -6,7 +6,7 @@
 /*   By: mwuckert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/28 19:14:13 by mwuckert          #+#    #+#             */
-/*   Updated: 2019/01/28 23:37:18 by mwuckert         ###   ########.fr       */
+/*   Updated: 2019/01/30 00:21:49 by mwuckert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,9 @@ typedef struct	s_mlx_coordinate
 	int			y;
 }				t_mlx;
 
-void			ft_put_line_tmlx(t_mlx *m);
 void			ft_loop_tmlx(t_mlx *mlx_ptr);
+void			ft_set_pos_tmlx(t_mlx *mlx_ptr, int x, int y);
+void			ft_put_line_tmlx(t_mlx *mlx_ptr, int x, int y, int color);
 void			ft_pixel_put_tmlx(t_mlx *mlx_ptr, int x, int y, int color);
 t_mlx			*ft_create_tmlx(t_mlx *mlx_ptr, int x, int y);
 t_mlx			*ft_create_window(t_mlx *mlx_ptr, int w, int h, char *title);

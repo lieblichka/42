@@ -1,31 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fdf.c                                              :+:      :+:    :+:   */
+/*   ft_set_pos_tmlx.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mwuckert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/28 18:56:44 by mwuckert          #+#    #+#             */
-/*   Updated: 2019/01/30 00:23:57 by mwuckert         ###   ########.fr       */
+/*   Created: 2019/01/29 14:42:06 by mwuckert          #+#    #+#             */
+/*   Updated: 2019/01/29 14:42:15 by mwuckert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "mlx.h"
 #include "libfdf.h"
-#include "libft.h"
 
-int	fdf(const int fd)
+void	ft_set_pos_tmlx(t_mlx *mlx_ptr, int x, int y)
 {
-	t_mlx *mlx_ptr;
-
-	mlx_ptr = 0;
-	if (fd != 3)
-		return (0);
-	if (!(mlx_ptr = ft_create_tmlx(mlx_ptr, 0, 0)) ||
-			!ft_create_window(mlx_ptr, 1000, 800, "HELLO"))
-		return (0);
-	ft_set_pos_tmlx(mlx_ptr, 200, 100);
-	ft_put_line_tmlx(mlx_ptr, 200, 600, 0x7D00);
-	ft_loop_tmlx(mlx_ptr);
-	ft_memdel((void**)&mlx_ptr);
-	return (1);
+	(*mlx_ptr).x = x;
+	(*mlx_ptr).y = y;
 }
