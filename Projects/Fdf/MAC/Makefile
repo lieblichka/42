@@ -25,8 +25,8 @@ all: $(NAME)
 $(NAME):
 	make -C $(HEADER_LFDF) fclean && make -C $(HEADER_LFDF)
 	gcc -c $(FLAGS) $(SRCS) -I $(HEADER_FDF) -I $(HEADER_LFDF) -I $(HEADER_LFT)
-	gcc -o $(NAME) $(SRCO) -L $(HEADER_LFDF) -lfdf -L $(LMLX) -lmlx \
-	-L $(HEADER_LFT) -lft  $(FRAMEWORKS)
+	gcc -o $(NAME) $(SRCO) -L $(HEADER_LFDF) -lfdf -L $(LMLX) -lmlx -L $(HEADER_LFT) \
+	-lft  $(FRAMEWORKS)
 clean:
 	make -C $(HEADER_LFDF) fclean
 	make -C $(HEADER_LFT) fclean
