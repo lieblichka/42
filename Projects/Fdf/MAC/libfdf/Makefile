@@ -6,7 +6,7 @@
 #    By: mwuckert <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/22 15:15:48 by mwuckert          #+#    #+#              #
-#    Updated: 2019/01/30 18:05:59 by mwuckert         ###   ########.fr        #
+#    Updated: 2019/01/30 19:18:05 by mwuckert         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,16 +26,21 @@ MLX_H = $(PATH_MLX)
 
 LFT_H = $(PATH_LFT)
 
+GNL_H = $(PATH_LGNL)
+
 PATH_MLX = libmlx/
 
-PATH_LFT = libft/
+PATH_LFT = $(PATH_GNL)libft/
+
+PATH_LGNL = libgnl/
 
 all: $(NAME)
 
 $(NAME):
 	make -C $(PATH_MLX) clean && make -C $(PATH_MLX) 
 	make -C $(PATH_LFT) clean && make -C $(PATH_LFT) 
-	gcc $(FLAGS) -c $(SRC) -I $(MLX_H) -I $(LFT_H)
+	make -C $(PATH_GNL) clean && make -C $(PATH_GNL) 
+	gcc $(FLAGS) -c $(SRC) -I $(MLX_H) -I $(LFT_H) -I $(GNL_H)
 	ar -r -c -s  $(NAME) $(OBJECT)
 
 norm:

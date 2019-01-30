@@ -1,20 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_countchar.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mwuckert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/23 10:30:01 by mwuckert          #+#    #+#             */
-/*   Updated: 2019/01/08 17:11:11 by mwuckert         ###   ########.fr       */
+/*   Created: 2019/01/12 14:25:45 by mwuckert          #+#    #+#             */
+/*   Updated: 2019/01/12 14:27:33 by mwuckert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-void	ft_putstr(char const *str)
+int	ft_countchar(const char *s, char c)
 {
-	if (str)
-		while (*str)
-			ft_putchar(*str++);
+	int i;
+
+	i = 0;
+	while (*s)
+		if (*s++ == c)
+			i++;
+	return (i);
 }

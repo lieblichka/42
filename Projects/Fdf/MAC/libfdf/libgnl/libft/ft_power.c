@@ -1,20 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_power.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mwuckert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/23 10:30:01 by mwuckert          #+#    #+#             */
-/*   Updated: 2019/01/08 17:11:11 by mwuckert         ###   ########.fr       */
+/*   Created: 2019/01/13 16:29:15 by mwuckert          #+#    #+#             */
+/*   Updated: 2019/01/14 11:22:10 by mwuckert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-void	ft_putstr(char const *str)
+int	ft_power(int n, int power)
 {
-	if (str)
-		while (*str)
-			ft_putchar(*str++);
+	if (power < 0)
+		return (0);
+	else if (power == 0)
+		return (1);
+	else if (power == 1)
+		return (n);
+	return (n * ft_power(n, power - 1));
 }

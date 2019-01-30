@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_swap.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mwuckert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/23 10:30:01 by mwuckert          #+#    #+#             */
-/*   Updated: 2019/01/08 17:11:11 by mwuckert         ###   ########.fr       */
+/*   Created: 2019/01/13 11:50:16 by mwuckert          #+#    #+#             */
+/*   Updated: 2019/01/13 12:33:54 by mwuckert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-void	ft_putstr(char const *str)
+void	ft_swap_point(void ***p1, void ***p2)
 {
-	if (str)
-		while (*str)
-			ft_putchar(*str++);
+	void **swap_point;
+
+	swap_point = *p1;
+	*p1 = *p2;
+	*p2 = swap_point;
 }
