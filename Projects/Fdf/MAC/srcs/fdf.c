@@ -6,7 +6,7 @@
 /*   By: mwuckert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/28 18:56:44 by mwuckert          #+#    #+#             */
-/*   Updated: 2019/01/30 01:39:31 by mwuckert         ###   ########.fr       */
+/*   Updated: 2019/01/30 17:22:06 by mwuckert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,6 @@ int	fdf(const int fd)
 	if (!(mlx_ptr = ft_create_tmlx(mlx_ptr, 0, 0)) ||
 			!ft_create_window(mlx_ptr, 1024, 768, "HELLO"))
 		return (0);
-	ft_set_pos_tmlx(mlx_ptr, 900, 500);
-	ft_put_line_tmlx(mlx_ptr, 200, 100, 0x7D00);
 	ft_loop_tmlx(mlx_ptr);
 	ft_memdel((void**)&mlx_ptr);
 	return (1);
