@@ -6,7 +6,7 @@
 /*   By: mwuckert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/30 01:34:09 by mwuckert          #+#    #+#             */
-/*   Updated: 2019/01/30 15:24:13 by mwuckert         ###   ########.fr       */
+/*   Updated: 2019/01/30 19:52:31 by mwuckert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ char	*ft_read_fdf_file(const int fd)
 	while (get_next_line(fd, &buf) > 0)
 	{
 		addr = map;
-		if (!(map = ft_strjoin(map, buf))
+		if (!(map = ft_strjoin(map, buf)))
 			return (0);
 		ft_memdel((void**)&addr);
 	}

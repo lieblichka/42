@@ -6,7 +6,7 @@
 /*   By: mwuckert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/30 15:28:59 by mwuckert          #+#    #+#             */
-/*   Updated: 2019/01/30 18:17:04 by mwuckert         ###   ########.fr       */
+/*   Updated: 2019/01/30 19:53:36 by mwuckert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,4 +30,6 @@ int				**ft_treatment_fdf_file(const int fd)
 
 	if (!(fdf_map = ft_read_fdf_file(fd)))
 		return (0);
+	ft_count_length_x(fdf_map);
+	return (0);
 }
