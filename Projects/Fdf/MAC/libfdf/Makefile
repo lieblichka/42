@@ -6,7 +6,7 @@
 #    By: mwuckert <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/22 15:15:48 by mwuckert          #+#    #+#              #
-#    Updated: 2019/01/30 19:18:05 by mwuckert         ###   ########.fr        #
+#    Updated: 2019/01/30 19:46:27 by mwuckert         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ SRC = ft_create_tmlx.c ft_create_window.c ft_loop_tmlx.c \
 
 OBJECT = ft_create_tmlx.o ft_create_window.o ft_loop_tmlx.o \
 		 ft_pixel_put_tmlx.o ft_put_line_tmlx.o ft_set_pos_tmlx.o \
-		 ft_read_fdf_file.o ft_treatment_fdf_file.o
+		 ft_read_fdf_file.o ft_treatment_fdf_file.o get_next_line.o
 
 FLAGS = -Wall -Wextra -Werror
 
@@ -26,21 +26,22 @@ MLX_H = $(PATH_MLX)
 
 LFT_H = $(PATH_LFT)
 
-GNL_H = $(PATH_LGNL)
+GNL_H = $(PATH_GNL)
 
 PATH_MLX = libmlx/
 
-PATH_LFT = $(PATH_GNL)libft/
+PATH_LFT = libft/
 
-PATH_LGNL = libgnl/
+PATH_GNL = libgnl/
+
+SRCS_GNL = $(PATH_GNL)get_next_line.c
 
 all: $(NAME)
 
 $(NAME):
 	make -C $(PATH_MLX) clean && make -C $(PATH_MLX) 
 	make -C $(PATH_LFT) clean && make -C $(PATH_LFT) 
-	make -C $(PATH_GNL) clean && make -C $(PATH_GNL) 
-	gcc $(FLAGS) -c $(SRC) -I $(MLX_H) -I $(LFT_H) -I $(GNL_H)
+	gcc $(FLAGS) -c $(SRC) $(SRCS_GNL) -I $(MLX_H) -I $(LFT_H) -I $(GNL_H)
 	ar -r -c -s  $(NAME) $(OBJECT)
 
 norm:
