@@ -1,30 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_read_fdf_file.c                                 :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mwuckert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/30 01:34:09 by mwuckert          #+#    #+#             */
-/*   Updated: 2019/01/30 15:24:13 by mwuckert         ###   ########.fr       */
+/*   Created: 2018/12/03 22:30:03 by mwuckert          #+#    #+#             */
+/*   Updated: 2018/12/03 22:36:20 by mwuckert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
 #include "libft.h"
 
-char	*ft_read_fdf_file(const int fd)
+void	ft_putendl_fd(char const *s, int fd)
 {
-	char *map;
-	char *buf;
-	char *addr;
-
-	while (get_next_line(fd, &buf) > 0)
-	{
-		addr = map;
-		if (!(map = ft_strjoin(map, buf))
-			return (0);
-		ft_memdel((void**)&addr);
-	}
-	return (map);
+	ft_putstr_fd(s, fd);
+	ft_putchar_fd('\n', fd);
 }

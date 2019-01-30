@@ -1,30 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_read_fdf_file.c                                 :+:      :+:    :+:   */
+/*   ft_countwordc.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mwuckert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/30 01:34:09 by mwuckert          #+#    #+#             */
-/*   Updated: 2019/01/30 15:24:13 by mwuckert         ###   ########.fr       */
+/*   Created: 2018/12/02 15:56:51 by mwuckert          #+#    #+#             */
+/*   Updated: 2018/12/10 13:59:47 by mwuckert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
 #include "libft.h"
 
-char	*ft_read_fdf_file(const int fd)
+int		ft_countwordc(const char *str, char c)
 {
-	char *map;
-	char *buf;
-	char *addr;
+	int i;
 
-	while (get_next_line(fd, &buf) > 0)
-	{
-		addr = map;
-		if (!(map = ft_strjoin(map, buf))
-			return (0);
-		ft_memdel((void**)&addr);
-	}
-	return (map);
+	i = 0;
+	while (*str)
+		if (*str != c && ++i)
+			while (*str != c && *str)
+				str++;
+		else
+			str++;
+	return (i);
 }

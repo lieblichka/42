@@ -1,30 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_read_fdf_file.c                                 :+:      :+:    :+:   */
+/*   ft_lstdel.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mwuckert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/30 01:34:09 by mwuckert          #+#    #+#             */
-/*   Updated: 2019/01/30 15:24:13 by mwuckert         ###   ########.fr       */
+/*   Created: 2018/12/07 11:05:25 by mwuckert          #+#    #+#             */
+/*   Updated: 2018/12/25 16:00:57 by mwuckert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
 #include "libft.h"
 
-char	*ft_read_fdf_file(const int fd)
+void	ft_lstdel(t_list **alst, void (*del)(void*, size_t))
 {
-	char *map;
-	char *buf;
-	char *addr;
-
-	while (get_next_line(fd, &buf) > 0)
+	if (alst && *alst && del)
 	{
-		addr = map;
-		if (!(map = ft_strjoin(map, buf))
-			return (0);
-		ft_memdel((void**)&addr);
+		if ((**alst).next)
+			ft_lstdel((&(**alst).next), del);
+		ft_lstdelone(alst, del);
 	}
-	return (map);
+	alst = 0;
 }

@@ -1,30 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_read_fdf_file.c                                 :+:      :+:    :+:   */
+/*   ft_strstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mwuckert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/30 01:34:09 by mwuckert          #+#    #+#             */
-/*   Updated: 2019/01/30 15:24:13 by mwuckert         ###   ########.fr       */
+/*   Created: 2018/11/26 20:27:21 by mwuckert          #+#    #+#             */
+/*   Updated: 2018/12/01 11:43:46 by mwuckert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
 #include "libft.h"
 
-char	*ft_read_fdf_file(const int fd)
+char	*ft_strstr(const char *haystack, const char *needle)
 {
-	char *map;
-	char *buf;
-	char *addr;
+	size_t i;
 
-	while (get_next_line(fd, &buf) > 0)
-	{
-		addr = map;
-		if (!(map = ft_strjoin(map, buf))
-			return (0);
-		ft_memdel((void**)&addr);
-	}
-	return (map);
+	i = ft_strlen(needle);
+	while (*haystack || !*needle)
+		if (*needle == '\0')
+			return ((char*)haystack);
+		else if (!(ft_strncmp(haystack++, needle, i)))
+			return ((char*)haystack - 1);
+	return (0);
 }

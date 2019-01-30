@@ -1,30 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_read_fdf_file.c                                 :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mwuckert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/30 01:34:09 by mwuckert          #+#    #+#             */
-/*   Updated: 2019/01/30 15:24:13 by mwuckert         ###   ########.fr       */
+/*   Created: 2018/11/27 17:04:04 by mwuckert          #+#    #+#             */
+/*   Updated: 2018/12/14 17:19:36 by mwuckert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include <string.h>
 #include "libft.h"
 
-char	*ft_read_fdf_file(const int fd)
+size_t		ft_strlcat(char *dst, const char *src, size_t size)
 {
-	char *map;
-	char *buf;
-	char *addr;
+	size_t i;
 
-	while (get_next_line(fd, &buf) > 0)
-	{
-		addr = map;
-		if (!(map = ft_strjoin(map, buf))
-			return (0);
-		ft_memdel((void**)&addr);
-	}
-	return (map);
+	i = ft_strlen(dst) + 1;
+	if (size == 0)
+		return (ft_strlen(src));
+	else if (size < i)
+		return (size + ft_strlen(src));
+	if (i <= size)
+		ft_strncat(dst, src, size - i);
+	return ((i - 1) + ft_strlen(src));
 }

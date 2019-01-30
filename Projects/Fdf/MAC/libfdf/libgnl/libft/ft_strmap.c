@@ -1,30 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_read_fdf_file.c                                 :+:      :+:    :+:   */
+/*   ft_strmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mwuckert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/30 01:34:09 by mwuckert          #+#    #+#             */
-/*   Updated: 2019/01/30 15:24:13 by mwuckert         ###   ########.fr       */
+/*   Created: 2018/11/28 17:58:36 by mwuckert          #+#    #+#             */
+/*   Updated: 2018/12/01 15:21:08 by mwuckert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
 #include "libft.h"
 
-char	*ft_read_fdf_file(const int fd)
+char	*ft_strmap(char const *s, char (*f)(char))
 {
-	char *map;
-	char *buf;
-	char *addr;
+	char	*new;
+	int		i;
 
-	while (get_next_line(fd, &buf) > 0)
-	{
-		addr = map;
-		if (!(map = ft_strjoin(map, buf))
-			return (0);
-		ft_memdel((void**)&addr);
-	}
-	return (map);
+	if (!s || !(new = (char*)(ft_memalloc(sizeof(*s) * ft_strlen(s) + 1))))
+		return (0);
+	i = -1;
+	while (*(char*)(s + ++i))
+		*(new + i) = f(*(s + i));
+	*(new + i) = '\0';
+	return (new);
 }

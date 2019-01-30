@@ -1,30 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_read_fdf_file.c                                 :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mwuckert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/30 01:34:09 by mwuckert          #+#    #+#             */
-/*   Updated: 2019/01/30 15:24:13 by mwuckert         ###   ########.fr       */
+/*   Created: 2018/11/24 21:23:52 by mwuckert          #+#    #+#             */
+/*   Updated: 2018/12/07 16:13:28 by mwuckert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
-#include "libft.h"
+#include <string.h>
 
-char	*ft_read_fdf_file(const int fd)
+void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
-	char *map;
-	char *buf;
-	char *addr;
+	size_t i;
 
-	while (get_next_line(fd, &buf) > 0)
-	{
-		addr = map;
-		if (!(map = ft_strjoin(map, buf))
-			return (0);
-		ft_memdel((void**)&addr);
-	}
-	return (map);
+	i = -1;
+	if (!(dst || src))
+		return (0);
+	while (++i < n)
+		*((unsigned char*)dst + i) = *((unsigned char*)src + i);
+	return (dst);
 }

@@ -1,30 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_read_fdf_file.c                                 :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mwuckert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/30 01:34:09 by mwuckert          #+#    #+#             */
-/*   Updated: 2019/01/30 15:24:13 by mwuckert         ###   ########.fr       */
+/*   Created: 2018/11/26 20:53:40 by mwuckert          #+#    #+#             */
+/*   Updated: 2018/12/08 14:03:04 by mwuckert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
-#include "libft.h"
-
-char	*ft_read_fdf_file(const int fd)
+int		ft_atoi(const char *str)
 {
-	char *map;
-	char *buf;
-	char *addr;
+	int	nb;
+	int sign;
+	int i;
 
-	while (get_next_line(fd, &buf) > 0)
+	i = 0;
+	nb = 0;
+	sign = 1;
+	while ((*str >= '\a' && *str <= '\r') || *str == ' ' || *str == '0')
+		str++;
+	if (*str == '-' || *str == '+')
+		if (*str++ == '-')
+			sign = -1;
+	while (*str >= '0' && *str <= '9')
 	{
-		addr = map;
-		if (!(map = ft_strjoin(map, buf))
-			return (0);
-		ft_memdel((void**)&addr);
+		nb = nb * 10 + *str++ - '0';
+		i++;
 	}
-	return (map);
+	if (i < 20)
+		return (nb * sign);
+	else if (sign == -1)
+		return (0);
+	return (-1);
 }

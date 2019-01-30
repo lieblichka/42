@@ -6,7 +6,7 @@
 /*   By: mwuckert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/28 19:14:13 by mwuckert          #+#    #+#             */
-/*   Updated: 2019/01/30 01:14:27 by mwuckert         ###   ########.fr       */
+/*   Updated: 2019/01/30 18:05:03 by mwuckert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,8 @@ void			ft_loop_tmlx(t_mlx *mlx_ptr);
 void			ft_set_pos_tmlx(t_mlx *mlx_ptr, int x, int y);
 void			ft_put_line_tmlx(t_mlx *mlx_ptr, int x, int y, int color);
 void			ft_pixel_put_tmlx(t_mlx *mlx_ptr, int x, int y, int color);
+char			*ft_read_fdf_file(const int fd);
+int				**ft_treatment_fdf_file(const int fd);
 t_mlx			*ft_create_tmlx(t_mlx *mlx_ptr, int x, int y);
 t_mlx			*ft_create_window(t_mlx *mlx_ptr, int w, int h, char *title);
 

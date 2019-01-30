@@ -1,30 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_read_fdf_file.c                                 :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mwuckert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/30 01:34:09 by mwuckert          #+#    #+#             */
-/*   Updated: 2019/01/30 15:24:13 by mwuckert         ###   ########.fr       */
+/*   Created: 2018/12/07 18:31:10 by mwuckert          #+#    #+#             */
+/*   Updated: 2018/12/10 18:36:05 by mwuckert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
 #include "libft.h"
 
-char	*ft_read_fdf_file(const int fd)
+t_list		*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 {
-	char *map;
-	char *buf;
-	char *addr;
+	t_list *new;
+	t_list *save;
 
-	while (get_next_line(fd, &buf) > 0)
+	while (lst && f)
 	{
-		addr = map;
-		if (!(map = ft_strjoin(map, buf))
+		if (!(new = f(lst)))
 			return (0);
-		ft_memdel((void**)&addr);
+		save = new;
+		while ((*lst).next)
+		{
+			lst = (*lst).next;
+			if (!((*new).next = f(lst)))
+			{
+				ft_lstdel(&new, &ft_lstdelcontent);
+				return (0);
+			}
+			new = (*new).next;
+		}
+		lst = (*lst).next;
 	}
-	return (map);
+	return (save);
 }

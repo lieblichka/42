@@ -1,30 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_read_fdf_file.c                                 :+:      :+:    :+:   */
+/*   ft_treatment_fdf_file.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mwuckert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/30 01:34:09 by mwuckert          #+#    #+#             */
-/*   Updated: 2019/01/30 15:24:13 by mwuckert         ###   ########.fr       */
+/*   Created: 2019/01/30 15:28:59 by mwuckert          #+#    #+#             */
+/*   Updated: 2019/01/30 18:17:04 by mwuckert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
-#include "libft.h"
+#include "libfdf.h"
 
-char	*ft_read_fdf_file(const int fd)
+static int		ft_count_length_x(char *fdf_map)
 {
-	char *map;
-	char *buf;
-	char *addr;
+	int i;
 
-	while (get_next_line(fd, &buf) > 0)
-	{
-		addr = map;
-		if (!(map = ft_strjoin(map, buf))
-			return (0);
-		ft_memdel((void**)&addr);
-	}
-	return (map);
+	i = 0;
+	while (*fdf_map != '\n')
+		if ((*fdf_map >= 48 && *fdf_map <= 57) & *fdf_map & i++)
+			while (*fdf_map != ' ' && *fdf_map != '\n')
+				fdf_map++;
+	return (i);
+}
+
+int				**ft_treatment_fdf_file(const int fd)
+{
+	char *fdf_map;
+
+	if (!(fdf_map = ft_read_fdf_file(fd)))
+		return (0);
 }

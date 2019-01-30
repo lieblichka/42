@@ -1,30 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_read_fdf_file.c                                 :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mwuckert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/30 01:34:09 by mwuckert          #+#    #+#             */
-/*   Updated: 2019/01/30 15:24:13 by mwuckert         ###   ########.fr       */
+/*   Created: 2018/11/24 22:42:19 by mwuckert          #+#    #+#             */
+/*   Updated: 2018/12/09 21:43:44 by mwuckert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include <stdlib.h>
 #include "libft.h"
 
-char	*ft_read_fdf_file(const int fd)
+void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	char *map;
-	char *buf;
-	char *addr;
+	size_t i;
 
-	while (get_next_line(fd, &buf) > 0)
-	{
-		addr = map;
-		if (!(map = ft_strjoin(map, buf))
-			return (0);
-		ft_memdel((void**)&addr);
-	}
-	return (map);
+	i = -1;
+	if (!(dst || src))
+		return (0);
+	while (++i < len)
+		if (src < dst)
+			*(unsigned char*)(dst + len - 1 - i) =
+				*(unsigned char*)(src + len - 1 - i);
+		else
+			*(unsigned char*)(dst + i) =
+				*(unsigned char*)(src + i);
+	return (dst);
 }

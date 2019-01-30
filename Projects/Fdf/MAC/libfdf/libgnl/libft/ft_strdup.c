@@ -1,30 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_read_fdf_file.c                                 :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mwuckert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/30 01:34:09 by mwuckert          #+#    #+#             */
-/*   Updated: 2019/01/30 15:24:13 by mwuckert         ###   ########.fr       */
+/*   Created: 2018/11/26 18:12:15 by mwuckert          #+#    #+#             */
+/*   Updated: 2018/12/30 18:10:22 by mwuckert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include <stdlib.h>
 #include "libft.h"
 
-char	*ft_read_fdf_file(const int fd)
+char	*ft_strdup(const char *s1)
 {
-	char *map;
-	char *buf;
+	char *dup;
 	char *addr;
 
-	while (get_next_line(fd, &buf) > 0)
-	{
-		addr = map;
-		if (!(map = ft_strjoin(map, buf))
-			return (0);
-		ft_memdel((void**)&addr);
-	}
-	return (map);
+	if (!(dup = (char*)(malloc(sizeof(*s1) * ft_strlen(s1) + 1))))
+		return (0);
+	addr = dup;
+	while (*s1)
+		*dup++ = *s1++;
+	*dup = '\0';
+	return (addr);
 }

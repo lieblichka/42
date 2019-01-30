@@ -1,30 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_read_fdf_file.c                                 :+:      :+:    :+:   */
+/*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mwuckert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/30 01:34:09 by mwuckert          #+#    #+#             */
-/*   Updated: 2019/01/30 15:24:13 by mwuckert         ###   ########.fr       */
+/*   Created: 2018/12/13 19:54:16 by mwuckert          #+#    #+#             */
+/*   Updated: 2019/01/29 22:18:23 by mwuckert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
-#include "libft.h"
+#ifndef GET_NEXT_LINE_H
+# define GET_NEXT_LINE_H
 
-char	*ft_read_fdf_file(const int fd)
-{
-	char *map;
-	char *buf;
-	char *addr;
+# define BUFF_SIZE 50
 
-	while (get_next_line(fd, &buf) > 0)
-	{
-		addr = map;
-		if (!(map = ft_strjoin(map, buf))
-			return (0);
-		ft_memdel((void**)&addr);
-	}
-	return (map);
-}
+# include <unistd.h>
+# include "libft/libft.h"
+
+int	get_next_line(const int fd, char **line);
+
+#endif

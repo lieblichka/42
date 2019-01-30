@@ -1,30 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_read_fdf_file.c                                 :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mwuckert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/30 01:34:09 by mwuckert          #+#    #+#             */
-/*   Updated: 2019/01/30 15:24:13 by mwuckert         ###   ########.fr       */
+/*   Created: 2018/11/30 16:24:10 by mwuckert          #+#    #+#             */
+/*   Updated: 2018/12/28 18:12:06 by mwuckert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
 #include "libft.h"
+#include <stdlib.h>
 
-char	*ft_read_fdf_file(const int fd)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	char *map;
-	char *buf;
-	char *addr;
+	char *s;
 
-	while (get_next_line(fd, &buf) > 0)
-	{
-		addr = map;
-		if (!(map = ft_strjoin(map, buf))
-			return (0);
-		ft_memdel((void**)&addr);
-	}
-	return (map);
+	if (!s1 || !s2 ||
+			!(s = (char*)(ft_memalloc(ft_strlen(s1) + ft_strlen(s2) + 1))))
+		return (0);
+	ft_strcpy(s, s1);
+	ft_strcat(s, s2);
+	return (s);
 }

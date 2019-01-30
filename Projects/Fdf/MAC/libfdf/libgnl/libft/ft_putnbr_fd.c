@@ -1,30 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_read_fdf_file.c                                 :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mwuckert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/30 01:34:09 by mwuckert          #+#    #+#             */
-/*   Updated: 2019/01/30 15:24:13 by mwuckert         ###   ########.fr       */
+/*   Created: 2018/12/03 22:21:47 by mwuckert          #+#    #+#             */
+/*   Updated: 2018/12/03 22:29:35 by mwuckert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
 #include "libft.h"
 
-char	*ft_read_fdf_file(const int fd)
+void	ft_putnbr_fd(int nb, int fd)
 {
-	char *map;
-	char *buf;
-	char *addr;
-
-	while (get_next_line(fd, &buf) > 0)
+	if (nb < 0)
 	{
-		addr = map;
-		if (!(map = ft_strjoin(map, buf))
-			return (0);
-		ft_memdel((void**)&addr);
+		ft_putchar_fd('-', fd);
+		if (nb == -2147483648)
+		{
+			nb = -147483648;
+			ft_putchar_fd('2', fd);
+		}
+		nb *= -1;
 	}
-	return (map);
+	if (nb > 9)
+		ft_putnbr_fd(nb / 10, fd);
+	ft_putchar_fd(nb % 10 + '0', fd);
 }

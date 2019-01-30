@@ -1,30 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_read_fdf_file.c                                 :+:      :+:    :+:   */
+/*   ft_memalloc.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mwuckert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/30 01:34:09 by mwuckert          #+#    #+#             */
-/*   Updated: 2019/01/30 15:24:13 by mwuckert         ###   ########.fr       */
+/*   Created: 2018/11/28 16:56:57 by mwuckert          #+#    #+#             */
+/*   Updated: 2018/12/06 20:16:30 by mwuckert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
-#include "libft.h"
+#include <stdlib.h>
 
-char	*ft_read_fdf_file(const int fd)
+void	*ft_memalloc(size_t size)
 {
-	char *map;
-	char *buf;
-	char *addr;
+	void *new;
 
-	while (get_next_line(fd, &buf) > 0)
-	{
-		addr = map;
-		if (!(map = ft_strjoin(map, buf))
-			return (0);
-		ft_memdel((void**)&addr);
-	}
-	return (map);
+	new = 0;
+	if (!(new = malloc(sizeof(*new) * size)))
+		return (0);
+	while (size--)
+		*(unsigned char*)(new + size) = 0;
+	return (new);
 }
