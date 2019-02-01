@@ -1,1 +1,1 @@
-ifconfig | grep .255 | cut -d ' ' -f 6
+ifconfig | grep 'inet 1' | awk '{print $2,$6}' | tr -d '\n' | tr ' ' '\n' | awk {'print $0'}
