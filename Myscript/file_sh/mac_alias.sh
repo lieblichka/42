@@ -1,5 +1,6 @@
 # mwuckert config :)
 export PATH="$PATH:$HOME/.rvm/bin"
+export CLICOLOR=1
 export PS1="[%n% ]: "
 cd ~/Desktop/
 alias p="pwd | rev | cut -d / -f 1 | rev"
@@ -10,5 +11,4 @@ alias downloads="cd ~/Downloads"
 alias battery="acpi | cut -d , -f 2 | tr -d ' '"
 alias time="date | cut -d ' ' -f 5"
 alias leak="~/Desktop/.link/leak"
-alias CLICOLOR=1
 clear
