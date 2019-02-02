@@ -1,0 +1,1 @@
+ifconfig | grep broadcast | cut -d ' ' -f 6&& arp -a | grep '192.168.20\|192.168.21' | awk '{print $2}' | tr -d '()'
