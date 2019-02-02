@@ -1,0 +1,1 @@
+route get 0.0.0.0 | grep gateway | cut -d ':' -f 2 | tr -d ' '
