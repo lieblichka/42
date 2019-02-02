@@ -10,5 +10,5 @@ alias desktop="cd ~/Desktop"
 alias downloads="cd ~/Downloads"
 alias battery="acpi | cut -d , -f 2 | tr -d ' '"
 alias time="date | cut -d ' ' -f 5"
-alias leak="~/Desktop/.link/leak"
+alias leak="~/Deskop/.link/leak"
 clear
