@@ -13,5 +13,5 @@ alias battery="acpi | cut -d , -f 2 | tr -d ' '"
 alias time="date | cut -d ' ' -f 5"
 alias leak="~/Deskop/.link/leak"
 alias black_style="export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx"
-alias linix_style="export LSCOLORS=ExGxBxDxCxEgEdxbxgxcxd"
+alias linux_style="export LSCOLORS=ExGxBxDxCxEgEdxbxgxcxd"
 clear
