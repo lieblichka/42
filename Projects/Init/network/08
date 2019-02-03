@@ -1,0 +1,5 @@
+#whois 52.84.197.139 | grep Ref | grep ip | tr -d ' ' | cut -d '/' -f 3 | awk '{print https://$0}'
+#https://rdap.arin.net
+#whois 13.33.103.149 | grep Amazon
+Amazon Technologies Inc. AT-88-Z (NET-13-32-0-0-1) 13.32.0.0 - 13.47.255.255
+Amazon.com, Inc. AMAZO-CF (NET-13-32-0-0-2) 13.32.0.0 - 13.33.255.255
