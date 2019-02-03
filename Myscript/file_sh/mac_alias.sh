@@ -7,6 +7,7 @@ cd ~/Desktop/
 alias p="pwd | rev | cut -d / -f 1 | rev"
 alias c=clear
 alias l="ls -1"
+alias l_hidden="ls -1a"
 alias desktop="cd ~/Desktop"
 alias downloads="cd ~/Downloads"
 alias battery="acpi | cut -d , -f 2 | tr -d ' '"
