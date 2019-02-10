@@ -3,4 +3,4 @@
 # ping 192.168.$i.$j  -c 1 -i 5 -t 1 | grep '64 b'
 # done
 # done
-ifconfig | grep broadcast | cut -d ' ' -f 6&& arp -a | grep '192.168.20\|192.168.21' | awk '{print $2}' | tr -d '()'
+ifconfig | grep broadcast | cut -d ' ' -f 6&& arp -a | grep school.ru | awk '{print $2}' | tr -d '()'
