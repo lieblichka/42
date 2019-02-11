@@ -1,0 +1,1 @@
+cat /etc/passwd | tr ':' ' ' | awk '{print "LOGIN: "$1"\nUID: " $3 "\nPATH: " $NF "\n"}'
