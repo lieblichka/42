@@ -1,0 +1,1 @@
+who | awk '/pts/ {print "\nlogin: "$1"\nip: "$NF"\nlogged in: " $(NF-1)"\n"}'
