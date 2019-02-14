@@ -15,4 +15,5 @@ alias time="date | cut -d ' ' -f 5"
 alias leak="~/Deskop/.link/leak"
 alias black_style="export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx"
 alias linux_style="export LSCOLORS=ExGxBxDxCxEgEdxbxgxcxd"
+alias vm_boot="virtualbox --startvm "
 clear
