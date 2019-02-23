@@ -19,7 +19,7 @@ alias brightness-extra="sudo tee /sys/class/backlight/radeon_bl0/brightness <<< 
 alias leak="sh ~/Desktop/.link/leak"
 alias wifi_stat="netctl status"
 alias wifi_connect="sudo netctl start"
-alias browser="exec firefox"
+alias browser="exec firefox &"
 alias audio="alsamixer"
 alias temp="acpi -t | cut -d ' ' -f 4"
 clear
