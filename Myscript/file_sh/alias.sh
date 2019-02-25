@@ -22,4 +22,5 @@ alias wifi_connect="sudo netctl start"
 alias browser="exec firefox &"
 alias audio="alsamixer"
 alias temp="acpi -t | cut -d ' ' -f 4"
+alias temp_exact="sensors | grep high | awk '{print \$2}'"
 clear
