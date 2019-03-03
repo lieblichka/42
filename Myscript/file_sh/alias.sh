@@ -23,4 +23,7 @@ alias browser="exec firefox &"
 alias audio="alsamixer"
 alias temp="acpi -t | cut -d ' ' -f 4"
 alias temp_exact="sensors | grep high | awk '{print \$2}'"
+alias vm_boot="VBoxManage startvm "
+alias vm_reset="VBoxManage controlvm \$1 reset"
+alias vm_poweroff="VBoxManage controlvm \$1 poweroff"
 clear
