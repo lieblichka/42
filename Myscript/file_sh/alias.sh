@@ -26,4 +26,5 @@ alias temp_exact="sensors | grep high | awk '{print \$2}'"
 alias vm_boot="VBoxManage startvm "
 alias vm_reset="VBoxManage controlvm \$1 reset"
 alias vm_poweroff="VBoxManage controlvm \$1 poweroff"
+alias telegram="telegram-desktop &"
 clear
