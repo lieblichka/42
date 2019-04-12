@@ -6,7 +6,7 @@
 /*   By: mwuckert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/11 18:19:02 by mwuckert          #+#    #+#             */
-/*   Updated: 2019/04/12 17:04:21 by mwuckert         ###   ########.fr       */
+/*   Updated: 2019/04/12 18:36:43 by mwuckert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ typedef struct	s_mlx
 }				t_mlx;
 
 char			**ft_valid_map(const int fd);
+t_mlx			**ft_create_mlx_map(char **map);
 t_mlx			*ft_create_mlx(void *mlx_window, void *mlx_ptr);
 
 #endif

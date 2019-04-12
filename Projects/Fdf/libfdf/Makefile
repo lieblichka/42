@@ -1,8 +1,8 @@
 NAME = libfdf.a
 
-SRC = ft_valid_map.c
+SRC = ft_valid_map.c ft_create_mlx.c ft_create_mlx_map.c
 
-OBJECT = ft_valid_map.o
+OBJECT = ft_valid_map.o ft_create_mlx.o ft_create_mlx_map.o
 
 INCLUDES =  libft/
 
