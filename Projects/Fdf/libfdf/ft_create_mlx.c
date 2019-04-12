@@ -1,40 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_valid_map.c                                     :+:      :+:    :+:   */
+/*   ft_create_mlx.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mwuckert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/11 18:18:52 by mwuckert          #+#    #+#             */
-/*   Updated: 2019/04/12 16:06:43 by mwuckert         ###   ########.fr       */
+/*   Created: 2019/04/12 16:19:37 by mwuckert          #+#    #+#             */
+/*   Updated: 2019/04/12 17:09:11 by mwuckert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libfdf.h"
+#include "libft.h"
 
-static int	ft_check_size(char **map)
+t_mlx	*ft_create_mlx(void *mlx_window, void *mlx_ptr)
 {
-	int	size;
+	t_mlx *mlx;
 
-	size = ft_countwordc(*map, ' ');
-	while (map++ && *map)
-		if (size != ft_countwordc(*map, ' '))
-			return (0);
-	return (1);
-}
-
-char		**ft_valid_map(const int fd)
-{
-	char	buf[BUFF_SIZE + 1];
-	char	**map;
-
-	ft_bzero(buf, BUFF_SIZE + 1);
-	if (read(fd, buf, BUFF_SIZE) <= 0 || !(map = ft_strsplit(buf, '\n')))
+	if (!(mlx = ft_memalloc(sizeof(t_mlx))))
 		return (0);
-	if (!ft_check_size(map))
+	if (!(mlx_window && mlx_ptr) ||
+			!(mlx.point = ft_memalloc(sizeof(t_point))))
 	{
-		ft_arraydel((void**)map);
+		ft_memdel((void**)&mlx);
 		return (0);
 	}
-	return (map);
+	(*(*mlx).point).x = 0;
+	(*(*mlx).point).y = 0;
+	(*(*mlx).point).z = 0;
+	(*(*mlx).point).color = 0;
 }

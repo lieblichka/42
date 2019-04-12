@@ -6,7 +6,7 @@
 /*   By: mwuckert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/11 18:19:02 by mwuckert          #+#    #+#             */
-/*   Updated: 2019/04/11 18:19:07 by mwuckert         ###   ########.fr       */
+/*   Updated: 2019/04/12 17:04:21 by mwuckert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,24 @@
 # define BUFF_SIZE 100000
 
 # include "libft.h"
-# include "unistd.h"
+# include <unistd.h>
 
-char	*ft_valid_map(const int fd);
+typedef struct	s_point
+{
+	int			x;
+	int			y;
+	int			z;
+	int			color;
+}				t_point;
+
+typedef struct	s_mlx
+{
+	t_point		*point;
+	void		*mlx_window;
+	void		*mlx_ptr;
+}				t_mlx;
+
+char			**ft_valid_map(const int fd);
+t_mlx			*ft_create_mlx(void *mlx_window, void *mlx_ptr);
 
 #endif

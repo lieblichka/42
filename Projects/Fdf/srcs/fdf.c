@@ -6,18 +6,17 @@
 /*   By: mwuckert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/11 18:19:25 by mwuckert          #+#    #+#             */
-/*   Updated: 2019/04/11 18:19:27 by mwuckert         ###   ########.fr       */
+/*   Updated: 2019/04/12 14:30:22 by mwuckert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libfdf.h"
 
-int fdf(const int fd)
+int	fdf(const int fd)
 {
-    char *map;
+	char **map;
 
-    if (!(map = ft_valid_map(fd)))
-        return (0);
-        
-    return (1);
+	if (!(map = ft_valid_map(fd)))
+		return (0);
+	return (1);
 }
