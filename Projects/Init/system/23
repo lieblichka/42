@@ -1,0 +1,4 @@
+Log in to the system by clicking on the button in the upper right corner
+after selecting the system shutdown button, then selecting the log out button,
+then entering another user’s login and password
+or using the command ssh username@localhost -p portnumber
