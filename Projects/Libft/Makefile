@@ -6,7 +6,7 @@
 #    By: mwuckert <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/22 15:15:48 by mwuckert          #+#    #+#              #
-#    Updated: 2019/01/14 11:51:28 by mwuckert         ###   ########.fr        #
+#    Updated: 2019/04/23 16:22:32 by mwuckert         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,7 +29,7 @@ SRC =	ft_atoi.c ft_bzero.c ft_isalnum.c ft_isalpha.c \
 		ft_lstadd.c ft_lstdel.c ft_lstiter.c ft_lstmap.c \
 		ft_lstdelcontent.c ft_twodarraydel.c ft_countchar.c \
 		ft_swap_point.c ft_swap.c ft_power.c ft_sqrt.c \
-		ft_delelemofarray.c
+		ft_delelemofarray.c ft_atoi_base.c
 
 OBJECT =	ft_atoi.o ft_bzero.o ft_isalnum.o ft_isalpha.o \
 			ft_isascii.o ft_isdigit.o ft_isprint.o ft_memccpy.o \
@@ -48,7 +48,7 @@ OBJECT =	ft_atoi.o ft_bzero.o ft_isalnum.o ft_isalpha.o \
 			ft_lstadd.o ft_lstdel.o ft_lstiter.o ft_lstmap.o \
 			ft_lstdelcontent.o ft_twodarraydel.o ft_countchar.o \
 			ft_swap_point.o ft_swap.o ft_power.o ft_sqrt.o \
-			ft_delelemofarray.o
+			ft_delelemofarray.o ft_atoi_base.o
 
 FLAGS = -Wall -Wextra -Werror
 

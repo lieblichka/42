@@ -6,7 +6,7 @@
 /*   By: mwuckert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/02 13:15:59 by mwuckert          #+#    #+#             */
-/*   Updated: 2019/04/14 18:23:22 by mwuckert         ###   ########.fr       */
+/*   Updated: 2019/04/23 16:23:02 by mwuckert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ typedef	struct		s_list
 }					t_list;
 
 int					ft_atoi(const char *str);
+int					ft_atoi_base(const char *str, int base);
 int					ft_power(int n, int power);
 int					ft_isalnum(int c);
 int					ft_isalpha(int c);
