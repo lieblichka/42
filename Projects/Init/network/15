@@ -1,3 +1,0 @@
-To redirect address from intra.42.fr to 46.19.122.85
-need to add a line to the file /etc/hosts
-echo 'intra.42.fr 46.19.122.85' >> /etc/hosts

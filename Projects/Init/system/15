@@ -1,3 +1,0 @@
-#kill PID procces
-#kill -9  
-pkill tail
