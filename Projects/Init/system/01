@@ -1,0 +1,3 @@
+#/etc/issue - general information about debian
+#/etc/os-release - more information about debian
+/etc/debian_version -  only version number of debian

@@ -1,0 +1,5 @@
+#route get 0 | grep gateway | cut -d ' ' -f 6
+Wireless Router
+IP Address: 192.168.20.1
+Network Address Translation (NAT) Tecnology
+Convert address internal in external 

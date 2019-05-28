@@ -1,0 +1,4 @@
+#nslookup 42.fr |grep Address | grep ' ' |awk {'print $2'}
+163.172.250.11
+163.172.250.13
+163.172.250.12

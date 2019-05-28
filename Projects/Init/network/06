@@ -1,0 +1,7 @@
+/etc/resolv.conf
+#domain 21-school.ru
+#nameserver 192.168.50.2
+#nameserver 77.88.8.1
+#nameserver 77.88.8.8
+#nameserver 1.1.1.1
+#nameserver 8.8.8.8

@@ -1,0 +1,1 @@
+ifconfig | grep ': f' | awk '{print $1}' | tr -d '\n' | tr ':' ' ' | awk '{print $0}'

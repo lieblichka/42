@@ -1,0 +1,7 @@
+ifconfig | grep broadcast | cut -d ' ' -f 6 &&
+for ((i = 20; i <= 21; i++)) do
+for ((j = 11; j <= 254; j++)) do
+ping 192.168.$i.$j  -c 1 -i 2 -t 1 | grep '64 b'
+done
+done
+#ifconfig | grep broadcast | cut -d ' ' -f 6&& arp -a| grep school.ru | awk '{print $2}' | tr -d '()'
