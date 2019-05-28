@@ -1,1 +1,0 @@
-systemctl list-unit-files | grep enabled | sed 's/.service//' | sed 's/enabled//' | awk '{print $1}' | tr '\n' ',' | awk '{print $0}' 

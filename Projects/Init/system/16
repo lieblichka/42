@@ -1,4 +1,0 @@
-# /var/spool/cron/crontabs/ - directory with crontab file
-#crontab -l look for current crontabs files
-#crontab -e create a new crontab file
-crontab

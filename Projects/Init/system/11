@@ -1,3 +1,0 @@
-#df,free,vmstat, du -h 
-#and file /proc/meminfo
-vmstat -s
