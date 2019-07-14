@@ -1,0 +1,1 @@
+nslookup slash16.org | grep Addres | grep ' ' | awk '{print $2}'
