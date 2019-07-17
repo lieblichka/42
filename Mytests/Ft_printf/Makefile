@@ -8,7 +8,7 @@ OBJECTS = main.o
 
 FLAGS = -Wall -Wextra -Werror
 
-LFTPRINTF = ../../Projects/Ft_printf/
+LFTPRINTF = ~/floobits/lieblichka/42/
 
 LFT = ../../Projects/Ft_printf/libft/
 
