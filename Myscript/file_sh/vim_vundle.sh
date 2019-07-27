@@ -5,8 +5,6 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
-Bundle 'Floobits/floobits-vim'
-
 call vundle#end()
 
 set exrc	" - искать дополнительный .vimrc в текущей директории "
