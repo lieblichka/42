@@ -6,7 +6,7 @@
 /*   By: mwuckert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/13 17:13:47 by mwuckert          #+#    #+#             */
-/*   Updated: 2019/08/25 22:07:24 by mwuckert         ###   ########.fr       */
+/*   Updated: 2019/08/26 15:19:58 by wmaykit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,12 @@
 static void	ft_identify_positive(t_power *p, int **i)
 {
 	--(*i);
-	while ((*i) > p->powers && *(*i) < 0)
+	while ((*i) >= p->powers && *(*i) < 0)
 		--(*i);
 	if (*(*i + 1) < 0)
 		p->negative = *i + 1;
-	if (*(*i) >= 0)
-		p->negative = 0;
-			p->positive = *i;
+	if ((*i) >= p->powers)
+		p->positive = *i;
 }	 
 
 static void	ft_add_power(int **i, unsigned m, short *e)
@@ -49,9 +48,11 @@ t_power		*ft_parse_power_mantis(t_parts *r)
 		return (0);
 	e = r->exponent;
 	i = p->powers;
-	*i++ = e--;
+	if (r->spec_value != DENORM_VALUE)
+		*i++ = e--;
 	ft_add_power(&i, *((unsigned*)r->mantis + 1), &e);
 	if (*((unsigned*)r->mantis))
 		ft_add_power(&i, *((unsigned*)r->mantis), &e);
+	ft_identify_positive(p, &i);
 	return (p);
 }

@@ -6,13 +6,14 @@
 /*   By: mwuckert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/11 18:35:04 by mwuckert          #+#    #+#             */
-/*   Updated: 2019/08/13 20:49:23 by mwuckert         ###   ########.fr       */
+/*   Updated: 2019/08/26 19:37:50 by wmaykit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftfloat.h"
+#include <stdio.h>
 
-t_real	*ft_get_real_number(t_ieee754 *st)
+t_real		*ft_get_real_number(t_ieee754 *st)
 {
 	t_parts	real;
 	t_real	*num;
@@ -26,5 +27,9 @@ t_real	*ft_get_real_number(t_ieee754 *st)
 		ft_delete_treal(num);
 		return (0);
 	}
+	if (real.spec_value & 255)
+		*((unsigned*)num->spec_value) = real.spec_value;
+	else
+		ft_conversion_powers(num, power);
 	return (num);
 }

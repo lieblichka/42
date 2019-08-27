@@ -6,7 +6,7 @@
 /*   By: mwuckert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/11 15:52:53 by mwuckert          #+#    #+#             */
-/*   Updated: 2019/08/25 22:07:27 by mwuckert         ###   ########.fr       */
+/*   Updated: 2019/08/26 20:49:56 by wmaykit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,22 @@
 # define GET_EXP_F(arg) arg - 127
 # define GET_EXP_D(arg) arg - 1023
 # define GET_EXP_LD(arg) arg - 16383
+
+/*
+** SPECIAL FLOATING VALUES
+*/
+
+# define NAN_VALUE 7233902
+# define INF_VALUE 6712937
+# define ZERO_VALUE 48
+# define DENORM_VALUE 256
+
+/*
+** CONSTATNT FOR LONG ARITHMETIC
+*/
+
+# define BASE_LONG_NUM 100000000
+
 /*
 ** INPUT INFO AS STANDART IEEE754
 */
@@ -47,6 +63,7 @@ typedef struct		s_parts
 	short			exponent;
 	unsigned char	sign;
 	unsigned char	mantis[8];
+	unsigned		spec_value;
 }					t_parts;
 
 /*
@@ -55,11 +72,24 @@ typedef struct		s_parts
 
 typedef struct		s_real
 {
-	unsigned char	*integer;
-	unsigned char	*fractional;
+	unsigned		*integer;
+	unsigned		*fractional;
 	int				len_int;
 	int				len_frac;
+	char			spec_value[4];
+	char			sign;
 }					t_real;
+
+
+/*
+** BUFFER FOR STORAGE RAISED NUMBER
+*/
+
+typedef struct		s_tmp
+{
+	unsigned		num[FRAC_LEN_MAX];
+	int				power;
+}					t_tmp
 
 /*
 **  STRUCTURE WITH ARRAY OF POWERS
@@ -70,8 +100,13 @@ typedef struct		s_power
 	int				powers[64];
 	int				*positive;
 	int				*negative;
-	
 }					t_power;
+
+typedef struct		s_buf
+{
+	unsigned		buf_power[10000];
+	unsigned		buf_reserv[10000];
+}					t_buf;				
 
 /*
 ** POINT TO FUNCTION
@@ -101,6 +136,12 @@ void				ft_parse_double(t_ieee754 *standart, t_parts *real);
 void				ft_parse_ldouble(t_ieee754 *standart, t_parts *real);
 void				ft_parse_parts_ieee754(t_ieee754 *standart, t_parts *r);
 t_power				*ft_parse_power_mantis(t_parts *r);
+
+/*
+** CONVERSION
+*/
+
+void				ft_conversion_powers(t_real *num, t_power *p);
 
 /*
 ** PRINT
