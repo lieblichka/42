@@ -6,7 +6,7 @@
 /*   By: mwuckert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/25 17:19:06 by mwuckert          #+#    #+#             */
-/*   Updated: 2019/08/26 18:14:49 by mwuckert         ###   ########.fr       */
+/*   Updated: 2019/09/03 15:28:07 by mwuckert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ static void	ft_putspecvalue(unsigned value)
 	ft_putchar('\n');
 }
 
-void	ft_print_tparts(t_parts *real)
+void		ft_print_tparts(t_parts *real)
 {
 	ft_putstr("sign:          ");
 	real->sign ? ft_putstr("Yes") : ft_putstr("No");
@@ -41,4 +41,3 @@ void	ft_print_tparts(t_parts *real)
 	ft_putstr("special value: ");
 	ft_putspecvalue(real->spec_value);
 }
-

@@ -6,7 +6,7 @@
 /*   By: mwuckert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/13 17:13:47 by mwuckert          #+#    #+#             */
-/*   Updated: 2019/08/26 15:19:58 by wmaykit          ###   ########.fr       */
+/*   Updated: 2019/09/03 15:30:13 by mwuckert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,11 @@ static void	ft_identify_positive(t_power *p, int **i)
 		p->negative = *i + 1;
 	if ((*i) >= p->powers)
 		p->positive = *i;
-}	 
+}
 
 static void	ft_add_power(int **i, unsigned m, short *e)
 {
-	int count;
+	int	count;
 
 	count = 0;
 	while (count++ < 32)
@@ -42,7 +42,7 @@ t_power		*ft_parse_power_mantis(t_parts *r)
 {
 	t_power		*p;
 	int			*i;
-	short 		e;
+	short		e;
 
 	if (!(p = ft_memalloc(sizeof(t_power))))
 		return (0);

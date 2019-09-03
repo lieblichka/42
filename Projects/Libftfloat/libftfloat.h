@@ -6,7 +6,7 @@
 /*   By: mwuckert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/11 15:52:53 by mwuckert          #+#    #+#             */
-/*   Updated: 2019/08/26 20:49:56 by wmaykit          ###   ########.fr       */
+/*   Updated: 2019/09/03 17:01:35 by mwuckert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,21 @@
 # define FLOAT_T 0
 # define DOUBLE_T 1
 # define LDOUBLE_T 2
-# define INT_LEN_MAX 4934
-# define FRAC_LEN_MAX 16446
+# define INT_LEN_MAX 620
+# define FRAC_LEN_MAX 2000
+
+/*
+** PUT REAL NUMBER
+*/
+
 # define PUT_F(arg) *((float*)arg)
 # define PUT_D(arg) *((double*)arg)
 # define PUT_LD(arg) *((long double*)arg)
+
+/*
+** PARSE TYPE OF REAL NUMBER
+*/
+
 # define PARSE_PREFIX(p) p##float, p##double, p##ldouble
 # define PARSE_FUNC PARSE_PREFIX(ft_parse_)
 # define GET_EXP_F(arg) arg - 127
@@ -76,10 +86,10 @@ typedef struct		s_real
 	unsigned		*fractional;
 	int				len_int;
 	int				len_frac;
+	int				frac_position;
 	char			spec_value[4];
 	char			sign;
 }					t_real;
-
 
 /*
 ** BUFFER FOR STORAGE RAISED NUMBER
@@ -88,8 +98,9 @@ typedef struct		s_real
 typedef struct		s_tmp
 {
 	unsigned		num[FRAC_LEN_MAX];
+	int				length;
 	int				power;
-}					t_tmp
+}					t_tmp;
 
 /*
 **  STRUCTURE WITH ARRAY OF POWERS
@@ -97,16 +108,10 @@ typedef struct		s_tmp
 
 typedef struct		s_power
 {
-	int				powers[64];
+	int				powers[65];
 	int				*positive;
 	int				*negative;
 }					t_power;
-
-typedef struct		s_buf
-{
-	unsigned		buf_power[10000];
-	unsigned		buf_reserv[10000];
-}					t_buf;				
 
 /*
 ** POINT TO FUNCTION
@@ -126,6 +131,8 @@ t_ieee754			*ft_create_tieee754(int type);
 */
 
 t_real				*ft_get_real_number(t_ieee754 *standart);
+void				ft_get_integer_part(t_real *num, t_power *p);
+void				ft_get_frac_part(t_real *num, t_power *p);
 
 /*
 ** PARSE
@@ -136,6 +143,14 @@ void				ft_parse_double(t_ieee754 *standart, t_parts *real);
 void				ft_parse_ldouble(t_ieee754 *standart, t_parts *real);
 void				ft_parse_parts_ieee754(t_ieee754 *standart, t_parts *r);
 t_power				*ft_parse_power_mantis(t_parts *r);
+
+/*
+** LONG ARIPHMETICS
+*/
+
+void				ft_move_digit(unsigned *src, unsigned *end, int sh, int *l);
+void				ft_addition_num(unsigned *n, unsigned *n1, int *l, int *l1);
+void				ft_normalize_num(unsigned *num, int *length);
 
 /*
 ** CONVERSION

@@ -6,7 +6,7 @@
 /*   By: mwuckert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/11 18:37:08 by mwuckert          #+#    #+#             */
-/*   Updated: 2019/08/12 19:05:49 by mwuckert         ###   ########.fr       */
+/*   Updated: 2019/08/31 17:18:45 by wmaykit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ t_real		*ft_create_treal(short integer, short fractional)
 {
 	t_real *real;
 
-	if (!(real = malloc(sizeof(t_real))))
+	if (!(real = ft_memalloc(sizeof(t_real))))
 		return (NULL);
 	if (!(real->integer = ft_memalloc(integer))
 			|| !(real->fractional = ft_memalloc(fractional)))

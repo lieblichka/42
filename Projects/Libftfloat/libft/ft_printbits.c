@@ -6,7 +6,7 @@
 /*   By: mwuckert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/13 15:19:09 by mwuckert          #+#    #+#             */
-/*   Updated: 2019/08/13 17:02:27 by mwuckert         ###   ########.fr       */
+/*   Updated: 2019/09/03 15:37:56 by mwuckert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	ft_printbits(void *bits, int n)
 		mask = 256;
 		while (mask >>= 1)
 		{
-			if (mask & 8) 
+			if (mask & 8)
 				ft_putchar(' ');
 			ft_putnbr(*((unsigned char*)bits + n) & mask ? 1 : 0);
 		}

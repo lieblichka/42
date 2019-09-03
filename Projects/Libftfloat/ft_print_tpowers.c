@@ -6,7 +6,7 @@
 /*   By: mwuckert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/25 16:01:55 by mwuckert          #+#    #+#             */
-/*   Updated: 2019/08/25 17:58:23 by mwuckert         ###   ########.fr       */
+/*   Updated: 2019/09/03 15:30:51 by mwuckert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ static void	ft_print_negative(int *negative)
 	ft_putchar('\n');
 }
 
-void	ft_print_tpowers(t_power *r)
+void		ft_print_tpowers(t_power *r)
 {
 	int i;
 
