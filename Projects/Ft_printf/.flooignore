@@ -1,0 +1,12 @@
+#*
+*.o
+*.pyc
+*swp
+*swn
+*swo
+*~
+*.a
+extern/
+node_modules/
+tmp
+vendor/
