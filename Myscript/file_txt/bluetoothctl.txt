@@ -1,0 +1,19 @@
+# need package
+bluez bluez-utils
+
+# check hard soft bluetooth
+lsmod | grep btusb 
+if not found then modpobe btusb
+systemctl start bluetooth
+rfkill list
+rfkill ublock bluetooth
+
+# first connect
+bluetoothctl
+power on
+agent on
+default-agent
+scan on
+trust MAC
+pair MAC 
+connect MAC 
