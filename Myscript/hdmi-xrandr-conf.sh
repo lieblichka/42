@@ -1,1 +1,1 @@
-xrandr --output HDMI-1 --mode 1366x768
+xrandr --output HDMI-0 --mode 1366x768
