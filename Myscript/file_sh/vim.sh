@@ -1,6 +1,19 @@
-set tabstop=4
+"BASIC"
+set tabstop=4	"размер табуляции"
 set colorcolumn=80
 set smartindent " - автоматически ставит отступы в нужных местах "
+set number "нумерация строк"
+"set foldcolumn=2 "отступ от левой части окна ""
+set mouse=a "включает поддержку мыши в vim"
+"-------"
+
+
+"SEARCH"
+set	ignorecase	"Игнорирование регистра при поиске"
+set	smartcase	"Игнорирование регистра при поиске"
+set hlsearch	"Подсветка результатов поиска"
+set incsearch	"Показывает первое вхождение при вводе шаблона"
+"--------"
 
 syntax on
 colorscheme pablo
@@ -12,3 +25,4 @@ colorscheme pablo
 " :b + tab  - перейти к выбранному буферу"
 " ctrl+n - автодополнение "
 " :%s/text/newtext/ - replace text in file "
+" /word - поиск нужных слов" 
