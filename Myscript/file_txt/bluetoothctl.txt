@@ -19,25 +19,43 @@ pair MAC
 connect MAC 
 
 
-# repair disconnected device
+# repair disconnected devices by used dbus service
 
-Создать группу bluetooth, которой будет предоставлено
-<allow send_destination="org.bluez"/> в конфигурации d-bus bluez
+	- Создать группу bluetooth, которой будет предоставлено
+	<allow send_destination="org.bluez"/> в конфигурации d-bus bluez
 	
-	sudo group add bluetooth
+		sudo group add bluetooth
 	
-Открыть конфигурацию
+	- Открыть конфигурацию
 	
-	sudo vim /etc/dbus-1/system.d/bluetooth.conf
+		sudo vim /etc/dbus-1/system.d/bluetooth.conf
 	
-Добавить следующие строки ниже в /etc/dbus-1/system.d/bluetooth.conf
+	- Добавить следующие строки ниже в /etc/dbus-1/system.d/bluetooth.conf
 
-	<policy group="bluetooth">
-	<allow send_destination="org.bluez"/>
-	</policy>
+		<policy group="bluetooth">
+		<allow send_destination="org.bluez"/>
+		</policy>
 
-Добавить пользователя для входа в группу "bluetooth" 
+	- Добавить пользователя для входа в группу "bluetooth" 
 
-	sudo usermod -a -G bluetooth <loginuser>
+		sudo usermod -a -G bluetooth <loginuser>
 
-Рестар системы
+	- Рестарт системы
+
+
+# for correct work should disable that services
+
+	- Disable next serices
+		
+		sudo systemctl disable blueman-machanism.service
+		sudo systemctl disable bluetooth-mesh.service	
+
+	- Check work services
+		
+		systemctl list-unit-files | grep blue 
+
+
+
+
+
+
