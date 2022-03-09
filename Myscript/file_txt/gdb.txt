@@ -1,0 +1,10 @@
+sudo pacman -S gdb  # Установить gdb 
+
+touch ~/.gdbinit 
+
+echo "set disassembly-flavor intel" >> ~/.gdbinit
+	
+	# синтаксис intel по умолчанию 
+
+how add debugging symbols for libc.so.6 archlinux
+
