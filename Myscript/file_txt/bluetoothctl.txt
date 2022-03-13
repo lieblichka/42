@@ -55,7 +55,7 @@ connect MAC
 		systemctl list-unit-files | grep blue 
 
 
-
+vim /etc/bluetooth/main.conf
 
 
 

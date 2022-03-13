@@ -1,3 +1,5 @@
+###### GDB SETTINGS ######
+
 sudo pacman -S gdb  # Установить gdb 
 
 touch ~/.gdbinit 
@@ -6,5 +8,40 @@ echo "set disassembly-flavor intel" >> ~/.gdbinit
 	
 	# синтаксис intel по умолчанию 
 
-how add debugging symbols for libc.so.6 archlinux
 
+
+### How add debugging symbols for libc.so.6 archlinux
+
+	https://wiki.archlinux.org/title/Debugging/Getting_traces
+
+
+
+### Install debugging packages 
+
+	- Скачать пакет по прямой ссылке
+
+	pacman -U https://europe.mirror.pkgbuild.com/core-debug/os/x86_64/name.zst
+
+	- Пакеты debug должны скачиваться с того же зеркала, что и основные 
+	исполняемые файлы
+
+	/etc/pacman.conf 
+
+		[core]
+			
+			Server = only231
+
+		[core-debug]
+			
+			Server = only231
+
+			-OR-
+
+		[core]
+			
+			Include = /etc/pacman.d/mirrorlist
+
+		[core-debug]
+			
+			Include = /etc/pacman.d/mirrorlist
+		
