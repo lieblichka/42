@@ -8,6 +8,9 @@ echo "set disassembly-flavor intel" >> ~/.gdbinit
 	
 	# синтаксис intel по умолчанию 
 
+echo "set style address intensity bold" >> ~/.gdbinit
+	
+	# увеличить яркость подсветки вывода адресов
 
 
 ### How add debugging symbols for libc.so.6 archlinux
