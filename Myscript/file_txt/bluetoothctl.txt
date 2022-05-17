@@ -55,7 +55,18 @@ connect MAC
 		systemctl list-unit-files | grep blue 
 
 
+### SET AUTOSTART
+
 vim /etc/bluetooth/main.conf
+
+[GENERAL]
+
+	DiscoverableTimeout = 0
+
+[POLICY]
+
+	AutoEnable=true
+	
 
 
 
