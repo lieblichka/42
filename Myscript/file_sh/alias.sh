@@ -33,5 +33,5 @@ alias vm_reset="VBoxManage controlvm \$1 reset"
 alias vm_poweroff="VBoxManage controlvm \$1 poweroff"
 alias telegram="telegram-desktop &"
 alias norminette="~/Desktop/42/Utilites/norminette/norminette"
-alias gobuster="/home/mwuckert/Desktop/htb/app/tier1/appointment/gobuster/gobuster"
+alias gobuster="/home/mwuckert/Desktop/htb/app/starting_point_basic_of_penetration_test/tier1/appointment/gobuster/gobuster"
 clear
