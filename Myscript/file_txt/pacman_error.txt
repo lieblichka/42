@@ -1,0 +1,29 @@
+FULL UPGRADE SYSTEM 
+
+	sudo pacman -Syu 
+	 	
+		(32/32) checking for file conflicts
+		error: failed to commit transaction (conflicting files)
+		python-future: /usr/bin/futurize exists in filesystem
+		python-future: /usr/bin/pasteurize exists in filesystem
+
+	### REPAIR 
+		
+		# FIRST 
+
+			pacman -Qo /path/to/file 
+		
+			pacman -Qo /usr/bin/future 
+			
+				error: No package owns /usr/bin/futurize
+
+	 	# SECOND VARIANT
+			
+			sudo mv /usr/bin/{futurize,pasteurize} backup_dir
+
+			
+			pacman -Syu 
+				
+				SUCCESSFULLY
+			
+				
