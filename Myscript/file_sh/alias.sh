@@ -3,6 +3,7 @@ export PATH="$PATH:$HOME/.rvm/bin"
 export PS1="[\u]: "
 cd $(cat ~/.wdir)
 function pid() { ps aux |grep "$@"|grep -v grep |awk {'print $2'};}
+function align() { echo "$( fold  --width=80 -s "$1" )";}
 function work() { if [ "$1" = "this" ]; then echo $(pwd) > ~/.wdir; \
 echo 'work-dir:' $(p); else cd $(cat ~/.wdir); echo 'current-dir:' $(p);fi;}
 alias ls='ls --color=auto'
