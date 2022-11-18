@@ -5,6 +5,9 @@ set smartindent " - автоматически ставит отступы в н
 set number "нумерация строк"
 "set foldcolumn=2 "отступ от левой части окна ""
 set mouse=a "включает поддержку мыши в vim"
+set shiftwidth=4 
+set textwidth=80 
+set wrapmargin=80
 "-------"
 
 
