@@ -29,4 +29,5 @@ colorscheme pablo
 " :b + tab  - перейти к выбранному буферу"
 " ctrl+n - автодополнение "
 " :%s/text/newtext/ - replace text in file "
-" /word - поиск нужных слов" 
+" /word - поиск нужных слов"
+" ESC + V + NUM_OF_STRING_AFTER_CURRENT + jq <===> EXAMPLE : v7jgq "  
