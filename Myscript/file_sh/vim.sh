@@ -10,6 +10,9 @@ set textwidth=80
 set wrapmargin=80
 "-------"
 
+"EDIT"
+set cursorline 		"ПОДСВЕТКА ПО ГОРИЗОНТАЛИ"
+set cursorcolumn	"ПОДСВЕТКА ПО ВЕРТИКАЛИ"
 
 "SEARCH"
 set	ignorecase	"Игнорирование регистра при поиске"
@@ -17,6 +20,11 @@ set	smartcase	"Игнорирование регистра при поиске"
 set hlsearch	"Подсветка результатов поиска"
 set incsearch	"Показывает первое вхождение при вводе шаблона"
 "--------"
+
+"WILDMENU"
+set wildmenu
+set wildmenu=list:longest
+
 
 syntax on
 colorscheme pablo
