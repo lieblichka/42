@@ -23,7 +23,7 @@ set incsearch	"Показывает первое вхождение при вв�
 
 "WILDMENU"
 set wildmenu
-set wildmenu=list:longest
+set wildmode=list:longest
 
 
 syntax on
