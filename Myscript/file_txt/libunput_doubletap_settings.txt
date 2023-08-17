@@ -1,0 +1,17 @@
+For active touchpad xf86-input-synaptics is outdated 
+
++ libunput include in package xorg 
+
+### add file with text:
+
+Section "InputClass"
+	identifier "InputClass"
+		Driver "libunput"
+	MatchIsTouchpad "on"
+	Option "tapping" "on"
+	Option "AccelProfile" "adaptive"
+	Option "TappingButtonMap" "lrm"
+
+EndSection
+
+### in file: /etc/X11/xorg.conf.d/30-touchpad.conf
