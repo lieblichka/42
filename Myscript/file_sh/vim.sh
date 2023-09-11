@@ -1,13 +1,13 @@
 "BASIC"
 set tabstop=4	"размер табуляции"
-set colorcolumn=80
+set colorcolumn=65
 set smartindent " - автоматически ставит отступы в нужных местах "
 set number "нумерация строк"
 "set foldcolumn=2 "отступ от левой части окна ""
 set mouse=a "включает поддержку мыши в vim"
 set shiftwidth=4 
-set textwidth=80 
-set wrapmargin=80
+set textwidth=65 
+set wrapmargin=65
 "-------"
 
 "EDIT"
@@ -25,10 +25,11 @@ set incsearch	"Показывает первое вхождение при вв�
 set wildmenu
 set wildmode=list:longest
 
-
+"GENERAL"
 syntax on
 colorscheme pablo
 :highlight Comment ctermfg=6
+:hi Normal guibg=NONE ctermbg=NONE
 
 " :ls - список текущих буферов"
 " :bn - перейти к предыдущему буферу"

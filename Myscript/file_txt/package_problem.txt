@@ -1,0 +1,9 @@
+# Установка document viewer
+
+	sudo pacman -S xreader  
+	
+	- По умолчанию пакет xreader не включает
+	функционал открытия djvu файлов, чтобы файлы формата 
+	открывались, устанавливаем доп-пакет
+
+		sudo pacman -S djvulibre 
