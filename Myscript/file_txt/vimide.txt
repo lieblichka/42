@@ -1,0 +1,31 @@
+*** VIM AS IDE
+
+	...~~~ LINK ~~~... 
+		
+		https://www.linuxfordevices.com/tutorials/linux/turn-vim-into-an-ide
+
+	
+	# INSTALL VIM-PLUG 
+
+		- oficial site vim-plug
+			
+			https://github.com/junegunn/vim-plug
+
+		- install 
+			
+			curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    			https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+		- add to ~/.vimrc 
+
+				set nocompatible 
+
+				call plug#begin()
+				
+					.... list of plugins
+
+				call plug#end()
+
+			
+			
+		
