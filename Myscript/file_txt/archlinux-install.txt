@@ -1,0 +1,28 @@
+***  ARCH 
+
+/dev/sda1 - /mnt/boot/efi  
+/dev/sda2 - [SWAP]
+/dev/sda3 - /mnt/
+/dev/sda4 - /mnt/home
+
+### GRUB INSTALL
+
+	# LINK
+		
+		https://wiki.archlinux.org/title/GRUB/Tips_and_tricks#Alternative_install_method
+
+	# FIRST
+		
+		from out of arch-chroot run: 
+
+			grub-install --target=x86_64-efi --efi-directory=/mnt/boot/efi --bootloader-id=grub --boot-directory=/mnt/boot/efi --debug
+
+
+	# SECOND 
+		
+		~> arch-chroot /mnt 
+
+		root@arch~> grub-mkconfig -o /boot/efi/grub/grub.cfg 
+		
+
+
