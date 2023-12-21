@@ -1,0 +1,10 @@
+*** XFWM4 
+
+	- установить оконные цвета в темном стиле 
+
+		GTK_CSD=1 GTK_THEME=Adwaita:dark xfce4-terminal --disable-server
+
+
+	- для установки цветов внутри окон, искать в настройках 
+
+		APPEARANCE -> change to DARK THEME 
