@@ -23,6 +23,102 @@
 		~> arch-chroot /mnt 
 
 		root@arch~> grub-mkconfig -o /boot/efi/grub/grub.cfg 
+
+### PACKAGES 
+
+	- packstrap -K /mnt base linux linux-firmware
+	
+		- arch-chroot 
+
+		- pacman -S iwd dialog dhcpcd sudo vim git 
+
+		- pacman -S base-devel
+
+
+	-  useradd -m -G sys,network,scanner,power,wheel,audio,lp,optical,storage,video,users,rfkill -s /bin/bash mwuckert
+		
+		passwd mwuckert
+
+	- git clone https://aur.archlinux.org/paru.git
+
+		makepkg -s 
+
+
+### VIDEO-DRIVER
+	
+	- sudo pacman -S mesa xf86-video-amdgpu
+
+
+	- sudo pacman -Qo lspci 
+
+		- sudo pacman -S pciutils
+		
+		lscpi -k | grep -A 3 -E "(VGA|3D)"
+
+			# check radeon and amdgpu drivers
+
+	- sudo vim /etc/mkinicpio.conf 
+
+		edit string with contain: MODULES=(amdgpu)
+
+	- sudo mkinitcpio -p linux 
+	
+### LIGHTDM 
+
+	- sudo pacman -S lightdm lightdm-slick-greeter
+
+	- sudo systemctl enable lightdm
+
+
+### X
+
+	- sudo pacman -S xorg xorg-xinit
+
+
+	~> cp /etc/X11/xinit/xinitrc ~/.xinitrc
+	~> echo "exec i3" >> ~/.xinitrc	
+
+### i3 
+
+	sudo pacman -S i3-gaps i3status
+
+	sudo pacman -S dmenu # для запуска приложений 
+
+
+### NETWORK 
+
+	sudo pacman -S iwd networkmanager
+
+	# systemd-znetworkd
+
+	systemctl disable iwd  && systemctl stop iwd
+	systemctl disable dhcpcd && systemctl stop dhcpcd
+
+
+	## NetworkManager
+
+		# INSTALL
+
+			sudo pacman -S networkmanager modemmanager 
+
+			~> systemctl enable NetworkManager ModemManager
+			~> reboot 
+
+		# CONNECT
+
+			nmcli device wifi connect Netpoint password "password"
+
 		
 
+	
 
+
+
+### KEYBOARD 
+
+	setxkbmap -model -pc105 -layout us,ru -option grp:alt_space_toggle
+
+### THEME 
+
+
+	sudo pacman -S lxappearance gnome-themes-extra
