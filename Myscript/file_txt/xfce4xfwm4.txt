@@ -8,3 +8,21 @@
 	- для установки цветов внутри окон, искать в настройках 
 
 		APPEARANCE -> change to DARK THEME 
+
+
+### XFCE4
+
+	
+	# DOCKLIKE 
+		
+		- упрощенный способ добавления приложений на панель 
+
+			~/.config/xfce4/panel/docklike-3.rc
+
+
+	# LAUNCHER 
+		
+		add launcher with custom command
+		
+		in field command: [add command]
+

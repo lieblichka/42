@@ -66,7 +66,30 @@ vim /etc/bluetooth/main.conf
 [POLICY]
 
 	AutoEnable=true
-	
 
+
+
+### REAPAIR bluetooth after update
+
+	- systemctl status bluetooth
+
+		Endpoint registered: sender=:1.42 path=/MediaEndpoint/A2DPSource/sbc_xq_552
+
+
+	# Check the latest update for blue* packages
+
+		grep -i installed /var/log/pacman.log | grep blue
+	
+			[2023-10-17T23:35:06+0300] [ALPM] installed bluez-libs (5.70-1)
+			[2023-10-17T23:35:53+0300] [ALPM] installed bluez-utils (5.70-1)
+			[2023-10-17T23:37:55+0300] [ALPM] installed bluez (5.70-1)
+			[2023-10-17T23:37:55+0300] [ALPM] installed pulseaudio-bluetooth (16.1-6)
+			[2023-12-27T03:17:56+0300] [ALPM] installed bluez (5.71-3)
+			[2023-12-27T03:17:56+0300] [ALPM] installed bluez-utils (5.71-3)
+			[2023-12-27T03:17:56+0300] [ALPM] installed pulseaudio-bluetooth (16.1-7)
+
+
+	# This problem resolve by deletion pulseaudo and install pipwire
+	and install bluez-git from AUR, or wait for next update
 
 
