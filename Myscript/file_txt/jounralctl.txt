@@ -1,0 +1,9 @@
+*** JOURNALCTL 
+
+
+	### CLEAR AND ROTATE LOG
+
+		journalctl --disk-usage			# check what size space have logs 
+
+		journalctl --vacuum-size=128M	# max logs size
+		journalctl --vacuum-time=1d		# clean every day

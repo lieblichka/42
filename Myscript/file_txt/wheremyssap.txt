@@ -1,0 +1,71 @@
+*** THIS FILE NAMED for eclude enumeration for find by name: PASS,
+but grep -ri "PASS" fuck this shit
+
+	
+	sudo pacman -S pass gnupg pinentry dmenu xclip
+
+
+
+### GNUPG 
+	
+	- понадобится для генерации gpg ключа, используется в получении
+	доступа к pass 
+
+
+	~> gpg --full-gen-key 
+
+		- def
+		- def
+		- def 
+		- Real name - examp: antonio
+		- email  - examp: antonio-bandera2312@outlook.com
+		- [ENTER password]
+
+	# PASS USE GNUPG2 THEN 
+
+		- так как pass использует gpg2, необходимо экспортировать
+		секретные ключи из gpg1
+
+		~> gpg --export-secret-keys > keyfile 
+			
+			:> enter your password
+
+		~> gpg2 --import keyfile
+
+			gpg: key XXXXXXX: "mwuckert (pass) ..... etc
+			gpg: key XXXXXXX: secret key imported
+
+
+		~> gpg2 --edit-key XXXXXXX  
+			
+			gpg> trust
+			gpg> 5 (trusted ultimately)
+			gpg> yes
+
+	# HOW TO LOOK ID IF FORGOT 
+
+		gpg2 --list-secret-keys --keyid-format=long  | grep sec | cut -d / -f 2 | awk '{print $1}'
+
+### PASS
+
+	~> pass init XXXXXXX
+
+	~> pass insert site.com/login
+		
+		> Enter pass
+		> Retype pass
+
+	~> pass -c site.com/login/ 
+
+
+
+		RIGHT CLICK -> AND PASTE 
+
+	~> pass show to/path
+
+	# PASSMENU 
+		
+		- требуется dmenu
+
+			passmenu 
+
