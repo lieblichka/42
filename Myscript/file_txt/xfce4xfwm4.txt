@@ -26,3 +26,6 @@
 		
 		in field command: [add command]
 
+#### WORKSPACE SWITCHER CUSTOMIZE
+
+	SETTINGS_EDITOR -> xfwm4 -> workspace_counter -> set num 
