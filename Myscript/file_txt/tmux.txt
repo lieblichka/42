@@ -1,0 +1,17 @@
+***  TMUX 
+
+
+~@> tmux # launch start tmux session
+
+
+### CREATE AND MOVE PANES
+
+	~@> tmux split-window -h # split horizontaly
+	~@> tmux list-panes  # list panels
+	
+		0: [168x41] [history 0/2000, 0 bytes] %0 (active)
+		1: [83x41] [history 18/2000, 6156 bytes] %1
+
+	~@> tmux select-pane -t [numofpanes]  
+
+
