@@ -1,0 +1,52 @@
+*** HOW TO DECREASE MOUSE SCROOL SPEED 
+
+	sudo pacman -S imwheel
+
+	### CATCH KEY SCROOL BUTTON 
+
+		imwheel -d --debug --kill 
+
+	# 
+		$ imwheel -b "45"
+
+	### STARTUP SH 
+		
+		add sh file to 
+	
+			/etc/profile.d/imwheel.sh	
+
+	### SYSTEMD IMWHEEL 
+
+	- touch /usr/lib/systemd/system/imwheel.service
+	
+		[Unit]
+		Description=IMWheel
+		Wants=display-manager.service
+		After=display-manager.service
+
+		[Service]
+		Type=simple
+		#Next line is only required for Xorg, should be removed for Wayland
+		Environment=XAUTHORITY=%h/.Xauthority
+		ExecStart=/usr/bin/imwheel -d
+		ExecStop=/usr/bin/pkill imwheel
+		RemainAfterExit=yes
+
+		[Install]
+		WantedBy=graphical-session.target
+
+
+	~> sudo systemctl daemon-reload 
+
+
+	# check unit 
+	
+		systemctl list-unit-files | grep imwheel
+
+
+### LINK
+
+	https://superuser.com/questions/1690821/how-to-run-imwheel-at-startup-login-to-allow-scrolling-while-moving-the-mouse
+
+
+	
