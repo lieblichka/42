@@ -14,8 +14,8 @@ set incsearch
 	call plug#begin()
 
 		"File Manager"
-			Plug 'https://github.com/preservim/nerdtree', { 'on': 'NERDTreeToggle' }
-
+			Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }	
+	
 		"Syntax" 
 			Plug 'sheerun/vim-polyglot'
 
