@@ -1,0 +1,70 @@
+set nocompatible 
+set number 				"Нумерация строк"
+set hidden 				"Разрешить скрытые буферы"
+set tabstop=4			"Размер шага табуляции 4"
+set shiftwidth=4
+set mouse=a
+
+set ignorecase
+set smartcase
+set hlsearch
+set incsearch
+
+"VIM-PLUG BLOCK"
+	call plug#begin()
+
+		"File Manager"
+			Plug 'https://github.com/preservim/nerdtree', { 'on': 'NERDTreeToggle' }
+
+		"Syntax" 
+			Plug 'sheerun/vim-polyglot'
+
+		"Paired Brackets"
+			Plug 'jiangmiao/auto-pairs'
+
+		"ColorSchemes"
+			Plug 'flazz/vim-colorschemes'
+
+		"BufTabLine"
+			
+			Plug 'ap/vim-buftabline' 
+
+
+	call plug#end()
+
+"HOTKEYS"
+	
+	"File Manager Display ON/OFF"
+	
+		map <silent> <C-F> :NERDTreeToggle<CR>	
+
+	"BufTabLine Move"
+		nnoremap <C-N> :bnext<CR>
+		nnoremap <C-P> :bprev<CR>
+		nnoremap <C-D> :bw<CR>
+		nnoremap <C-X> :bd<CR>
+
+	"ON/OFF AutoPairs"0
+		let g:AutoPairsShortcutToggle = '<C-L>' 
+
+"APPEARANCE"
+
+	"THEMES"
+
+		"colorscheme PerfectDark"
+		colorscheme monokain"	
+
+	"BACKGROUND"
+	
+		:hi Normal guibg=NONE ctermbg=NONE"
+		
+	"TABS"
+	
+		hi TabLine      ctermfg=White  ctermbg=Black     cterm=NONE"
+		hi TabLineFill  ctermfg=White  ctermbg=Black     cterm=NONE"
+		hi TabLineSel   ctermfg=White  ctermbg=DarkGray  cterm=NONE"
+
+	"NERDTreeToggle SIZE" 
+		
+
+
