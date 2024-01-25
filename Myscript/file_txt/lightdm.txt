@@ -1,0 +1,14 @@
+*** LIGDTDM
+
+	~> sudo pacman -S lighdtm-slick-greeter
+
+	paru lightdm-settings 
+
+# OR
+
+	~> sudo pacman -S lightdm-gtk-greeter
+
+	config file: /etc/lighdtm/*
+
+ 
+
