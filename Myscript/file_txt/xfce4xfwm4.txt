@@ -26,6 +26,28 @@
 		
 		in field command: [add command]
 
+
+	# POWER MANAGER 
+		
+		- SET VARIABLE 
+
+			xfconf-query --channel xfce4-power-manager --property /xfce4-power-manager/inactivity-on-ac --set [num]	
+			xfconf-query --channel xfce4-power-manager --property /xfce4-power-manager/inactivity-on-battery --set [num]	
+
+		- CHECK VALUE
+
+			xfconf-query --channel xfce4-power-manager --list --verbose 
+
+		- BLANK MONITOR IN X11 
+
+			xset q			# check current settings 
+			xset s 60 60	# blank mon 1 minute period
+
+
+	
+	
+		  
+
 #### WORKSPACE SWITCHER CUSTOMIZE
 
 	SETTINGS_EDITOR -> xfwm4 -> workspace_counter -> set num 
