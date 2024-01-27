@@ -41,3 +41,12 @@
 	# IF KEYABOARD LAYOUT CHANGE DOESN'T WORK 
 		
 		setxkbmap $(setxkbmap -query | grep "^layout:" | awk -F ": *" '{print $2}')
+
+
+*** LINK 
+
+
+	### SYSTEMD
+
+		https://github.com/AdrianKoshka/config/wiki/My-barrier-setup
+
