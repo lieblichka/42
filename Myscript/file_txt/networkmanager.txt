@@ -1,14 +1,43 @@
 ### FOR CORRECT WORK WITH OPENCONNECT INSTALL PACKAGES 
 
-networkmanager-*{openconnect,openvpn}
+	networkmanager-*{openconnect,openvpn}
 
 
-glib-networking 1:2.78.0-1
-network-manager-applet 1.36.0-1
-networkmanager 1.44.2-3
-networkmanager-l2tp 1.20.10-1
-networkmanager-openconnect 1.2.10-1
-networkmanager-openvpn 1.10.2-3
-networkmanager-pptp 1.2.12-3
-networkmanager-vpnc 1.2.8-3
+	glib-networking 1:2.78.0-1
+	network-manager-applet 1.36.0-1
+	networkmanager 1.44.2-3
+	networkmanager-l2tp 1.20.10-1
+	networkmanager-openconnect 1.2.10-1
+	networkmanager-openvpn 1.10.2-3
+	networkmanager-pptp 1.2.12-3
+	networkmanager-vpnc 1.2.8-3
 
+
+### ADD wifi connection
+	
+	# Check status adapter card
+
+		@> nmcli dev status 
+
+	# Check status network monitor
+
+		@> nmcli radio wifi 
+		@> nmcli radio wifi on 
+
+	# Get network around you 
+
+		@> nmcli dev wifi list 
+
+	# Connect wifi network 
+		
+		- Without password
+		@> nmcli dev wifi connect [network-ssid]
+		- With password: 
+		@> nmcli dev wifi connect [network-ssid] password "network-pass"
+
+
+
+
+### Disable wifi
+	
+	@> nmcli radio wifi off 
