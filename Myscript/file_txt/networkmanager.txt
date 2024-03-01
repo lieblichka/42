@@ -34,7 +34,10 @@
 		@> nmcli dev wifi connect [network-ssid]
 		- With password: 
 		@> nmcli dev wifi connect [network-ssid] password "network-pass"
-
+	
+	# List saved wifi connections
+		
+		nmcli connection show | grep wifi 
 
 
 
