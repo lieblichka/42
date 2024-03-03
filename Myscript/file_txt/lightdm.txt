@@ -10,5 +10,9 @@
 
 	config file: /etc/lighdtm/*
 
+	### LIGHTDM autostart
+		
+		https://arcolinuxforum.com/viewtopic.php?t=3004
+
  
 

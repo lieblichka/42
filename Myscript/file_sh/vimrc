@@ -3,31 +3,39 @@ set number 				"Нумерация строк"
 set hidden 				"Разрешить скрытые буферы"
 set tabstop=4			"Размер шага табуляции 4"
 set shiftwidth=4
-set mouse=a
+set mouse=r
 
 set ignorecase
 set smartcase
 set hlsearch
 set incsearch
 
+set colorcolumn=111
+"set smartindent			""автоматически ставит отступы в нужных местах "
+
+set textwidth=111
+set wrapmargin=111
+
 "VIM-PLUG BLOCK"
 	call plug#begin()
 
-		"File Manager"
+		"FileManager"
 			Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }	
 	
 		"Syntax" 
 			Plug 'sheerun/vim-polyglot'
 
-		"Paired Brackets"
+		"PairedBrackets"
 			Plug 'jiangmiao/auto-pairs'
 
 		"ColorSchemes"
 			Plug 'flazz/vim-colorschemes'
 
 		"BufTabLine"
-			
 			Plug 'ap/vim-buftabline' 
+		
+		"EmmetVim"
+			Plug 'mattn/emmet-vim'
 
 
 	call plug#end()
@@ -39,14 +47,19 @@ set incsearch
 		map <silent> <C-F> :NERDTreeToggle<CR>	
 
 	"BufTabLine Move"
-		nnoremap <C-N> :bnext<CR>
-		nnoremap <C-P> :bprev<CR>
+		nnoremap <C-P> :bnext<CR>
+		nnoremap <C-O> :bprev<CR>
 		nnoremap <C-D> :bw<CR>
 		nnoremap <C-X> :bd<CR>
 
 	"ON/OFF AutoPairs"0
 		let g:AutoPairsShortcutToggle = '<C-L>' 
 
+	"Emmet Mod Key"
+		let g:user_emmet_leader_key='<C-M>'
+
+		let g:user_emmet_install_global = 0
+		autocmd FileType html,css EmmetInstall
 "APPEARANCE"
 
 	"THEMES"
@@ -64,7 +77,4 @@ set incsearch
 		hi TabLineFill  ctermfg=White  ctermbg=Black     cterm=NONE"
 		hi TabLineSel   ctermfg=White  ctermbg=DarkGray  cterm=NONE"
 
-	"NERDTreeToggle SIZE" 
-		
-
-
+	"NERDTreeToggle SIZE"
