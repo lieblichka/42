@@ -50,3 +50,11 @@
 
 		https://github.com/AdrianKoshka/config/wiki/My-barrier-setup
 
+*** TROUBLESHOOTING
+
+        https://github.com/debauchee/barrier/issues/94\#issuecomment-934400562
+        https://losst.pro/razreshenie-ekrana-v-linux
+
+        ### XLIB
+
+                https://github.com/symless/synergy-core/pull/6685
