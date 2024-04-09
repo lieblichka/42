@@ -1,9 +1,140 @@
+*** HDD
+	
+	### SAMSUNG np355v5c
+		
+		https://www.partsdirect.ru/goods/AA954785/samsung_np355v5c_s0eru
+
+
+*** ISO
+
+	https://wiki.archlinux.org/title/Multiboot_USB_drive
+	+++ https://wiki.archlinux.org/title/USB_flash_installation_medium
+
 ***  ARCH 
 
 /dev/sda1 - /mnt/boot/efi  
 /dev/sda2 - [SWAP]
 /dev/sda3 - /mnt/
 /dev/sda4 - /mnt/home
+
+
+
+### FONT
+
+	# BIG FONT
+		
+		setfont ter-c32b
+
+	# MORE READABLE FONT
+		
+		setfont cyr-sun16
+
+### CHECK
+	
+
+	## CHECK EFI
+		
+		# BIT DEPTH
+		
+			cat /sys/firmware/efi/fw_platform_size
+
+	## CHECK INTERNET CONNECTIONS
+		
+
+		# IWD 
+			
+			START:
+				
+				iwctl
+
+			DEVICE:
+				
+				device list 
+
+			UP ADAPTHER  AND DEVICE: 
+				
+				device wlan0 set-property Powered on 
+				adapter pyh0 set-property Powered on 
+
+			SCAN:
+
+				station wlan0 scan 
+				station wlan0 get-networks 
+			
+			CONNECT: 
+				
+				station wlan0 connect SSID 
+
+			CONNECTION STATUS: 
+				
+				station wlan0 
+
+		# INTERFACE
+			
+			ip link 
+
+### TIME 
+	
+	## TIMEDATECTL
+		
+		timedatectl list-timezones 
+		timedatectl set-timezone Europe/Moscow
+		timedatectl set-ntp true
+
+### PARTITIONING AND FORMATTING
+	
+	## FDISK 
+		
+		fdisk /dev/sd[X]
+
+			fdisk@> g  # CREATE GPT PARTITION TABLE
+			fdisk@> n 
+			|
+			|- @> BEG SIZE, END SIZE = +[num][M,G]
+			fdisk@> t
+			|
+			|- @> choose 1=/dev/sda1 2=/dev/sda2  3=/dev/sda3 4=/dev/sda4
+
+		# TYPES
+			
+			/dev/sda1 - EFI SYSTEM
+			/dev/sda2 - Linux swap
+			/dev/sda3 - Linux root (x86-64)
+			/dev/sda4 - Linux filesystem
+
+
+	## FORMATTING 
+		
+		mkfs.ext4 /dev/sda3 
+		mkfs.ext4 /dev/sda4
+		mkfs.fat -F 32 /dev/sda1
+		mkswap /dev/sda2
+			
+
+### MOUNTING
+	
+	mount /dev/sda3 /mnt 
+	mount --mkdir /dev/sda1 /mnt/boot/efi
+	mount --mkdir /dev/sda4 /mnt/home 
+	swapon /dev/sda2
+
+### BASE INSTALLATION 
+	
+
+	## BASE 
+
+		pacstrap -K /mnt base linux linux-firmware 
+	
+
+	## FSTAB
+		
+		genfstab -U /mnt >> /mnt/etc/fstab 
+
+	## SHELL ENVIRONMENT
+		
+		
+		arch-chroot /mnt
+
 
 ### GRUB INSTALL
 
@@ -25,10 +156,6 @@
 		root@arch~> grub-mkconfig -o /boot/efi/grub/grub.cfg 
 
 ### PACKAGES 
-
-	- packstrap -K /mnt base linux linux-firmware
-	
-		- arch-chroot 
 
 		- pacman -S iwd dialog dhcpcd sudo vim git 
 
