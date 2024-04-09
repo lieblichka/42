@@ -1,0 +1,8 @@
+
+### SOMETIME CONFLICT 
+	
+	## ALT+SUPERKEY FOR CHANGE LANGUAGE WITH ALT FIREFOX
+			
+		GO TO: about:config
+			
+			ALT: ui.key.menuAccessKeyFocuses: set to FALSE
