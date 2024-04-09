@@ -1,0 +1,29 @@
+*** HOW to check bit sector with FIX on /home
+	
+	### START THE LAPTOP WITHOUT LOGININ
+
+		CTRL + ALT + F[x] to TTY[free]
+
+	### LOGIN ROOT 
+
+		@> umount /home 
+		@> lsblk
+			
+			make sure it's unmounted on /dev/sda4
+
+	### START e2fsck 
+		
+		@> e2fsck -cfpv /dev/sda4 
+
+
+	### HOW TO KNOW IS IT START
+		
+		CTRL + ALT + F[x+1] to TTY[free]
+
+		GO ROOT: login 
+			
+			@> pacman -S iotop
+			@> iotop -obPat 
+				
+				- look to badblock commands, 
+				check while doesn't complete 
