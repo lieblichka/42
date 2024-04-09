@@ -1,0 +1,31 @@
+### SHARE KEY TO OTHER DEVICE
+
+	## EXPORT 
+
+		# SHOW KEYS 
+
+			@> gpg --list-secret-keys mwuckert
+
+		# COPY ID 
+			
+			second column output
+
+		# @> gpg --export-secret-keys -a ID > private.key
+
+	## SAFETY  SHARE 
+
+		HOST1: pythom -m http.server [PORT]
+
+		HOST2: wget http://host1ip:[PORT]/private.key
+
+	## IMPORT 
+		
+		# Delete old gnupg 
+
+			@> rm -rf ~/.gnupg
+			@> gpg -k 
+
+		# gpg --import private.key 
+
+
+
