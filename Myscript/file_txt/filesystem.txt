@@ -27,3 +27,13 @@
 				
 				- look to badblock commands, 
 				check while doesn't complete 
+
+*** TABLE PARTITIONS
+	
+	### PARTITIONS TYPES
+		
+		## MBR 
+		- for old bios 
+
+		## GPT
+		- Uefi 
