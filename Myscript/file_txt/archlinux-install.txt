@@ -10,6 +10,26 @@
 	https://wiki.archlinux.org/title/Multiboot_USB_drive
 	+++ https://wiki.archlinux.org/title/USB_flash_installation_medium
 
+	### HOW TO
+		
+		DOWNLOAD ISO:
+		| 
+		|	@> wget "iso-link" 
+		|
+		INPUT USB-DEVICE
+		|- check him 
+		|
+		|	@> ls /dev/disk/by-id/usb-*
+		|
+		ERASE ALL DATA
+		|
+		|	@> wipefs --all /dev/disk-by-id/usb-[]
+		|
+		UPLOAD ISO
+		|
+		|	@> cat [FILEPATH].iso > /dev/disk-by-id/usb-[]
+		|
+
 ***  ARCH 
 
 /dev/sda1 - /mnt/boot/efi  
@@ -67,7 +87,7 @@
 
 			CONNECTION STATUS: 
 				
-				station wlan0 
+				station wlan0 show 
 
 		# INTERFACE
 			
@@ -161,8 +181,6 @@
 
 		- pacman -S base-devel
 
-
-	-  useradd -m -G sys,network,scanner,power,wheel,audio,lp,optical,storage,video,users,rfkill -s /bin/bash mwuckert
 		
 		passwd mwuckert
 
@@ -171,8 +189,12 @@
 		makepkg -s 
 
 
-### VIDEO-DRIVER
+### AUDIO 
 	
+	sudo pacman -S pulseaudio
+
+### VIDEO-DRIVER
+
 	- sudo pacman -S mesa xf86-video-amdgpu
 
 
@@ -189,27 +211,163 @@
 		edit string with contain: MODULES=(amdgpu)
 
 	- sudo mkinitcpio -p linux 
+
+
+	## MAY ATTENTION:
+		
+		# before installation check already installed drivers 
+			
+			pacman -Ss xf86-video
+
+		# Check virtualization
+			
+			lspcu | grep Virtualization 
+
+		# Process available
+			
+			ps -e | grep X 
+
+		# Kernel Modules list 
+			
+			mkinitcpio -M | grep amd 
+
+	## LINK
+	
+		# Models list
+
+			https://en.wikipedia.org/wiki/List_of_AMD_graphics_processing_units#Features_overview
+
+			https://en.wikipedia.org/wiki/List_of_AMD_graphics_processing_units#Features_overview
 	
 ### LIGHTDM 
 
-	- sudo pacman -S lightdm lightdm-slick-greeter
+	- sudo pacman -S lightdm lightdm-gtk-greeter lightdm-slick-greeter
 
 	- sudo systemctl enable lightdm
+		
+	@> reboot 
 
+		
+	## EDIT 
+		
+		FILE:
+		|/etc/lightdm/lightdm.conf
+		|
+		|	@> greeter-session=lightdm-slick-greeter 
+		|
+		UNIT
+		|
+		|	@> systemctl restart lightdm
+
+	## INTERESTING ABOUT X-SERVER
+
+		https://www.reddit.com/r/linux/comments/6pi5yp/why_does_lightdm_start_x_server_when_startx_isnt/
 
 ### X
 
 	- sudo pacman -S xorg xorg-xinit
 
+	## CONFIGURATION 
 
-	~> cp /etc/X11/xinit/xinitrc ~/.xinitrc
-	~> echo "exec i3" >> ~/.xinitrc	
+		~> cp /etc/X11/xinit/xinitrc ~/.xinitrc
+			
+			@> echo "startx /usr/bin/i3" >> ~/.xinitrc	
+		
 
-### i3 
+		~> cp /etc/X11/xinit/xserverrc ~/.xserverrc
+		
+			~/.xserverrc:
+			|
+			| #!/bin/sh
+			|
+			| exec /usr/bin/Xorg -nolisten tcp "$@" vt$XDG_VTNR
+				
+				# vt $XDG_VTNR
+				- предотвратить обход блокировки экрана 
+				путем переключения терминалов
 
-	sudo pacman -S i3-gaps i3status
 
-	sudo pacman -S dmenu # для запуска приложений 
+	## TERMINATE (X and i3 )
+	
+		CTRL + ALT + F2 # go to another TTY  
+		pkill -15 Xorg
+		pkill -15 -t tty"$XDG_VTNR" Xorg 
+
+	## XSCREENSAVER
+		
+		paru xscreensaver-arch-logo 
+
+	
+
+### I3-NORD 
+
+	sudo pacman -S i3-gaps i3status i3lock dmenu alacritty picom maim light imwheel nitrogen polkit-gnome xclip lxappearance nemo
+
+
+		## PACKAGE FOR i3status
+
+			BATTERY & NOTIFY
+				
+				@> sudo pacman -S xfce4-notifyd xfce4-power-manager
+				@> sudo pacman -S dmenu # для запуска приложений 
+
+		## FONT 
+		
+			ALLACRITTY
+				
+				@> sudo pacman -S ttf-jetbrains-mono 	
+
+			I3STATUS
+
+				@> paru otf-operator-mono-nerd 
+
+			## AUDIO
+				
+				@> sudo pacman -S pactl
+
+		## I3-STATUS 
+			
+			# STYLING 
+
+				sudo pacman -S kcolorchooser
+				
+					- choose color
+				
+				sed -i 's/#1f222d/#210b1f/g' ~/.config/i3/config
+				sed -i 's/#81a1c1/#fdd7ae/g' ~/.config/i3/config
+				sed -i 's/#81a1c1/#fdd7ae/g' ~/.config/i3status/config
+
+	i3 xfce4 wokspace plugin
+
+### ZSH 
+	
+
+	## SHELLCHECK
+		
+		@> echo $SHELL 
+
+	## INSTALL 
+
+		@> sudo pacman -S zsh zsh-completions 
+
+		@> zsh
+
+			...configure
+
+		## set ZSH shell by default
+
+			
+			# list available shell 
+				
+				@> chsh -l 
+
+			# switch on ZSH 
+				
+				@> chsh -s /bin/zsh
+
+
+	
+
 
 
 ### NETWORK 
@@ -239,7 +397,9 @@
 
 	
 
+### ZSH
 
+	sudo pacman -
 
 ### KEYBOARD 
 
@@ -249,3 +409,20 @@
 
 
 	sudo pacman -S lxappearance gnome-themes-extra
+
+### TROUBLE 
+	
+
+	BIOS ** APCI DRIVER 
+
+		journalctl -b-1
+
+		https://forum.level1techs.com/t/amd-p-state-driver/197885/9
+	
+	KERNEL PROBLEM
+		
+		https://wiki.archlinux.org/title/Kernel_parameters
+
+		
+		SOUTH ISLAND
+			- https://wiki.archlinux.org/index.php/Kernel_mode_setting
