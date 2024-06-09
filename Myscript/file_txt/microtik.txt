@@ -1,0 +1,7 @@
+### ERROR
+	
+	## MEMORY
+		
+		# system, error, critical
+			
+			router was rebooted without proper shutdown 
