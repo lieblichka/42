@@ -1,0 +1,15 @@
+TTY KILL
+	
+	## MOVE TO TYT 
+		
+		CTRL+ALT+F[number of other TTY]
+	
+	## LOGIN user
+		
+		user@tty2> ps -H -t /dev/tty[number of need TTY]
+		
+		[pid] tty[num]
+
+	## GO TO ROOT
+
+		kill -SIGKILL [tty pid]
