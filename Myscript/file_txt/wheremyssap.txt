@@ -69,3 +69,29 @@ but grep -ri "PASS" fuck this shit
 
 			passmenu 
 
+	## PASS AUTOSUBSTITUTE PROBLEM
+		
+		# 1 STEP
+			@> rm -rf ~/.password-store/*
+			@> pass init [GPG-ID, or name owner GPG-ID]
+
+		# INIT REPO 
+			
+			mwuckert@~/.password-store> git init 
+			mwuckert@~/.password-store> git remote add github [link]
+
+		# 2 STEP
+			
+			@> rm ~/.password-store/.gpg-id 
+
+		# END STEP
+			
+			@> pass git pull github master 
+
+
+			!!! EXCELLENT
+
+
+
+
+
