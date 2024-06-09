@@ -39,6 +39,30 @@
 		
 		nmcli connection show | grep wifi 
 
+### CONNECT VIA SELECTED INTERFACE
+	
+	# RADIO ON 
+
+		nmcli radio wifi on
+
+	# CONNECT VIA IFNAME 
+		
+		nmcli dev wifi connect BSSID password PASS ifname INTERFACE 
+
+### DELETE CONNECTION
+	
+	# LIST CONNECTIONS 
+		
+		@> nmcli connection show
+
+	# DEL
+		
+		@> nmcli connection delete BSSID	
+		
+	
+
+
+
 
 
 ### Disable wifi
