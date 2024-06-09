@@ -1,0 +1,17 @@
+*** NET TOPOLOGY
+
+	### LOCAL NETWORK WITH ONE CABLE
+
+		1-------
+		|
+		|
+		|- ip link set dev enp2s0 up
+		|- sudo ip addr add 10.0.0.10/24 dev enp2s0
+		|__________________________________________
+
+		2-------
+		|
+		|
+		|- ip link set dev enp2s0 up
+		|- sudo ip addr add 10.0.0.20/24 dev enp2s0
+		|__________________________________________
