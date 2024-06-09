@@ -259,6 +259,11 @@
 		|
 		|	@> systemctl restart lightdm
 
+	## LIGHTDN BACKGROUND IMAGE
+		
+		[greeter]
+		background=/usr/share/pixmaps/black_and_white_photography-wallpaper-1920x1080.jpg
+
 	## INTERESTING ABOUT X-SERVER
 
 		https://www.reddit.com/r/linux/comments/6pi5yp/why_does_lightdm_start_x_server_when_startx_isnt/
@@ -426,3 +431,23 @@
 		
 		SOUTH ISLAND
 			- https://wiki.archlinux.org/index.php/Kernel_mode_setting
+
+
+### LOCK SCREEN SIMPLE
+	
+	sflock-git 
+		
+		https://aur.archlinux.org/packages/sflock-git/
+
+	xtrlock 
+		
+		@> sudo pacman -S xtrlock
+
+
+	## XSSLOCK 
+		
+		@> sudo pacman -S xss-lock 
+
+		https://wiki.archlinux.org/title/Power_management#xss-lock
+			
+			 xss-lock -- i3lock -n -i  background_image.png  &
