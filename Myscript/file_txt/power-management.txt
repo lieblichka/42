@@ -1,0 +1,26 @@
+*** POWER 
+
+	### HOW TO CHECK WHAT PROCESS MANAGE POWER 
+		
+		systemd-inhibit --list
+
+	### XFCE4-POWER-MANAGER
+
+		## POWER MANAGER LIST
+		
+			xfconf-query -c xfce4-power-manager -lv
+
+		## DISABLE OPTIONS 
+			
+			xfconf-query -c xfce4-power-manager -p /xfce4-power-manager/inactivity-sleep-mode-on-battery -s 0
+			xfconf-query -c xfce4-power-manager -p /xfce4-power-manager/inactivity-on-battery -s 0
+			xfconf-query -c xfce4-power-manager -p /xfce4-power-manager/inactivity-sleep-mode-on-battery -s 0
+
+		## SET VALUE 
+
+			LOGOUT FOR SET NEW CHANGE 
+
+	###	LOGIND
+
+		/etc/systemd/logind.conf
+
