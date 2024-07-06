@@ -28,4 +28,66 @@
 		# gpg --import private.key 
 
 
+### USSUALY COMMANDS 
+	
+	## DEL SUB KEY
+		
+		gpg --edit-key [keyname]
+			
+			ssb cv25519/ID-HASH
+			ssb rsa4096/ID-HASH
+			
+			@> key [SSB-ID-HASH]
+				
+				ssb* rsa4096/ID-HASH
+
+			@> delkey
+			@> save
+
+	## CHANGE EXPIRATION SUB KEY
+		
+		gpg --edit-key [keyname]
+
+			@> key [SSB-ID-HASH]
+			@> expire
+				> 0 
+
+			@> save
+
+
+### WORK
+
+	## YOUBIKEY 
+		
+		# MIGRATE 
+			
+			- COMPLETE ALL FROM `SHARE KEY WITH OTHER DEVICES`
+			
+			TWO STEP
+			|
+			| ~/.gnupg/
+			|	
+			|	@> tar -czvf openpgp-revocs.d.tar.gz openpgp-revocs.d
+			|
+			SECOND PC
+			|
+			| ~/.gnupg/
+			|
+			|	@> wget http://host1ip:[PORT]/openpgp-revocs.d.tar.gz
+			|	@> tar -xvf openpgp-revocs.d.tar.gz 
+			|
+			SSHCONTROL
+			|
+			| ~/.gnupg/
+			| COPY FROM INCUBATOR PC TO 
+			|
+			|	@> echo "HASHPUBKEY" > ~/.gnupg/sshcontrol
+			|
+			RESTART
+			|
+			|	@> gpgconf --kill gpg-agent
+
+
+
+
 
