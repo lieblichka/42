@@ -1,0 +1,23 @@
+shut ALL=(ALL) NOPASSWD: /sbin/shutdown
+
+mkdir -p /home/shut
+chmod 400 /home/shut
+sudo chown shut:shut /home/shut
+
+
+usermod --home /home/shut/ shut
+
+useradd shut
+passwd shut 
+
+	NO VALID
+
+		@> su -c "shutdown -h +1 'hello'" shut
+
+	VALID
+		
+		@> sudo -u shut shutdown --help
+
+SHUTPASS
+	
+	l\JZ1i@*
