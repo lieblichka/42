@@ -1,0 +1,29 @@
+### DARK THEME 
+	
+	/usr/share/application/virtualbox.desktop
+		
+		Exec=VirtualBox -style fusion %U 
+
+	## QT_STYLE
+		
+		# APPLICATION
+			
+			qt5ct
+
+		# PRESTART_PROFILE 
+			
+			/etc/profile.d/qt-to-gtk.sh
+			|
+			|	#export QT_STYLE_OVERRIDE=gtk2
+			|	export QT_QPA_PLATFORMTHEME="qt5ct"
+			|
+
+		# Qt5-Styleplugins
+			
+			INSTALL
+			| @> sudo pacman -S qt5ct
+			| @> paru qt5styleplugins
+			
+			run qt5ct and choose Style: gtk2, Apply.
+			
+
