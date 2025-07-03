@@ -1,3 +1,4 @@
+https://gist.github.com/mjnaderi/28264ce68f87f52f2cabb823a503e673
 *** HDD
 	
 	### SAMSUNG np355v5c
@@ -103,6 +104,29 @@
 
 ### PARTITIONING AND FORMATTING
 	
+	## NVME 
+		
+		# IF HAS /dev/nvme0n1
+
+		# CHECK CURRENT SIZE SECTOR 
+			
+			@> lsblk -td 
+
+		# SHOW BEST SIZE SECTOR 
+			
+			@> nvme id-ns -H /dev/nvme0n1 | grep "Relative Performance"
+
+				OR
+
+			@> smartctl -c /dev/nvme0n1 | grep "Supported LBA" -A 10
+
+				
+				OR
+
+			$ cat /sys/class/block/устройство/queue/physical_block_size
+			$ cat /sys/class/block/устройство/queue/logical_block_size
+		
+	
 	## FDISK 
 		
 		fdisk /dev/sd[X]
@@ -117,10 +141,17 @@
 
 		# TYPES
 			
+			# IF SSD Don't use swap, after install system you can include zram 
+			
 			/dev/sda1 - EFI SYSTEM
 			/dev/sda2 - Linux swap
 			/dev/sda3 - Linux root (x86-64)
 			/dev/sda4 - Linux filesystem
+
+		# SOMETIMES NEED RE-READ
+			
+			hdparm -z /dev/sda
+
 
 
 	## FORMATTING 
@@ -186,7 +217,7 @@
 
 	- git clone https://aur.archlinux.org/paru.git
 
-		makepkg -s 
+		makepkg -si 
 
 
 ### AUDIO 
