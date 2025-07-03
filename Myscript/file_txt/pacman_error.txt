@@ -4,26 +4,75 @@ FULL UPGRADE SYSTEM
 	 	
 		(32/32) checking for file conflicts
 		error: failed to commit transaction (conflicting files)
-		python-future: /usr/bin/futurize exists in filesystem
-		python-future: /usr/bin/pasteurize exists in filesystem
-
-	### REPAIR 
 		
-		# FIRST 
+	### python-future: /usr/bin/futurize exists in filesystem
+	### python-future: /usr/bin/pasteurize exists in filesystem
 
-			pacman -Qo /path/to/file 
+		## REPAIR 
 		
-			pacman -Qo /usr/bin/future 
+			# FIRST 
+
+				pacman -Qo /path/to/file 
+		
+				pacman -Qo /usr/bin/future 
 			
 				error: No package owns /usr/bin/futurize
 
-	 	# SECOND VARIANT
+	 		# SECOND VARIANT
 			
-			sudo mv /usr/bin/{futurize,pasteurize} backup_dir
+				sudo mv /usr/bin/{futurize,pasteurize} backup_dir
 
-			
+		## AFTER FIX 
+
 			pacman -Syu 
 				
 				SUCCESSFULLY
+	
+	### linux-firmware-nvidia: /usr/lib/firmware/nvidia/ad103 exists in filesystem
+	###	linux-firmware-nvidia: /usr/lib/firmware/nvidia/ad104 exists in filesystem
+	###	linux-firmware-nvidia: /usr/lib/firmware/nvidia/ad106 exists in filesystem
+	###	linux-firmware-nvidia: /usr/lib/firmware/nvidia/ad107 exists in filesystem
+
+		## REPAIR
 			
+			sudo pacman -Rdd linux-firmware
+
+		## AFTER FIX
+			
+			sudo pacman -Syu linux-firmware
+			
+
+	### BREAK DEPENDENCY 
+		
+
+		## IF BREAK WHEN UPGRADE 
+			
+			error: failed to prepare transaction (could not satisfy dependencies)
+			:: installing icu (76.1-1) breaks dependency 'libicui18n.so=75-64' required by electron29
+			:: installing icu (76.1-1) breaks dependency 'libicuuc.so=75-64' required by electron29
+			:: installing flac (1.5.0-1) breaks dependency 'libFLAC.so=12-64' required by electron29
+			:: installing icu (76.1-1) breaks dependency 'libicui18n.so=75-64' required by electron30
+			:: installing icu (76.1-1) breaks dependency 'libicuuc.so=75-64' required by electron30
+			:: installing flac (1.5.0-1) breaks dependency 'libFLAC.so=12-64' required by electron30
+			
+
+		## FIND UNUSED PACKAGE(NEW DEPENDENCY)
+		
+			pacman-Qdtq
+
+		## SECOND HANDS 
+			
+			pacman -Qi packagename | grep Required 
+
+			# IF NONE
 				
+				pacman -Rns packagename
+			
+### LIST AUR PACKAGES
+	
+	pacman -Qm # local installed packages 
+
+
+### FATAL PROBLEM WITH libxml2 
+	
+	/usr/bin/vpn: error while loading shared libraries: libxml2.so.2: cannot open shared object file: No such file or directory
