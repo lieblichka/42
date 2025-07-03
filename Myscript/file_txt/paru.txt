@@ -1,0 +1,28 @@
+### PARU INSTALL
+	
+	sudo pacman -S --needed base-devel
+	git clone https://aur.archlinux.org/paru.git
+	cd paru
+	makepkg -si
+
+
+### UPDATE PROBLEM 
+
+	paru: 
+	|-error while loading shared libraries:
+	|--libalpm.so.14: cannot open shared object file: 
+	|---No such file or directory
+		
+		https://github.com/Morganamilo/paru/issues/1238
+
+	## HARD FIX WITH OTHER PROBLEMS 
+		
+		sudo ln -s /usr/lib/libalpm.so /usr/lib/libalpm.so.14
+
+	## WAIT RELEASE BY COMMUNITY PARU and DOUBLE INDENTITY version in AUR REPO
+		
+		git clone [aur repo link]
+		makepkg
+		pacman -U [package-name].tar.zst
+
+
