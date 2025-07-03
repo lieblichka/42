@@ -186,6 +186,10 @@ https://gist.github.com/mjnaderi/28264ce68f87f52f2cabb823a503e673
 		
 		arch-chroot /mnt
 
+### GRUB INSTALL BIOS
+	
+	grub-install --boot-directory=/mnt/boot  /dev/vda
+	grub-mkconfig -o /mnt/boot/grub/grub.cfg
 
 ### GRUB INSTALL
 
@@ -219,6 +223,11 @@ https://gist.github.com/mjnaderi/28264ce68f87f52f2cabb823a503e673
 
 		makepkg -si 
 
+### USER
+
+	sudo pacman -S polkit	
+	useradd -m [username]
+	gpasswd -a [username] power audio
 
 ### AUDIO 
 	
