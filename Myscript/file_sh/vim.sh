@@ -40,3 +40,5 @@ colorscheme pablo
 " :%s/text/newtext/ - replace text in file "
 " /word - поиск нужных слов"
 " ESC + V + NUM_OF_STRING_AFTER_CURRENT + jq <===> EXAMPLE : v7jgq "  
+" 1) YY COPY "
+" 2) ESC + Y + 7 + p"
