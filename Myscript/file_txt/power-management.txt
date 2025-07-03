@@ -12,6 +12,10 @@
 
 		## DISABLE OPTIONS 
 			
+			/xfce4-power-manager/critical-power-level               20
+				
+			xfconf-query -c xfce4-power-manager -p /xfce4-power-manager/critical-power-level -s 35
+			
 			xfconf-query -c xfce4-power-manager -p /xfce4-power-manager/inactivity-sleep-mode-on-battery -s 0
 			xfconf-query -c xfce4-power-manager -p /xfce4-power-manager/inactivity-on-battery -s 0
 			xfconf-query -c xfce4-power-manager -p /xfce4-power-manager/inactivity-sleep-mode-on-battery -s 0
