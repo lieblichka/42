@@ -1,0 +1,7 @@
+notify-send test Test
+cat   /sys/class/power_supply/BAT1/capacity
+paplay ~/Downloads/razriajennaia-batar-huawei.mp3 
+
+systemctl start cronie
+env|grep -i runt
+XDG_RUNTIME_DIR=/run/user/1000
