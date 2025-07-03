@@ -1,0 +1,13 @@
+### TAR 
+
+	https://www.fryaha.ru/how-to-encrypt-tar-archive/
+
+	- Encryption tar.gz archive with openssl 
+
+		## ENCRYPT WITH ITER 
+		
+			@> tar czvf test.tar.gz test | openssl enc -aes-256-ctr -a -in test.tar.gz -out test.tar.gz.aes -iter 80000000
+
+		## DECRYPT WITH ITER 
+			
+			@> openssl enc -aes-256-ctr -d -a -in test.tar.gz.aes -out test.tar.gz -iter 80000000
