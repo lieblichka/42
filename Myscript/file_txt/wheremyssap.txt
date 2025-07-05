@@ -2,7 +2,7 @@
 but grep -ri "PASS" fuck this shit
 
 	
-	sudo pacman -S pass gnupg pinentry dmenu xclip
+	sudo pacman -S pass gnupg pinentry dmenu xclip wl-clipboard
 
 
 
