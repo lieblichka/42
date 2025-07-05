@@ -87,6 +87,27 @@
 			|
 			|	@> gpgconf --kill gpg-agent
 
+		# AFTER MIGRATE SETTINGS
+
+			~/.ssh/config
+				
+				Match host * exec "gpg-connect-agent UPDATESTARTUPTTY /bye"
+			
+			~/.gnupg/gpg-agent.conf
+				
+				enable-ssh-support
+				write-env-file
+				use-standard-socket
+				default-cache-ttl 600
+				max-cache-ttl 7200
+			
+			ADDID-TO-SSHCONTROL
+
+				gpg --list-keys --with-keygrip | grep -A1 "\[A\]" | grep Keygrip | awk -F" = " '{print $2}' >> ~/.gnupg/sshcontrol
+
+		# CHECK getcardsshpubkey
+			
+			ssh-add -L
 
 
 
